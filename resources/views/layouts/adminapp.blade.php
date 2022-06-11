@@ -117,6 +117,7 @@
                 </ul>
             </div>
             <!--Container-->
+            @yield('content')
         </div>
 </body>
 

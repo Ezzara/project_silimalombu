@@ -15,6 +15,9 @@ class ProdukController extends Controller
     public function index()
     {
         //
+        $produk = Produk::latest()->paginate(5);
+
+        return view('admin.produk.home', compact('produk'));
     }
 
     /**
@@ -25,6 +28,7 @@ class ProdukController extends Controller
     public function create()
     {
         //
+        return view('admin.produk.create');
     }
 
     /**
@@ -36,6 +40,9 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            ''
+        ]);
     }
 
     /**
