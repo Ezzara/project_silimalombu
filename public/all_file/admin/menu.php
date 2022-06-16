@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
+<html>
 
 <head>
     <meta charset='utf-8'>
@@ -9,13 +7,17 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="admin.css">
     <script src='main.js'></script>
     <script src="https://kit.fontawesome.com/510de3573f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style type="text/css">
+
+    </style>
+
 </head>
 
 <body>
@@ -51,14 +53,14 @@
                         <span>
                             <i class="fas fa-user fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Profil</a>
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">&nbsp Profil</a>
                     </li>
 
                     <li class="nav-link d-flex">
                         <span>
                             <i class="fas fa-box fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Kelola
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#"> &nbsp Kelola
                             Produk</a>
                     </li>
 
@@ -66,7 +68,7 @@
                         <span>
                             <i class="fas fa-list fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Data Kategori
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#"> &nbsp Data Kategori
                             Produk</a>
                     </li>
 
@@ -74,7 +76,7 @@
                         <span>
                             <i class="fas fa-cart-arrow-down fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Detail
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#"> &nbsp Detail
                             Pemesanan</a>
                     </li>
 
@@ -82,7 +84,7 @@
                         <span>
                             <i class="fas fa-file-invoice-dollar fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Data Biaya
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#"> &nbsp &nbsp Data Biaya
                             Pengiriman</a>
                     </li>
 
@@ -90,7 +92,7 @@
                         <span>
                             <i class="fas fa-file-signature fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Laporan
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#"> &nbsp Laporan
                             Penjualan</a>
                     </li>
 
@@ -104,8 +106,9 @@
                 </ul>
             </div>
             <!--Container-->
-            @yield('content')
-        </div>
+
+
+    </div>
 </body>
 
 </html>

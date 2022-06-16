@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <h3 class="mx-auto mt-5">Oils</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+
+        </div>
+
+        <div class="col-md-10">
+
+            <div class="d-flex justify-content-around">
+                <?php $x = 5;
+                    if ($x >= 5) {
+                        for ($i = 0; $i < $x; $i++) { ?>
+                <div class="row">
+                    <?php for ($j = 0; $j < 5; $j++) { ?>
+                    <div class="d-flex flex-column">
+                        <a href="" class="text-center"><img class=" rounded " src=" oils.jpeg" alt=""
+                                style="width:75% ;"></a>
+                        <h3 class="mx-auto">Oils</h3>
+                    </div>
+                    <?php } ?>
+                </div>
+                <?php } ?>
+
+            </div>
+            <?php
+                    } else {
+                        for ($i = 0; $i < 5; $i++) { ?>
+            <div class="d-flex flex-column">
+                <a href="" class="text-center"><img class=" rounded " src=" oils.jpeg" alt="" style="width:75% ;"></a>
+                <h3 class="mx-auto">Oils</h3>
+            </div>
+            <?php }
+                    }
+                            ?>
+        </div>
+    </div>
+</div>
