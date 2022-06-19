@@ -1,3 +1,5 @@
+@extends('layouts.adminapp')
+@section('content')
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Kelola Produk</p>
     <div class="card w-100">
@@ -21,7 +23,7 @@
                     <div class="col-md-4">
                         <!--Kosong untuk field-->
                     </div>
-                    <div class="col-md-2"><a href="link_tambah_data" class="lead text-secondary">+ Tambah Data</a></div>
+                    <div class="col-md-2"><a href="{{ route('produk.create') }}" class="lead text-secondary">+ Tambah Data</a></div>
 
                 </div>
 
@@ -39,11 +41,33 @@
                             <th>Tools</th>
                             <!--looping <a href>-->
                         </tr>
+                        @foreach ($produk as $produks)
                         <tr>
+                            <td>{{ ++$i }}</td>
+                            <td>{{ $produks->id }}</td>
+                            <td>{{ $produks->nm_produk }}</td>
+                            <td>{{ $produks->kd_kategori }}</td>
+                            <td>{{ $produks->jmlh_stok }}</td>
+                            <td>{{ $produks->harga }}</td>
+                            <td><img src="/image/{{ $produks->gambar }}" width="100px"></td>
+                            <td>{{ $produks->keterangan }}</td>
+                            <td>{{ $produks->jmlh_stok }}</td>
                             <td>
-                                <!--foreach data-->
+                                <a href="{{ route('produk.edit', $produks->id) }}">Edit</a><br> 
+                                
+                                <form action="{{ route('produk.destroy', $produks->id) }}" method="POST">
+
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" title="delete">Delete
+                                    </button>
+                                
+
+                                </form>
                             </td>
                         </tr>
+                        @endforeach
                     </table>
                 </div>
 
@@ -54,3 +78,5 @@
     </div>
 </div>
 </div>
+
+@endsection

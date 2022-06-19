@@ -1,3 +1,5 @@
+@extends('layouts.adminapp')
+@section('content')
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Data Biaya Pengiriman</p>
     <div class="card w-100">
@@ -34,14 +36,20 @@
                             <th>Tools</th>
                             <!--looping <a href>-->
                         </tr>
+                        @foreach ($biaya as $biaya)
                         <tr>
                             <td>
-                                <!--foreach data-->
+                                {{ $biaya->id }}
                             </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td> 
+                                {{ $biaya->nm_provinsi }}
+                            </td>
+                            <td> 
+                                {{ $biaya->biaya_kirim }} 
+                            </td>
+                            <td> </td>
                         </tr>
+                        @endforeach
                     </table>
                 </div>
 
@@ -52,3 +60,4 @@
     </div>
 </div>
 </div>
+@endsection

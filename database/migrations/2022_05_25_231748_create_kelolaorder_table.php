@@ -14,19 +14,20 @@ class CreateKelolaorderTable extends Migration
     public function up()
     {
         Schema::create('kelola_order', function (Blueprint $table) {
-            $table->id('id_order');
-            $table->string('username');
-            $table->string('email');
-            $table->string('nama_penerima');
-            $table->string('alamat_lengkap');
-            $table->string('kelurahan');
-            $table->string('kecamatan');
-            $table->string('kab_kota');
-            $table->string('kd_provinsi');
-            $table->string('kd_pos');
-            $table->string('telepon');
-            $table->string('kd_promo');
-            $table->string('catatan');
+            $table->string('id');
+            $table->string('username')->nullable();
+            $table->string('email')->nullable();
+            $table->string('nama_penerima')->nullable();
+            $table->string('alamat_lengkap')->nullable();
+            $table->string('kelurahan')->nullable();
+            $table->string('kecamatan')->nullable();
+            $table->string('kab_kota')->nullable();
+            $table->string('kd_provinsi')->nullable();
+            $table->string('kd_pos')->nullable();
+            $table->string('telepon')->nullable();
+            $table->string('kd_promo')->nullable();
+            $table->string('catatan')->nullable();
+            $table->string('status')->nullabel();
             $table->timestamps();
         });
     }
