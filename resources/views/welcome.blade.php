@@ -1,4 +1,5 @@
-
+@extends('layouts.userapp')
+@section('content')
 <div class="bg-image"
     style="background-image: url('banner.jpeg');height:85vh;background-repeat:no-repeat; background-size: cover; background-position:center;">
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.5);height:85vh;">
@@ -29,29 +30,29 @@
         <div class="col-md-10">
             <div class="d-flex justify-content-around">
                 <div class="d-flex flex-column">
-                    <a href="" class="text-center"><img class=" rounded " src=" oils.jpeg" alt=""
+                    <a href="" class="text-center"><img class=" rounded " src="img/oils.jpeg" alt=""
                             style="width:75% ;"></a>
                     <h3 class="mx-auto">Oils</h3>
                 </div>
                 <div class="d-flex flex-column">
-                    <a href="" class="text-center"><img class=" rounded" src="buah.jpeg" alt="" style="width:75% ;"></a>
+                    <a href="" class="text-center"><img class=" rounded" src="img/buah.jpeg" alt="" style="width:75% ;"></a>
                     <h3 class="mx-auto">Buah</h3>
                 </div>
 
                 <div class="d-flex flex-column">
-                    <a href="" class="text-center"><img class=" rounded" src="sayur.jpeg" alt=""
+                    <a href="" class="text-center"><img class=" rounded" src="img/sayur.jpeg" alt=""
                             style="width:75% ;"></a>
                     <h3 class="mx-auto">Sayur</h3>
                 </div>
 
                 <div class="d-flex flex-column">
-                    <a href="" class="text-center"><img class=" rounded" src="makanan.jpeg" alt=""
+                    <a href="" class="text-center"><img class=" rounded" src="img/makanan.jpeg" alt=""
                             style="width:75% ;"></a>
                     <h3 class="mx-auto">Makanan</h3>
                 </div>
 
                 <div class="d-flex flex-column">
-                    <a href="" class="text-center"><img class="rounded" src="lainnya.jpeg" alt=""
+                    <a href="" class="text-center"><img class="rounded" src="img/lainnya.jpeg" alt=""
                             style="width:75% ;"></a>
                     <h3 class="mx-auto">Lainnya</h3>
                 </div>
@@ -64,3 +65,4 @@
 
 
 </div>
+@endsection
