@@ -1,3 +1,5 @@
+@extends('layouts.adminapp')
+@section('content')
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Detail Pemesanan</p>
     <div class="card w-100">
@@ -40,26 +42,57 @@
                             <th>Catatan</th>
                             <th>Status</th>
                         </tr>
+                        @foreach ($order as $order)
                         <tr>
+
                             <td>
-                                <!--foreach data-->
+                                {{ ++$i}}
                             </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                {{ $order->id}}
+                            </td>
+                            <td>
+                                {{ $order->nama_penerima }}
+                            </td>
+                            <td>
+                                {{ $order->username }}
+                            </td>
+                            <td>
+                                {{ $order->email }}
+                            </td>
+                            <td>
+                                {{ $order->telepon }}
+                            </td>
+                            <td>
+                                {{ $order->kd_provinsi }}
+                            </td>
+                            <td>
+                                {{ $order->kab_kota }}
+                            </td>
+                            <td>
+                                {{ $order->kecamatan }}
+                            </td>
+                            <td>
+                                {{ $order->kelurahan }}
+                            </td>
+                            <td>
+                                {{ $order->kd_pos }}
+                            </td>
+                            <td>
+                                {{ $order->alamat_lengkap }}
+                            </td>
+                            <td>
+                                {{ $order->kd_promo }}
+                            </td>
+                            <td>
+                                {{ $order->catatan }}
+                            </td>
+                            <td>
+                                {{ $order->status }}
+                            </td>
 
                         </tr>
+                    @endforeach
                     </table>
                 </div>
 
@@ -75,3 +108,4 @@
     </div>
 </div>
 </div>
+@endsection

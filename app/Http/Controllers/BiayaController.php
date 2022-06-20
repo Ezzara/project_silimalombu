@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Order;
+use App\Models\Biaya;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class BiayaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,10 @@ class OrderController extends Controller
     public function index()
     {
         //
-        $order = Order::latest()->paginate(5);
+        $biaya = Biaya::latest()->paginate(5);
 
-        return view('admin.detail_pemesanan.index', compact('order'))
-        ->with('i');
+        return view('admin.biaya_pengiriman.index', compact('biaya'))
+        ->with ('i');
     }
 
     /**
@@ -29,6 +29,7 @@ class OrderController extends Controller
     public function create()
     {
         //
+        return view('admin.biaya_pengiriman.create');
     }
 
     /**
@@ -45,10 +46,10 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Order  $order
+     * @param  \App\Models\Biaya  $biaya
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show(Biaya $biaya)
     {
         //
     }
@@ -56,10 +57,10 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Order  $order
+     * @param  \App\Models\Biaya  $biaya
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+    public function edit(Biaya $biaya)
     {
         //
     }
@@ -68,10 +69,10 @@ class OrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Order  $order
+     * @param  \App\Models\Biaya  $biaya
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, Biaya $biaya)
     {
         //
     }
@@ -79,10 +80,10 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Order  $order
+     * @param  \App\Models\Biaya  $biaya
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy(Biaya $biaya)
     {
         //
     }

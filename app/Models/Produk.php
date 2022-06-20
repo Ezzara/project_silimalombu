@@ -11,13 +11,16 @@ class Produk extends Model
 
     protected $table= 'produk';
     public $timestamps = true;
+    protected $primarykey = 'id';
+    public $incrementing = false;
+    
 
     protected $casts = [
         'jmlh_stok' => 'float',
         'harga' => 'float'
     ];
-    protected $fillabel = [
-        'id_produk',
+    protected $fillable = [
+        'id',
         'nm_produk',
         'kd_kategori',
         'gambar',

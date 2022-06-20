@@ -15,9 +15,10 @@ class ProdukController extends Controller
     public function index()
     {
         //
-        $produk = Produk::latest()->paginate(5);
+        $produk = Produk::latest()->paginate();
 
-        return view('admin.produk.home', compact('produk'));
+        return view('admin.kelola_produk.index', compact('produk'))
+        ->with('i');
     }
 
     /**
@@ -28,7 +29,7 @@ class ProdukController extends Controller
     public function create()
     {
         //
-        return view('admin.produk.create');
+        return view('admin.kelola_produk.create');
     }
 
     /**
@@ -39,10 +40,28 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
         $request->validate([
-            ''
+            'id' => 'required',
+            'nm_produk' => 'required',
+            'harga' => 'required',
+            'jmlah_stok' => 'required',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'keterangan' => 'required',
+            //'kd_kategori' => 'required'
         ]);
+
+        $input = $request->all();
+        if ($image = $request->file('gambar')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['gambar'] = "$profileImage";
+        }
+        Produk::create($input);
+
+        return redirect()->route('produk.index')
+            ->with('success', 'Produk telah ditambahkan.');
     }
 
     /**
@@ -64,29 +83,40 @@ class ProdukController extends Controller
      */
     public function edit(Produk $produk)
     {
-        //
+        return view('admin.kelola_produk.edit', compact('produk'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Produk  $produk
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, Produk $produk)
     {
-        //
-    }
+        $request->validate([
+            'nm_produk' => 'required',
+            'harga' => 'required',
+            'jmlah_stok' => 'required',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'keterangan' => 'required',
+        ]);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Produk  $produk
-     * @return \Illuminate\Http\Response
-     */
+        $input = $request->all();
+        if ($image = $request->file('gambar')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['gambar'] = "$profileImage";
+        }
+
+        $produk->update($input);
+
+        return redirect()->route('produk.index')
+            ->with('success', 'Produk berhasil di Edit');
+    }
+   
     public function destroy(Produk $produk)
     {
-        //
+        $produk->delete();
+
+        return redirect()->route('produk.index')
+            ->with('success', 'deleted successfully');
+
+            
     }
 }

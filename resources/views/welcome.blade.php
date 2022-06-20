@@ -1,65 +1,66 @@
-@extends('layouts.adminapp')
-@section('content')
-<div class="col-lg-8 pl-5 pt-5 mt-2">
-    <p>Profil</p>
-    <div class="card w-100">
-        <div class="card-header text-white lead">
-            Data Profil
-        </div>
-        <div class="card-body">
-            <blockquote class="blockquote mb-0">
-                <form action="/profile_edit.php">
-                    <div class="mb-3 row">
-                        <label for="id_admin" class="col-sm-2 col-form-label">ID Admin :</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="id_admin" readonly>
-                        </div>
-                    </div>
 
-                    <div class="mb-3 row">
-                        <label for="nama_admin" class="col-sm-2 col-form-label">Nama Admin :</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nama_admin" readonly>
-                        </div>
-                    </div>
-
-                    <div class=" row">
-                        <label for="password_admin" class="col-sm-2 col-form-label">Password :</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password_admin" readonly>
-                        </div>
-                    </div>
-
-                    <a href="link ganti pass" class="text-secondary"> <u>Ganti Password</u> </a>
-
-                    <div class="mt-3 row">
-                        <label for="email_admin" class="col-sm-2 col-form-label">Email :</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email_admin" readonly>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 row">
-                        <label for="telp_admin" class="col-sm-2 col-form-label">Telepon :</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="telp_admin" readonly>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 row">
-                        <label for="status_admin" class="col-sm-2 col-form-label">Status</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="status_admin" value="Aktif" readonly>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn pr-4 pl-4" style="background-color: #3E8412;color:white">Edit</button>
-
-                </form>
-
-            </blockquote>
+<div class="bg-image"
+    style="background-image: url('banner.jpeg');height:85vh;background-repeat:no-repeat; background-size: cover; background-position:center;">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.5);height:85vh;">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <h1 class="display-1 text-white font-weight-bold shadow ">SELAMAT DATANG <div class="display-1 ml-5 lead">di
+                    <i>Website</i> Ecovillage Silimalombu
+                </div>
+            </h1>
         </div>
     </div>
 </div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-5">
+            <h2 class="mt-3 mb-4">Kategori Produk</h2>
+        </div>
+        <div class="col-md-5"></div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-10">
+            <div class="d-flex justify-content-around">
+                <div class="d-flex flex-column">
+                    <a href="" class="text-center"><img class=" rounded " src=" oils.jpeg" alt=""
+                            style="width:75% ;"></a>
+                    <h3 class="mx-auto">Oils</h3>
+                </div>
+                <div class="d-flex flex-column">
+                    <a href="" class="text-center"><img class=" rounded" src="buah.jpeg" alt="" style="width:75% ;"></a>
+                    <h3 class="mx-auto">Buah</h3>
+                </div>
+
+                <div class="d-flex flex-column">
+                    <a href="" class="text-center"><img class=" rounded" src="sayur.jpeg" alt=""
+                            style="width:75% ;"></a>
+                    <h3 class="mx-auto">Sayur</h3>
+                </div>
+
+                <div class="d-flex flex-column">
+                    <a href="" class="text-center"><img class=" rounded" src="makanan.jpeg" alt=""
+                            style="width:75% ;"></a>
+                    <h3 class="mx-auto">Makanan</h3>
+                </div>
+
+                <div class="d-flex flex-column">
+                    <a href="" class="text-center"><img class="rounded" src="lainnya.jpeg" alt=""
+                            style="width:75% ;"></a>
+                    <h3 class="mx-auto">Lainnya</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">
+
+        </div>
+    </div>
+
+
 </div>
-@endsection

@@ -1,3 +1,5 @@
+@extends('layouts.adminapp')
+@section('content')
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Data Kategori Produk</p>
     <div class="card w-100">
@@ -27,11 +29,13 @@
                             <th>Tools</th>
                             <!--looping <a href>-->
                         </tr>
+                        @foreach ($kategori as $kategoris)
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td> {{ $kategoris->id }} </td>
+                            <td> {{ $kategoris->nm_kategori}}</td>
                             <td></td>
                         </tr>
+                        @endforeach
                     </table>
                 </div>
 
@@ -42,3 +46,5 @@
     </div>
 </div>
 </div>
+
+@endsection

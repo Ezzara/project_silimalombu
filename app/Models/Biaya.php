@@ -5,18 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kategori extends Model
+class Biaya extends Model
 {
     use HasFactory;
-    protected $table= 'kategori';
+
+    protected $table = 'biaya';
     public $timestamps = true;
-    protected $primarykey = 'id';
+    protected $primaryKey = 'id';
     public $incrementing = false;
 
-    protected $casts = [
+    protected $casts = [  
+        'biaya_kirim',
     ];
     protected $fillable = [
         'id',
-        'nm_kategori',
+        'nm_provinsi',
+        'biaya_kirim',
     ];
 }

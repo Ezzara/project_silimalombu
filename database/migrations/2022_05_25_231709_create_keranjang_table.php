@@ -14,12 +14,12 @@ class CreateKeranjangTable extends Migration
     public function up()
     {
         Schema::create('keranjang', function (Blueprint $table) {
-            $table->id();
-            $table->string('nm_produk');
-            $table->string('gambar');
-            $table->decimal('jumlah');
-            $table->decimal('harga_satuan');
-            $table->decimal('harga_total');
+            $table->string('id');
+            $table->string('nm_produk')->nullable();
+            $table->string('gambar')->nullable();
+            $table->decimal('jumlah')->nullable()->default(0.00);
+            $table->decimal('harga_satuan')->nullable()->default(0.00);
+            $table->decimal('harga_total')->nullable()->default(0.00);
             $table->timestamps();
         });
     }
