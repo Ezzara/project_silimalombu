@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -18,8 +19,8 @@ class ProdukController extends Controller
     {
         //
         $produk = Produk::latest()->paginate();
-
-        return view('admin.kelola_produk.index', compact('produk'))
+        $kategori = Kategori::latest()->paginate();
+        return view('admin.kelola_produk.index', compact('produk','kategori'))
         ->with('i');
     }
 
@@ -50,7 +51,7 @@ class ProdukController extends Controller
             'jmlah_stok' => 'required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'keterangan' => 'required',
-            //'kd_kategori' => 'required'
+            'kd_kategori' => 'required'
         ]);
 
         $input = $request->all();

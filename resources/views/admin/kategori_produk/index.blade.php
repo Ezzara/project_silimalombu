@@ -16,9 +16,10 @@
                     <div class="col-md-4">
                         <!--Kosong untuk field-->
                     </div>
-                    <div class="col-md-2"><a href="{{}}" class="lead text-secondary">+
+                    {{--
+                    <div class="col-md-2"><a href="{{route('kategori.create')}}" class="lead text-secondary">+
                             Tambah Kategori</a></div>
-
+                        --}}
                 </div>
 
                 <div class="row mt-3 ">

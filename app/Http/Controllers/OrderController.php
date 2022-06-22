@@ -67,12 +67,12 @@ class OrderController extends Controller
             
         ]);
         
-        $request['id'] = $key;
+        $request['id'] = '2';
         $request['status'] = 'belum';
         $input = $request->all();
         Order::create($input);
 
-        return redirect()->route('order.index')
+        return redirect()->route('pembeli.produk')
             ->with('success', 'Produk berhasil di Edit');
 
     }

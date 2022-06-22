@@ -15,17 +15,41 @@ class allseed extends Seeder
      */
     public function run()
     {
-        //
-        for ($i = 1 ; $i < 10 ; $i ++) {
+        //produk
+        for ($i = 1 ; $i < 5 ; $i ++) {
             DB::table('produk')->insert ([
                 'id' => (string) $i,
-                'nm_produk' => Str::random(10),
-                //'kd_katgori' => (string) $i,
+                'nm_produk' => 'Minyak',
+                'kd_kategori' => (string) $i,
                 'gambar' => '20220619135205.jpg',
-                'keterangan'=>Str::random(10),
+                'keterangan'=> 'minyak',
                 'jmlh_stok'=> 100,
-                'harga'=> 10,
+                'harga'=> 100000,
             ]);
         }
+        DB::table('kategori')->insert(
+            [
+                [
+                    'id' => '1',
+                    'nm_kategori' => 'Oils'
+                ],
+                [
+                    'id' => '2',
+                    'nm_kategori' => 'Buah'
+                ],
+                [
+                    'id' => '3',
+                    'nm_kategori' => 'sayur'
+                ],
+                [
+                    'id' => '4',
+                    'nm_kategori' => 'makanan'
+                ],
+                [
+                    'id' => '5',
+                    'nm_kategori' => 'lainya'
+                ],
+            ]
+        );
     }
 }
