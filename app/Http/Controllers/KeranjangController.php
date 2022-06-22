@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+//Model
 use App\Models\Keranjang;
 use App\Models\Produk;
 use Illuminate\Http\Request;
+//Controller
+use App\Http\Controllers\OrderController;
 
 class KeranjangController extends Controller
 {
@@ -20,6 +22,8 @@ class KeranjangController extends Controller
         return view('pembeli.produk.index', compact('produk'))
         ->with ('i');
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -47,9 +51,9 @@ class KeranjangController extends Controller
         $cart = session()->get('cart',[]);
         //$cart -> save;
         $key = uniqid();
-        
-        foreach ($request->produk as $k => $p) {
-            $data ->validate([
+        //$key = session()->get('cart',["key"]);
+        //foreach ($request->produk as $k => $p) {
+            $request->validate([
                 'id' => 'required',
                 'nm_produk' => 'required',
                 //'gambar' => $cart['image'],
@@ -58,12 +62,11 @@ class KeranjangController extends Controller
                 'harga_satuan' => 'required',
                 'harga_total' => 'required'
             ]);
-        }
+            $request['id'] = $key;
+            //$request['id'] = $key;
+        //}
         Keranjang::create($request->all());
-        return redirect()->route('keranjang.index');
-        
-        
-
+        return redirect()->route('order.create',$key);
     }
 
     /**

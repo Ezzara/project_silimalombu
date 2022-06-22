@@ -58,7 +58,7 @@
                         <span>
                             <i class="fas fa-box fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Kelola
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="{{route('produk.index')}}">Kelola
                             Produk</a>
                     </li>
 
@@ -66,7 +66,7 @@
                         <span>
                             <i class="fas fa-list fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Data Kategori
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="{{route('kategori.index')}}">Data Kategori
                             Produk</a>
                     </li>
 
@@ -74,7 +74,7 @@
                         <span>
                             <i class="fas fa-cart-arrow-down fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Detail
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="{{route('order.index')}}">Detail
                             Pemesanan</a>
                     </li>
 
@@ -82,7 +82,7 @@
                         <span>
                             <i class="fas fa-file-invoice-dollar fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Data Biaya
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="{{route('biaya.index')}}">Data Biaya
                             Pengiriman</a>
                     </li>
 

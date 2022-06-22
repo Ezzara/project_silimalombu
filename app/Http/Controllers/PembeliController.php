@@ -32,18 +32,33 @@ class PembeliController extends Controller
             'jumlah' => 'required',
         ]);
         $cart = session()->get('cart', []);
-  
+        $key = uniqid();
             $cart[$id] = [
                 "id" => $produk->id,
                 "name" => $produk->nm_produk,
                 "quantity" => $request->jumlah,
                 "price" => $produk->harga,
                 "image" => $produk->gambar,
+                "key" => $key
             ];
         
           
         session()->put('cart', $cart);
         return redirect()->route('cart');
+    }
+
+    public function notif()
+    {
+        return view('pembeli.notif');
+    }
+
+    public function about()
+    {
+        return view('pembeli.about');
+    }
+    public function qa()
+    {
+        return view('pembeli.qa');
     }
 
 }

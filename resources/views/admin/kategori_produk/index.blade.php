@@ -16,7 +16,7 @@
                     <div class="col-md-4">
                         <!--Kosong untuk field-->
                     </div>
-                    <div class="col-md-2"><a href="link_tambah_data_kategori_produk" class="lead text-secondary">+
+                    <div class="col-md-2"><a href="{{}}" class="lead text-secondary">+
                             Tambah Kategori</a></div>
 
                 </div>

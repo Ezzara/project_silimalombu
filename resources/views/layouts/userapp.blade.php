@@ -56,7 +56,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <a class="navbar-brand text-black font-weight-bold ml-5" href="#">Ecovillage <br> Silimalombu</a>
+        <a class="navbar-brand text-black font-weight-bold ml-5" href="{{route('welcome')}}">Ecovillage <br> Silimalombu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,24 +64,24 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item px-3">
-                    <a class="nav-link active" href="#">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link active" href="{{route('welcome')}}">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link text-white" href="#">PRODUK</a>
+                    <a class="nav-link text-white" href="{{route('pembeli.produk')}}">PRODUK</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link text-white" href="#">NOTIFIKASI</a>
+                    <a class="nav-link text-white" href="{{route('pembeli.notif')}}">NOTIFIKASI</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link text-white" href="#">TENTANG</a>
+                    <a class="nav-link text-white" href="{{route('pembeli.about')}}">TENTANG</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link text-white" href="#">Q&A</a>
+                    <a class="nav-link text-white" href="{{route('pembeli.qa')}}">Q&A</a>
                 </li>
             </ul>
             <div class="form-inline my-2 my-lg-0">
                 <a href=""><i class="fas fa-user fa-2x text-white px-3"></i></a>
-                <a href=""> <i class="fas fa-cart-arrow-down fa-2x text-white px-3"></i></a>
+                <a href="{{route('cart')}}"> <i class="fas fa-cart-arrow-down fa-2x text-white px-3"></i></a>
                 <a href="" class="nav-link text-white lead font-weight-bold px-3">Login</a>
             </div>
         </div>

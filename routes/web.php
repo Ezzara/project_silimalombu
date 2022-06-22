@@ -27,8 +27,13 @@ Route::resource('biaya',BiayaController::class);
 Route::resource('keranjang',KeranjangController::class);
 //Route::resource('pembeli',PembeliController::class);
 
-Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk']);
-Route::get('/', [PembeliController::class, 'welcome']);
+Route::get('/pesanan', [OrderController::class, 'buat']);
+Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk'])->name('pembeli.produk');
+Route::get('/', [PembeliController::class, 'welcome'])->name('welcome');
 
 Route::get('cart', [PembeliController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [PembeliController::class, 'addToCart'])->name('add.to.cart');
+
+Route::get('/pembeli/notifikasi', [PembeliController::class, 'notif'])->name('pembeli.notif');
+Route::get('/pembeli/tentang', [PembeliController::class, 'about'])->name('pembeli.about');
+Route::get('/pembeli/qa', [PembeliController::class, 'qa'])->name('pembeli.qa');

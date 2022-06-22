@@ -29,7 +29,14 @@ class OrderController extends Controller
     public function create()
     {
         //
+        return view('pembeli.order.create');
     }
+    public function buat($key)
+    {
+        //
+        return view('pembeli.order.create');
+    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -40,7 +47,36 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         //
+        
+        $request->validate([
+            'username'=> 'required',
+            'email'=> 'required',
+      
+            'nama_penerima'=> 'required',
+
+            'alamat_lengkap'=> 'required',
+            'kelurahan'=> 'required',
+            'kecamatan'=> 'required',
+            'kab_kota'=> 'required',
+            
+            //'kd_provinsi'=> 'required',
+            'kd_pos'=> 'required',
+            'telepon'=> 'required',
+            //'kd_promo'=> 'required',
+            //'catatan'=> 'required',
+            
+        ]);
+        
+        $request['id'] = $key;
+        $request['status'] = 'belum';
+        $input = $request->all();
+        Order::create($input);
+
+        return redirect()->route('order.index')
+            ->with('success', 'Produk berhasil di Edit');
+
     }
+    
 
     /**
      * Display the specified resource.
@@ -74,6 +110,23 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         //
+        $request->validate([
+            'username'=> 'required',
+            'email'=> 'required',
+            'nama_penerima'=> 'required',
+            'alamat_lengkap'=> 'required',
+            'kelurahan'=> 'required',
+            'kecamatan'=> 'required',
+            'kab_kota'=> 'required',
+            //'kd_provinsi'=> 'required',
+            'kd_pos'=> 'required',
+            'telepon'=> 'required',
+            'kd_promo'=> 'required',
+            'catatan'=> 'required',
+        ]);
+        $request['id'] = $key;
+        $request['status'] = 'belum';
+        Order::create($request->all());
     }
 
     /**
