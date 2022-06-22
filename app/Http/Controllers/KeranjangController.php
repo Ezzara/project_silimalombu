@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Keranjang;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class KeranjangController extends Controller
@@ -15,6 +16,9 @@ class KeranjangController extends Controller
     public function index()
     {
         //
+        $produk = Produk::latest()->paginate();
+        return view('pembeli.produk.index', compact('produk'))
+        ->with ('i');
     }
 
     /**
@@ -36,6 +40,30 @@ class KeranjangController extends Controller
     public function store(Request $request)
     {
         //
+        //$id = Produk::findOrFail();
+        //$cart = new Keranjang;
+       //$cart -> user_id = $request ->session ()->get('cart')[$id];
+        //$cart -> save;
+        $cart = session()->get('cart',[]);
+        //$cart -> save;
+        $key = uniqid();
+        
+        foreach ($request->produk as $k => $p) {
+            $data ->validate([
+                'id' => 'required',
+                'nm_produk' => 'required',
+                //'gambar' => $cart['image'],
+                'gambar' => 'required',
+                'jumlah' => 'required',
+                'harga_satuan' => 'required',
+                'harga_total' => 'required'
+            ]);
+        }
+        Keranjang::create($request->all());
+        return redirect()->route('keranjang.index');
+        
+        
+
     }
 
     /**

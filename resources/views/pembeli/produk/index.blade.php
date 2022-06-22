@@ -4,6 +4,7 @@
         <div class="row">
             <h3 class="mx-auto my-5"> Semua Produk</h3>
         </div>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="float-right mr-5">
@@ -17,8 +18,8 @@
                     </form>
                 </div>
             </div>
-
         </div>
+
         <div class="row">
             <!-- untuk fitur filter -->
             <div class="col-md-2 mx-auto">
@@ -29,14 +30,18 @@
             </div>
             <div class="col-md-10 mx-auto">
                 <div class="d-flex justify-content-around"> 
-                    <div class="d-flex flex-column">
-                    @foreach($produk as $produk)
-                        <a href="" class="text-center"><img class=" rounded " src="/image/{{$produk->gambar}}" alt="" style="width:75% ;"></a>
-                        <h4 class="mx-auto">{{$produk->nm_produk}}</h4>
-                        <h4 class="mx-auto">{{$produk->harga}}</h4>
-                    @endforeach
+                    <div class="row">
+                            
+                            @foreach($produk as $produk)
+                                <div class="column">
+                                <a href="{{ route('produk.show',$produk->id) }}" class="text-center"><img class=" rounded " src="/image/{{$produk->gambar}}" alt="" style="width:205px; height:205px ;"></a>
+                                <h4 class="mx-auto">{{$produk->nm_produk}}</h4>
+                                <h4 class="mx-auto">{{$produk->harga}}</h4>
+                                </div>
+                            @endforeach
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 @endsection

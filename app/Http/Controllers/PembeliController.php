@@ -7,81 +7,43 @@ use Illuminate\Http\Request;
 
 class PembeliController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    //
+    public function daftarProduk()
     {
-        $produk = Produk::latest()->paginate(10);
+        $produk = Produk::latest()->paginate();
         return view('pembeli.produk.index', compact('produk'))
         ->with ('i');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function welcome()
     {
-        //
+        return view('welcome');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function cart()
     {
-        //
+        $produk = Produk::latest()->paginate();
+        return view('pembeli.keranjang.index', compact('produk'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Produk  $produk
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Produk $produk)
+    public function addToCart($id, Request $request)
     {
-        //
+        $produk = Produk::findOrFail($id);
+        $request->validate ([
+            'jumlah' => 'required',
+        ]);
+        $cart = session()->get('cart', []);
+  
+            $cart[$id] = [
+                "id" => $produk->id,
+                "name" => $produk->nm_produk,
+                "quantity" => $request->jumlah,
+                "price" => $produk->harga,
+                "image" => $produk->gambar,
+            ];
+        
+          
+        session()->put('cart', $cart);
+        return redirect()->route('cart');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Produk  $produk
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Produk $produk)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Produk  $produk
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Produk $produk)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Produk  $produk
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Produk $produk)
-    {
-        //
-    }
 }

@@ -12,6 +12,8 @@ class ProdukController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         //
@@ -73,6 +75,7 @@ class ProdukController extends Controller
     public function show(Produk $produk)
     {
         //
+        return view ('pembeli.produk.show', compact('produk'));
     }
 
     /**

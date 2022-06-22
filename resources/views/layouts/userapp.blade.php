@@ -14,6 +14,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+         nav {
+            background-color: #3E8412 !important;
+        }
+
+        .card-header {
+            background-color: #3E8412 !important;
+        }
+
+        .card-body {
+            background-color: #C2FF9B !important;
+        }
+
+        tr th {
+            font-size: 12px;
+        }
+
+        td {
+            font-size: 12px;
+        }
+
+        .pilih_gambar {
+            border: 1px;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
 
 </head>
 

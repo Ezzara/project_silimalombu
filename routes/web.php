@@ -6,6 +6,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\BiayaController;
 use App\Http\Controllers\PembeliController;
+use App\Http\Controllers\KeranjangController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,12 +18,17 @@ use App\Http\Controllers\PembeliController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () { return view('welcome');});
 
 Route::resource('produk',ProdukController::class);
 Route::resource('kategori',KategoriController::class);
 Route::resource('order',OrderController::class);
 Route::resource('biaya',BiayaController::class);
-Route::resource('pembeli',PembeliController::class);
+Route::resource('keranjang',KeranjangController::class);
+//Route::resource('pembeli',PembeliController::class);
+
+Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk']);
+Route::get('/', [PembeliController::class, 'welcome']);
+
+Route::get('cart', [PembeliController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [PembeliController::class, 'addToCart'])->name('add.to.cart');
