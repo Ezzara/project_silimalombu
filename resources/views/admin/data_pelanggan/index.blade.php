@@ -1,8 +1,8 @@
 <div class="col-lg-8 pl-5 pt-5 mt-2">
-    <p>Laporan Penjualan</p>
+    <p>Data Pelanggan</p>
     <div class="card w-100">
         <div class="card-header text-white lead">
-            Laporan Penjualan
+            Data Pelanggan
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
@@ -24,13 +24,15 @@
                 <div class="row mt-3 ">
                     <table class="table bg-light">
                         <tr>
-                            <th>Kode</th>
-                            <th>ID Order</th>
                             <th>Username</th>
-                            <th>Nama Produk</th>
-                            <th>Jumlah</th>
+                            <th>Password</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Telepon</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Tanggal Lahir</th>
                             <th>Alamat</th>
-                            <th>Tanggal Transaksi</th>
+                            <th>Gambar</th>
                         </tr>
                         <tr>
                             <td>
@@ -42,13 +44,11 @@
                             <td></td>
                             <td></td>
                             <td></td>
+                            <td></td>
+                            <td></td>
 
                         </tr>
                     </table>
-                </div>
-
-                <div class="row mt-3">
-                    <button class="btn pr-4 pl-4 mr-3" style=" background-color: #3E8412;color:white">Simpan</button>
                 </div>
 
 
