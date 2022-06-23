@@ -7,6 +7,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\BiayaController;
 use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\adminProfileController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +39,10 @@ Route::get('add-to-cart/{id}', [PembeliController::class, 'addToCart'])->name('a
 Route::get('/pembeli/notifikasi', [PembeliController::class, 'notif'])->name('pembeli.notif');
 Route::get('/pembeli/tentang', [PembeliController::class, 'about'])->name('pembeli.about');
 Route::get('/pembeli/qa', [PembeliController::class, 'qa'])->name('pembeli.qa');
+
+Route::get('/admin/profile', [adminProfileController::class,'index'])->name('admin.profile');
+Route::get('/admin/user_data', [UserController::class,'index'])->name('admin.userdata');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

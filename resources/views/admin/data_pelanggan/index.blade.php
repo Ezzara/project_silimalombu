@@ -34,20 +34,22 @@
                             <th>Alamat</th>
                             <th>Gambar</th>
                         </tr>
+                        @foreach ($user as $user)
                         <tr>
                             <td>
                                 <!--foreach data-->
                             </td>
+                            <td>{{ $user->name }}</td>
                             <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->telepon }}</td>
+                            <td>{{ $user->jenis_kelamin }}</td>
+                            <td>{{ $user->tgl_lahir }}</td>
+                            <td><img src="image/{{ $user->foto_profil }}"></td>
 
                         </tr>
+                        @foreach
                     </table>
                 </div>
 

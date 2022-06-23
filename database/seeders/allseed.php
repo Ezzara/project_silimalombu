@@ -51,5 +51,33 @@ class allseed extends Seeder
                 ],
             ]
         );
+
+        DB::table('users')->insert (
+            [
+                [
+                    'name' => 'Admin',
+                    'email' => 'admin@online',
+                    'is_admin' => '1',
+                    'password' => bcrypt('123456'),
+                    'telepon' => '0211234567',
+                    'alamat_lengkap' => 'Jalan nomor 39',
+                    'foto_profil' => 'fotoprofile.jpg',
+                    'jenis_kelamin' => 'laki-laki',
+                    'tgl_lahir' => '10 - 03 - 2000'
+                    
+                ],
+                [
+                    'name' => 'user',
+                    'email' => 'user@online',
+                    'is_admin' => '0',
+                    'password' => bcrypt('123456'),
+                    'telepon' => '0211234567',
+                    'alamat_lengkap' => 'Jalan nomor 39',
+                    'foto_profil' => 'fotoprofile.jpg',
+                    'jenis_kelamin' => 'laki-laki',
+                    'tgl_lahir' => '10 - 03 - 2000'
+                ]
+            ]
+        );
     }
 }

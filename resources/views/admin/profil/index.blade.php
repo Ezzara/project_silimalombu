@@ -1,3 +1,5 @@
+@extends ('layouts.adminapp')
+@section ('content')
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Profil</p>
     <div class="card w-100">
@@ -10,21 +12,21 @@
                     <div class="mb-3 row">
                         <label for="id_admin" class="col-sm-2 col-form-label">ID Admin :</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="id_admin" readonly>
+                            <input type="text" class="form-control" id="id" readonly value="{{ Auth::user()->id }}">
                         </div>
                     </div>
 
                     <div class="mb-3 row">
                         <label for="nama_admin" class="col-sm-2 col-form-label">Nama Admin :</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nama_admin" readonly>
+                            <input type="text" class="form-control" id="name" readonly value="{{ Auth::user()->name }}">
                         </div>
                     </div>
 
                     <div class=" row">
                         <label for="password_admin" class="col-sm-2 col-form-label">Password :</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password_admin" readonly>
+                            <input type="password" class="form-control" id="password" readonly value="">
                         </div>
                     </div>
 
@@ -33,14 +35,14 @@
                     <div class="mt-3 row">
                         <label for="email_admin" class="col-sm-2 col-form-label">Email :</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email_admin" readonly>
+                            <input type="email" class="form-control" id="email_admin" readonly name="email" value="{{ Auth::user()->email}}"> 
                         </div>
                     </div>
 
                     <div class="mt-3 row">
                         <label for="telp_admin" class="col-sm-2 col-form-label">Telepon :</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="telp_admin" readonly>
+                            <input type="text" class="form-control" id="telp_admin" readonly name="telepon" value="{{ Auth::user()->telepon}}">
                         </div>
                     </div>
 
@@ -60,3 +62,5 @@
     </div>
 </div>
 </div>
+
+@endsection

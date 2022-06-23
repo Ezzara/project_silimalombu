@@ -67,7 +67,7 @@ class OrderController extends Controller
             
         ]);
         
-        $request['id'] = '2';
+        $request['id'] = uniqid();
         $request['status'] = 'belum';
         $input = $request->all();
         Order::create($input);

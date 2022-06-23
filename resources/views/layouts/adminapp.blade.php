@@ -51,7 +51,7 @@
                         <span>
                             <i class="fas fa-user fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Profil</a>
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="{{route('admin.profile')}}">Profil</a>
                     </li>
 
                     <li class="nav-link d-flex">
@@ -105,7 +105,16 @@
                         <span>
                             <i class="fa-solid fa-right-from-bracket"></i>
                         </span>
-                        <a class="nav-link text-secondary lead" aria-current="page" href="#">Keluar</a>
+
+                        <a class="nav-link text-secondary lead" aria-current="page" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Keluar
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                     </li>
 
                 </ul>
