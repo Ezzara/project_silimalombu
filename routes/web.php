@@ -9,6 +9,8 @@ use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\adminProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BayarController;
+use App\Http\Controllers\UserProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +29,7 @@ Route::resource('kategori',KategoriController::class);
 Route::resource('order',OrderController::class);
 Route::resource('biaya',BiayaController::class);
 Route::resource('keranjang',KeranjangController::class);
+Route::resource('bayar',BayarController::class);
 //Route::resource('pembeli',PembeliController::class);
 
 Route::get('/pesanan', [OrderController::class, 'buat']);
@@ -39,6 +42,7 @@ Route::get('add-to-cart/{id}', [PembeliController::class, 'addToCart'])->name('a
 Route::get('/pembeli/notifikasi', [PembeliController::class, 'notif'])->name('pembeli.notif');
 Route::get('/pembeli/tentang', [PembeliController::class, 'about'])->name('pembeli.about');
 Route::get('/pembeli/qa', [PembeliController::class, 'qa'])->name('pembeli.qa');
+Route::get('/user/profile', [UserProfileController::class, 'index'])->name('user.profile');
 
 Route::get('/admin/profile', [adminProfileController::class,'index'])->name('admin.profile');
 Route::get('/admin/user_data', [UserController::class,'index'])->name('admin.userdata');

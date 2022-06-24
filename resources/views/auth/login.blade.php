@@ -44,7 +44,7 @@
             </form>
             <br>
             <p class="mx-auto d-block text-center">Belum memiliki akun? <span><a class="text-dark font-weight-bold"
-                        href="">Daftar</a></span></p>
+                        href="{{route('register')}}">Daftar</a></span></p>
 
 
 
