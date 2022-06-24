@@ -80,9 +80,9 @@
                 </li>
             </ul>
             <div class="form-inline my-2 my-lg-0">
-                <a href=""><i class="fas fa-user fa-2x text-white px-3"></i></a>
+                <a href="{{route('user.profile')}}"><i class="fas fa-user fa-2x text-white px-3"></i></a>
                 <a href="{{route('cart')}}"> <i class="fas fa-cart-arrow-down fa-2x text-white px-3"></i></a>
-                <a href="" class="nav-link text-white lead font-weight-bold px-3">Login</a>
+                <a href="{{route('login')}}" class="nav-link text-white lead font-weight-bold px-3">Login</a>
             </div>
         </div>
     </nav>

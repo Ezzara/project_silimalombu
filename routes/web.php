@@ -48,6 +48,7 @@ Route::get('/user/profile', [UserProfileController::class, 'index'])->name('user
 
 Route::get('/admin/profile', [adminProfileController::class,'index'])->name('admin.profile');
 Route::get('/admin/user_data', [UserController::class,'index'])->name('admin.userdata');
+Route::post('/profile/update',[UserProfileController::class,'update'])->name('profile.update');
 Route::get('admin/penjualan', function () { return view('admin.laporan_penjualan.index');})->name('admin.penjualan');
 
 Auth::routes();

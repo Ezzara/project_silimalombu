@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class PembeliController extends Controller
 {
     //
+
     public function daftarProduk()
     {
         $produk = Produk::latest()->paginate();
