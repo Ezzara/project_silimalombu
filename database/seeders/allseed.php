@@ -52,6 +52,61 @@ class allseed extends Seeder
             ]
         );
 
+        DB::table('bayar')->insert(
+            [
+                'id'=>'100',
+                'nama'=>'sam',
+                'nominal'=>'34000',
+                'bukti'=>'bukti.jpg',
+                'telepon'=>'0211234323'
+            ]
+        );
+
+        DB::table('keranjang')->insert (
+            [
+                'id'=>'100',
+                'nm_produk'=>'minyak',
+                'gambar'=>'oils.jpeg',
+                'jumlah'=>3,
+                'harga_satuan'=>10000,
+                'harga_total'=>30000,
+            ]
+        );
+
+        DB::table('kelola_order')->insert (
+            [
+                'id'=>'100',
+                'username'=>'nama',
+                'email'=>'user@online',
+                'nama_penerima'=>'dina',
+                'alamat_lengkap'=>'jalan no 39',
+                'kelurahan'=>'jatisari',
+                'kecamatan'=>'jatiasih',
+                'kab_kota'=>'bekasi',
+                'kd_provinsi'=>'2',
+                'kd_pos'=>'3333',
+                'telepon'=>'0323232332',
+                'kd_promo'=>'3333',
+                'catatan'=>'tambahan',
+                'status'=>'sudah diverifikasi',
+            ]
+        );
+
+        DB::table('biaya')->insert (
+            [
+                [
+                    'id' => '1',
+                    'nm_provinsi'=>'jakarta',
+                    'biaya_kirim'=>24000,
+                ],
+                [
+                    'id' => '2',
+                    'nm_provinsi'=>'jawa barat',
+                    'biaya_kirim'=>24000,
+                ]
+            ]
+        );
+
         DB::table('users')->insert (
             [
                 [
