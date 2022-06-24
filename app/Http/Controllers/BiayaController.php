@@ -72,7 +72,7 @@ class BiayaController extends Controller
     public function edit(Biaya $biaya)
     {
         //
-        return view ('biaya.edit', compact('biaya'));
+        return view ('admin.biaya_pengiriman.edit', compact('biaya'));
     }
 
     /**
@@ -103,6 +103,10 @@ class BiayaController extends Controller
      */
     public function destroy(Biaya $biaya)
     {
-        //
+        //\
+        $biaya->delete();
+
+        return redirect()->route('biaya.index')
+            ->with('success', 'deleted successfully');
     }
 }

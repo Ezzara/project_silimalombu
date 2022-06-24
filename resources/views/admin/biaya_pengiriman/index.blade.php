@@ -48,7 +48,18 @@
                                 {{ $biaya->biaya_kirim }} 
                             </td>
                             <td>
+                            <a href="{{ route('biaya.edit', $biaya->id) }}">Edit</a><br> 
                                 
+                                <form action="{{ route('biaya.destroy', $biaya->id) }}" method="POST">
+
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" title="delete">Delete
+                                    </button>
+                                
+
+                                </form>
 
                             </td>
                         </tr>
