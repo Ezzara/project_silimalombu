@@ -25,7 +25,7 @@
             <div class="col-md-2 mx-auto">
                 <ul class="list-group list-group-flush ">
                     <li class="list-group-item"><a href="" class="text-dark">Filters</a></li>
-                    <li class="list-group-item "> <a href="" class="text-dark">Looping foreach</a></li>
+                    <li class="list-group-item "> <a href="" class="text-dark"></a></li>
                 </ul>
             </div>
             <div class="col-md-10 mx-auto">

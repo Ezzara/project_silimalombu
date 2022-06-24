@@ -32,7 +32,7 @@ Route::resource('biaya',BiayaController::class);
 Route::resource('keranjang',KeranjangController::class);
 Route::resource('bayar',BayarController::class);
 //Route::resource('pembeli',PembeliController::class);
-
+Route::get('admin', [adminProfileController::class,'index']);
 Route::get('/pesanan', [OrderController::class, 'buat']);
 Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk'])->name('pembeli.produk');
 Route::get('/', [PembeliController::class, 'welcome'])->name('welcome');

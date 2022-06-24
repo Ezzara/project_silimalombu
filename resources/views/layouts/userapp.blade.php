@@ -82,7 +82,21 @@
             <div class="form-inline my-2 my-lg-0">
                 <a href="{{route('user.profile')}}"><i class="fas fa-user fa-2x text-white px-3"></i></a>
                 <a href="{{route('cart')}}"> <i class="fas fa-cart-arrow-down fa-2x text-white px-3"></i></a>
+
+                @if (!Auth::guest())
+                <a class="nav-link text-white lead font-weight-bold px-3" aria-current="page" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Log Out
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                @else
                 <a href="{{route('login')}}" class="nav-link text-white lead font-weight-bold px-3">Login</a>
+                @endif
+
             </div>
         </div>
     </nav>
