@@ -1,3 +1,5 @@
+@extends('layouts.adminapp')
+@section('content')
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Data Pelanggan</p>
     <div class="card w-100">
@@ -49,7 +51,7 @@
                             <td><img src="image/{{ $user->foto_profil }}"></td>
 
                         </tr>
-                        @foreach
+                        @endforeach
                     </table>
                 </div>
 
@@ -60,3 +62,4 @@
     </div>
 </div>
 </div>
+@endsection
