@@ -41,6 +41,15 @@ class BiayaController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'id' => 'required',
+            'nm_provinsi' => 'required',
+            'biaya_kirim' => 'required',
+        ]);
+        $input = $request->all();   
+        Biaya::create($input);
+
+        return redirect()->route('biaya.index');
     }
 
     /**
@@ -63,6 +72,7 @@ class BiayaController extends Controller
     public function edit(Biaya $biaya)
     {
         //
+        return view ('biaya.edit', compact('biaya'));
     }
 
     /**
@@ -75,6 +85,14 @@ class BiayaController extends Controller
     public function update(Request $request, Biaya $biaya)
     {
         //
+        $request->validate([
+            'nm_provinsi' => 'required',
+            'biaya_kirim' => 'required',
+        ]);
+        $input = $request->all();   
+        $biaya->update($input);
+
+        return redirect()->route('biaya.index');
     }
 
     /**

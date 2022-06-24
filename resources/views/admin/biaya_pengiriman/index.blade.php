@@ -23,7 +23,7 @@
                     <div class="col-md-4">
                         <!--Kosong untuk field-->
                     </div>
-                    <div class="col-md-2"><a href="link_tambah_data" class="lead text-secondary">+ Tambah Data</a></div>
+                    <div class="col-md-2"><a href="{{route('biaya.create')}}" class="lead text-secondary">+ Tambah Data</a></div>
 
                 </div>
 
@@ -47,7 +47,10 @@
                             <td> 
                                 {{ $biaya->biaya_kirim }} 
                             </td>
-                            <td> </td>
+                            <td>
+                                
+
+                            </td>
                         </tr>
                         @endforeach
                     </table>
