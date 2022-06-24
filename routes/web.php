@@ -11,6 +11,7 @@ use App\Http\Controllers\adminProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BayarController;
 use App\Http\Controllers\UserProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +48,7 @@ Route::get('/user/profile', [UserProfileController::class, 'index'])->name('user
 
 Route::get('/admin/profile', [adminProfileController::class,'index'])->name('admin.profile');
 Route::get('/admin/user_data', [UserController::class,'index'])->name('admin.userdata');
+Route::get('admin/penjualan', function () { return view('admin.laporan_penjualan.index');})->name('admin.penjualan');
 
 Auth::routes();
 

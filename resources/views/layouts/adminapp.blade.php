@@ -90,14 +90,14 @@
                         <span>
                             <i class="fas fa-users fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Data Pelanggan</a>
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="{{route('admin.userdata')}}">Data Pelanggan</a>
                     </li>
 
                     <li class="nav-link d-flex">
                         <span>
                             <i class="fas fa-file-signature fa-2x text-secondary"></i>
                         </span>
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Laporan
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="{{route('admin.penjualan')}}">Laporan
                             Penjualan</a>
                     </li>
 

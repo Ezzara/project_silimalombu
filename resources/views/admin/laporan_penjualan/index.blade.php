@@ -1,3 +1,5 @@
+@extends ('layouts.adminapp')
+@section ('content')
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Laporan Penjualan</p>
     <div class="card w-100">
@@ -58,3 +60,4 @@
     </div>
 </div>
 </div>
+@endsection
