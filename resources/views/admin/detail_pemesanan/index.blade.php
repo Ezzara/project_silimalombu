@@ -1,6 +1,6 @@
 @extends('layouts.adminapp')
 @section('content')
-<div class="col-lg-8 pl-5 pt-5 mt-2">
+<div class="col-lg pl-5 pt-5 mt-2">
     <p>Detail Pemesanan</p>
     <div class="card w-100">
         <div class="card-header text-white lead">
@@ -92,7 +92,7 @@
                             </td>
 
                         </tr>
-                    @endforeach
+                        @endforeach
                     </table>
                 </div>
 

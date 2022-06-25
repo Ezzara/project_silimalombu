@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
-         nav {
+        nav {
             background-color: #3E8412 !important;
         }
 
@@ -84,17 +84,16 @@
                 <a href="{{route('cart')}}"> <i class="fas fa-cart-arrow-down fa-2x text-white px-3"></i></a>
 
                 @if (!Auth::guest())
-                <a class="nav-link text-white lead font-weight-bold px-3" aria-current="page" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                <a class="nav-link text-white lead px-3" aria-current="page" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        Log Out
-                                    </a>
+                    Log Out
+                </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
                 @else
-                <a href="{{route('login')}}" class="nav-link text-white lead font-weight-bold px-3">Login</a>
+                <a href="{{route('login')}}" class="nav-link text-white lead px-3">Login</a>
                 @endif
 
             </div>
