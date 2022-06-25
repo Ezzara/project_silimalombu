@@ -19,9 +19,10 @@
                         </tr>
                         @if(session('cart'))
                             @foreach (session('cart') as $id => $produk)
+                            {{--@foreach (session('cart') as $produk)--}}
                             <tr>
                                 <td class="text-center"><img class="shadow rounded " src="/image/{{$produk['image']}}" alt="" style="width:205px; height:205px ;"></td>
-                                <td>{{$produk['name']}}</td>
+                                {{--<td>ini{{session()->get('cart')['quantity']}}</td>--}}
                                 <td>Rp.{{$produk['price']}}</td>
                                 <td>{{$produk['quantity']}}</td>
                                 <td>Rp.{{$produk['price'] * $produk['quantity']}}</td>

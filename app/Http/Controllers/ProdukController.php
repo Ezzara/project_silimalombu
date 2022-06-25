@@ -103,13 +103,15 @@ class ProdukController extends Controller
             'keterangan' => 'required',
         ]);
 
-        $input = $request->all();
+        
         if ($image = $request->file('gambar')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
         }
+
+        $input = $request->all();
 
         $produk->update($input);
 

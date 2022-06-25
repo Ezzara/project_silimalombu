@@ -22,20 +22,11 @@ use App\Http\Controllers\UserProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-//Route::get('/', function () { return view('welcome');});
-
-Route::resource('produk',ProdukController::class);
-Route::resource('kategori',KategoriController::class);
-Route::resource('order',OrderController::class);
-Route::resource('biaya',BiayaController::class);
-Route::resource('keranjang',KeranjangController::class);
-Route::resource('bayar',BayarController::class);
-//Route::resource('pembeli',PembeliController::class);
 Route::get('admin', [adminProfileController::class,'index']);
 Route::get('/pesanan', [OrderController::class, 'buat']);
 Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk'])->name('pembeli.produk');
 Route::get('/', [PembeliController::class, 'welcome'])->name('welcome');
+//Route::get('detail_produk', [PembeliController::class, 'show'])->name('pembeli.show');
 
 Route::get('cart', [PembeliController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [PembeliController::class, 'addToCart'])->name('add.to.cart');
@@ -48,9 +39,23 @@ Route::get('/user/profile', [UserProfileController::class, 'index'])->name('user
 
 Route::get('/admin/profile', [adminProfileController::class,'index'])->name('admin.profile');
 Route::get('/admin/user_data', [UserController::class,'index'])->name('admin.userdata');
-Route::post('/profile/update',[UserProfileController::class,'update'])->name('profile.update');
+Route::put('/profile/update',[UserProfileController::class,'update'])->name('profile.update');
 Route::get('admin/penjualan', function () { return view('admin.laporan_penjualan.index');})->name('admin.penjualan');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/', function () { return view('welcome');});
+
+Route::resource('produk',ProdukController::class);
+Route::resource('kategori',KategoriController::class);
+Route::resource('order',OrderController::class);
+Route::resource('biaya',BiayaController::class);
+Route::resource('keranjang',KeranjangController::class);
+Route::resource('bayar',BayarController::class);
+Route::resource('pembeli',PembeliController::class);
+//Route::resource('profile',UserProfileController::class);
+
+//Route::resource('pembeli',PembeliController::class);
+
+

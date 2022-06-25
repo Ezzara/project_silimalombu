@@ -21,6 +21,7 @@
         <div class="col-md-6" style="border-right: 1px solid gainsboro;">
             <form action="{{route('profile.update')}}" class="text-secondary" method="post">
             @csrf
+            @method('put')
                 <div class="form-group row">
                     <label for="colUsername" class="col-sm-2 col-form-label">Username</label>
                     <div class="col-sm-10">

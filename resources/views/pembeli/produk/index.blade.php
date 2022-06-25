@@ -34,7 +34,7 @@
                             
                             @foreach($produk as $produk)
                                 <div class="column">
-                                <a href="{{ route('produk.show',$produk->id) }}" class="text-center"><img class=" rounded " src="/image/{{$produk->gambar}}" alt="" style="width:205px; height:205px ;"></a>
+                                <a href="{{ route('pembeli.show',$produk->id) }}" class="text-center"><img class=" rounded " src="/image/{{$produk->gambar}}" alt="" style="width:205px; height:205px ;"></a>
                                 <h4 class="mx-auto">{{$produk->nm_produk}}</h4>
                                 <h4 class="mx-auto">{{$produk->harga}}</h4>
                                 </div>

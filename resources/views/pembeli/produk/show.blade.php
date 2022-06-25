@@ -26,6 +26,7 @@
                 <input type="submit" class="btn shadow-md mt-3 ml-5 py-2 text-white" value="Masukkan Keranjang"
                     style="background-color: #3E8412;">
             </form>
+            
         </div>
         <div class="col-md-6 ">
 

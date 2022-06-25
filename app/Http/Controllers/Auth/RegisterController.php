@@ -30,6 +30,7 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -55,6 +56,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8'],
             'telepon' => ['required'],
         ]);
+        return redirect()->route('welcome');
     }
 
     /**
@@ -72,5 +74,6 @@ class RegisterController extends Controller
             'telepon' => $data['telepon'],
             'is_admin' => "0"
         ]);
+        
     }
 }

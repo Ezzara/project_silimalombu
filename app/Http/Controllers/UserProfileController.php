@@ -37,7 +37,8 @@ class UserProfileController extends Controller
         }
         $request['is_admin'] = '0';
         $user = Auth::user();
-        $user->update($input);
+        
+        //$user->update($input);
         return back();
     }
 }

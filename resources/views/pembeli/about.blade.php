@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-4 mt-5 text-center">
-            <img src="tentang.jpeg" alt="" style="width:75%">
+            <img src="{{ asset('image/tentang.jpeg') }}" alt="" style="width:75%">
         </div>
         <div class="col-md-3 mt-5 lead">
             <h3 class="text-center mb-3">Profil Perusahaan</h3>
@@ -33,7 +33,7 @@
     <div class="row pb-5">
         <div class="col-md-2"></div>
         <div class="col-md-4 mt-5 text-center">
-            <img src="lokasi.png" alt="" style="width: 75%;">
+            <img src="{{ asset('image/lokasi.png') }}" alt="" style="width: 75%;">
         </div>
         <div class="col-md-3 mt-5 lead">
             <h4>Alamat</h4>

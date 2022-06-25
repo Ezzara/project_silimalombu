@@ -15,6 +15,12 @@ class PembeliController extends Controller
         return view('pembeli.produk.index', compact('produk'))
         ->with ('i');
     }
+    public function show($id)
+    {
+        //
+        $produk = Produk::findOrFail($id);
+        return view ('pembeli.produk.show', compact('produk'));
+    }
     public function welcome()
     {
         return view('welcome');
