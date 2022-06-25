@@ -21,16 +21,8 @@
 
 <body>
     <nav>
-        <ul class="nav justify-content-center pt-2 pb-2 shadow-sm">
-            <li class="nav-item">
-                <a class="nav-link text-white " href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white " href="#">Produk</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white " href="#">Tentang</a>
-            </li>
+        <ul class="nav justify-content-center pt-5 pb-3 mb-5 shadow-sm">
+
         </ul>
     </nav>
 
