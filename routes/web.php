@@ -36,6 +36,7 @@ Route::get('/pembeli/notifikasi', [PembeliController::class, 'notif'])->name('pe
 Route::get('/pembeli/tentang', [PembeliController::class, 'about'])->name('pembeli.about');
 Route::get('/pembeli/qa', [PembeliController::class, 'qa'])->name('pembeli.qa');
 Route::get('/user/profile', [UserProfileController::class, 'index'])->name('user.profile');
+Route::get('logout', [PembeliController::class, 'logout'])->name('user.logout');
 
 Route::get('/admin/profile', [adminProfileController::class,'index'])->name('admin.profile');
 Route::get('/admin/user_data', [UserController::class,'index'])->name('admin.userdata');

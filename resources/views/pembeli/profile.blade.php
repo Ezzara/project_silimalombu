@@ -16,10 +16,12 @@
         </div>
     </div>
     <hr>
+    <form action="{{route('profile.update')}}" class="text-secondary" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md-1"></div>
+        
         <div class="col-md-6" style="border-right: 1px solid gainsboro;">
-            <form action="{{route('profile.update')}}" class="text-secondary" method="post">
+            
             @csrf
             @method('put')
                 <div class="form-group row">
@@ -157,24 +159,27 @@
                 <input type="submit" value="Simpan" class="btn float-right text-white px-4 py-2"
                     style="background-color:#3E8412">
 
-            </form>
+            
         </div>
 
         <div class="col-md-4 text-center my-auto">
             <img src="avatar.png" alt="">
             <div class="center">
-                {{--<button class="btn mt-4" onclick="document.getElementById('getFile').click()">Pilih Gambar</button>
+                {{-- test
+                <button class="btn mt-4" onclick="document.getElementById('getFile').click()">Pilih Gambar</button>
                 <input type='file' id="getFile" style="display:none" name="foto_profil">--}}
-                <input type="file" class="btn mt-4" name="foto_profil" value="Pilih Gambar">
+                <input type="file" class="btn mt-4" name="foto_profil" value="">
             </div>
             <div class="text-secondary mt-3">
                 <p>Ukuran Gambar: maks 1 MB</p>
                 <p>Format Gambar: .JPEG, .PNG</p>
             </div>
         </div>
+        </form>
     </div>
     <div class=" col-md-1">
     </div>
+    </form>
 </div>
 
 @endsection

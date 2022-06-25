@@ -84,17 +84,21 @@
                 <a href="{{route('cart')}}"> <i class="fas fa-cart-arrow-down fa-2x text-white px-3"></i></a>
 
                 @if (!Auth::guest())
-                <a class="nav-link text-white lead px-3" aria-current="page" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                    Log Out
-                </a>
+                    {{--
+                    <a class="nav-link text-white lead px-3" aria-current="page" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                        Log Out
+                    </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                    --}}
+                    <a href="{{route('user.logout')}}"> Log Out </a>
                 @else
-                <a href="{{route('login')}}" class="nav-link text-white lead px-3">Login</a>
-                @endif
+                    <a href="{{route('login')}}" class="nav-link text-white lead px-3">Login</a>
+                
+                    @endif
 
             </div>
         </div>

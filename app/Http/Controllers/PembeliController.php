@@ -80,4 +80,9 @@ class PembeliController extends Controller
         }
     }
 
+    public function logout()
+    {
+        return view ('pembeli.logout');
+    }
+
 }
