@@ -26,7 +26,7 @@ Route::get('admin', [adminProfileController::class,'index']);
 Route::get('/pesanan', [OrderController::class, 'buat']);
 Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk'])->name('pembeli.produk');
 Route::get('/', [PembeliController::class, 'welcome'])->name('welcome');
-//Route::get('detail_produk', [PembeliController::class, 'show'])->name('pembeli.show');
+Route::get('detail_produk', [PembeliController::class, 'show'])->name('pembeli.show');
 
 Route::get('cart', [PembeliController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [PembeliController::class, 'addToCart'])->name('add.to.cart');

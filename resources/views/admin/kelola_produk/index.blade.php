@@ -51,7 +51,6 @@
                             <td>{{ $produks->harga }}</td>
                             <td><img src="/image/{{ $produks->gambar }}" width="100px"></td>
                             <td>{{ $produks->keterangan }}</td>
-                            <td>{{ $produks->jmlh_stok }}</td>
                             <td>
                                 <a href="{{ route('produk.edit', $produks->id) }}">Edit</a><br> 
                                 
