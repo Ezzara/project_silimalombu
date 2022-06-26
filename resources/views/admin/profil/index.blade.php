@@ -53,7 +53,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn pr-4 pl-4" style="background-color: #3E8412;color:white">Edit</button>
+                    <a href="{{route('admin.profile.edit')}}" type="submit" class="btn pr-4 pl-4" style="background-color: #3E8412;color:white">Edit</a>
 
                 </form>
 

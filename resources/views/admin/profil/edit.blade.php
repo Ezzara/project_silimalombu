@@ -1,3 +1,14 @@
+@extends ('layouts.adminapp')
+@section ('content')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Profil/Edit</p>
     <div class="card w-100">
@@ -6,7 +17,9 @@
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.profile.update')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                @method('put')
                     <div class="mb-3 row">
                         <label for="id_admin" class="col-sm-2 col-form-label">ID Admin :</label>
                         <div class="col-sm-10">
@@ -17,7 +30,7 @@
                     <div class="mb-3 row">
                         <label for="nama_admin" class="col-sm-2 col-form-label">Nama Admin :</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nama_admin">
+                            <input type="text" class="form-control" id="nama_admin" name="nama">
                         </div>
                     </div>
 
@@ -33,14 +46,14 @@
                     <div class="mt-3 row">
                         <label for="email_admin" class="col-sm-2 col-form-label">Email :</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email_admin">
+                            <input type="email" class="form-control" id="email_admin" name="email">
                         </div>
                     </div>
 
                     <div class="mt-3 row">
                         <label for="telp_admin" class="col-sm-2 col-form-label">Telepon :</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="telp_admin">
+                            <input type="text" class="form-control" id="telp_admin" name="telepon">
                         </div>
                     </div>
 
@@ -60,3 +73,4 @@
     </div>
 </div>
 </div>
+@endsection

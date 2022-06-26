@@ -1,5 +1,14 @@
 @extends('layouts.adminapp')
 @section('content')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Kelola Produk/Tambah Data</p>
     <div class="card w-100">
@@ -34,7 +43,7 @@
                     <div class="mt-3 row">
                         <label for="jumlah_stok" class="col-sm-2 col-form-label">Jumlah Stok :</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="jmlah_stok">
+                            <input type="number" class="form-control" name="jmlh_stok">
                         </div>
                     </div>
 

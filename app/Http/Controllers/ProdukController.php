@@ -51,7 +51,7 @@ class ProdukController extends Controller
             'id' => 'required',
             'nm_produk' => 'required',
             'harga' => 'required',
-            'jmlah_stok' => 'required',
+            'jmlh_stok' => 'required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'keterangan' => 'required',
             'kd_kategori' => 'required'
@@ -65,7 +65,9 @@ class ProdukController extends Controller
             $input['gambar'] = "$profileImage";
         }
         Produk::create($input);
-
+        //dd(Produk::get('jmlah_stok'));
+        //dd($input);
+        
         return redirect()->route('produk.index')
             ->with('success', 'Produk telah ditambahkan.');
     }

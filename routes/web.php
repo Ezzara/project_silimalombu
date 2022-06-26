@@ -39,6 +39,9 @@ Route::get('/user/profile', [UserProfileController::class, 'index'])->name('user
 Route::get('logout', [PembeliController::class, 'logout'])->name('user.logout');
 
 Route::get('/admin/profile', [adminProfileController::class,'index'])->name('admin.profile');
+Route::get('/admin/profile/edit',[adminProfileController::class,'edit'])->name('admin.profile.edit');
+Route::put('/admin/profile/update',[adminProfileController::class,'update'])->name('admin.profile.update');
+
 Route::get('/admin/user_data', [UserController::class,'index'])->name('admin.userdata');
 Route::put('/profile/update',[UserProfileController::class,'update'])->name('profile.update');
 Route::get('admin/penjualan', function () { return view('admin.laporan_penjualan.index');})->name('admin.penjualan');
