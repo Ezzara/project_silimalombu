@@ -45,9 +45,9 @@ class KategoriController extends Controller
             'id' => 'required',
             'nm_kategori' => 'required',
         ]);
-        Produk::create($request->all());
+        Kategori::create($request->all());
 
-        return redirect()->route('produk.index')
+        return redirect()->route('kategori.index')
             ->with('success','kategori telah ditambahkan');
     }
 
@@ -71,7 +71,7 @@ class KategoriController extends Controller
     public function edit(Kategori $kategori)
     {
         //
-        return view('admin.kategori_produk.edit', compact('produk'));
+        return view('admin.kategori_produk.edit', compact('kategori'));
     }
 
     /**
@@ -88,9 +88,9 @@ class KategoriController extends Controller
             'nm_kategori' => 'required',
         ]);
         $input = $request->all();
-        $produk->update($input);
+        $kategori->update($input);
 
-        return redirect()->route('produk.index')
+        return redirect()->route('kategori.index')
             ->with('success','kategori berhasil diubah');
         
     }
@@ -104,8 +104,8 @@ class KategoriController extends Controller
     public function destroy(Kategori $kategori)
     {
         //
-        $kateogri->delete();
-        return redirect()->route('produk.index')
+        $kategori->delete();
+        return redirect()->route('kategori.index')
             ->with('sucess','deleted successfully');
     }
 }

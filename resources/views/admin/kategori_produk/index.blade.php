@@ -16,10 +16,10 @@
                     <div class="col-md-4">
                         <!--Kosong untuk field-->
                     </div>
-                    {{--
+                    
                     <div class="col-md-2"><a href="{{route('kategori.create')}}" class="lead text-secondary">+
                             Tambah Kategori</a></div>
-                        --}}
+                        
                 </div>
 
                 <div class="row mt-3 ">
@@ -34,7 +34,18 @@
                         <tr>
                             <td> {{ $kategoris->id }} </td>
                             <td> {{ $kategoris->nm_kategori}}</td>
-                            <td></td>
+                            <td> 
+                                <a href="{{ route('kategori.edit', $kategoris->id) }}">Edit</a><br> 
+                                
+                                <form action="{{ route('kategori.destroy', $kategoris->id) }}" method="POST">
+
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" title="delete">Delete
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
                         @endforeach
                     </table>
