@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Produk;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use DB;
 
 class ProdukController extends Controller
 {
@@ -21,10 +22,14 @@ class ProdukController extends Controller
     public function index()
     {
         //
+
         $produk = Produk::latest()->paginate();
-        $kategori = Kategori::latest()->paginate();
-        return view('admin.kelola_produk.index', compact('produk','kategori'))
-        ->with('i');
+        $data = DB::table('produk')
+                    ->join('kategori', 'kategori.id', '=', 'produk.kd_kategori')
+                    ->get();
+
+        return view('admin.kelola_produk.index', compact('produk'))
+        ->with('i')->with('data', $data);
     }
 
     /**

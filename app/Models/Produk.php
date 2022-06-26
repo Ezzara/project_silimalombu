@@ -29,4 +29,5 @@ class Produk extends Model
         'harga'
 
     ];
+
 }

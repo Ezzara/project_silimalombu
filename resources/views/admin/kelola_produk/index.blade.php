@@ -41,12 +41,12 @@
                             <th>Tools</th>
                             <!--looping <a href>-->
                         </tr>
-                        @foreach ($produk as $produks)
+                        @foreach ($data as $produks)
                         <tr>
                             <td>{{ ++$i }}</td>
                             <td>{{ $produks->id }}</td>
                             <td>{{ $produks->nm_produk }}</td>
-                            <td>{{ $produks->kd_kategori }}</td>
+                            <td>{{ $produks->nm_kategori }}</td>
                             <td>{{ $produks->jmlh_stok }}</td>
                             <td>{{ $produks->harga }}</td>
                             <td><img src="/image/{{ $produks->gambar }}" width="100px"></td>

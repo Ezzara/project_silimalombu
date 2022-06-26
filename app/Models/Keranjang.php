@@ -25,4 +25,5 @@ class Keranjang extends Model
         'harga_satuan',
         'harga_total'
     ];
+
 }

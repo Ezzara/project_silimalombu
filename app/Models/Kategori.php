@@ -19,4 +19,5 @@ class Kategori extends Model
         'id',
         'nm_kategori',
     ];
+
 }
