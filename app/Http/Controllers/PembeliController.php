@@ -12,6 +12,10 @@ class PembeliController extends Controller
 
     public function daftarProduk(Request $request)
     {
+        //$produk = Produk::latest()->paginate();
+        //$kategori = Kategori::latest()->paginate();
+        //return view('livewire.catalog',compact('produk','kategori'));
+        
         //$produk = Produk::latest();
         $kategori = Kategori::latest()->paginate();
         //dd($kategori);
@@ -31,6 +35,7 @@ class PembeliController extends Controller
         }
         return view('pembeli.produk.index', compact('produk','kategori'))
         ->with ('i');
+
     }
     public function show($id)
     {
@@ -68,6 +73,7 @@ class PembeliController extends Controller
         
           
         session()->put('cart', $cart);
+        
         return redirect()->route('cart');
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bayar;
 use Illuminate\Http\Request;
+use Session;
 
 class BayarController extends Controller
 {
@@ -43,7 +44,10 @@ class BayarController extends Controller
             'bukti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'telepon' => 'required'
         ]);
-        $request['id'] = '1';
+
+        $cart = Session::get('cart');
+        
+        $request['id'] = $cart[1]['key'];
         $input = $request->all();
         if ($image = $request->file('bukti')) {
             $destinationPath = 'image/';
@@ -51,7 +55,7 @@ class BayarController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['bukti'] = "$profileImage";
         }
-        Produk::create($input);
+        Bayar::create($input);
 
         return redirect()->route('pembeli.produk');
 

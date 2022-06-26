@@ -42,7 +42,7 @@
                 </div>
                 <input type="text" class="form-control mt-3" id="" placeholder="Alamat Lengkap" name="alamat_lengkap">
                 <div class="mt-5">
-                    <input type="submit" class="btn mx-auto text-white" value="Buat Pesanan" style="background-color:#3E8412"> <a href="" class="mx-auto text-dark">Kembali ke keranjang</a>
+                    <input type="submit" class="btn mx-auto text-white" value="Buat Pesanan" style="background-color:#3E8412"> <a href="{{ url()->previous() }}" class="mx-auto text-dark">Kembali ke keranjang</a>
                 </div>
 
 
@@ -50,18 +50,20 @@
         <div class="col-md-5 mt-5">
             <table class="table table-borderless">
                 <tr class="">
-                    <td rowspan="2"><img class="shadow rounded " src=" oils.jpeg" alt="" style="width:100px ;"></td>
+                    {{--<td rowspan="2"><img class="shadow rounded " src=" oils.jpeg" alt="" style="width:100px ;"></td>--}}
                     <td>Produk</td>
                     <td>Harga Satuan</td>
                     <td>Jumlah</td>
                     <td>Subtotal Produk</td>
                 </tr>
+                @foreach (session('cart') as $id => $produk)
                 <tr class="font-weight-bold">
-                    <td>Minyak Kemiri</td>
-                    <td>Rp.42.000</td>
-                    <td>1</td>
-                    <td>Rp.42.000 </td>
+                    <td>{{$produk['name']}}</td>
+                    <td>Rp.{{$produk['price']}}</td>
+                    <td>{{$produk['quantity']}}</td>
+                    <td>Rp.{{$produk['price'] * $produk['quantity']}} </td>
                 </tr>
+                @endforeach
 
             </table>
 

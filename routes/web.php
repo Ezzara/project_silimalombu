@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BayarController;
 use App\Http\Controllers\UserProfileController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,9 @@ use App\Http\Controllers\UserProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//livewire
+//Route::get('/catalog', Catalog::class);
+
 Route::get('admin', [adminProfileController::class,'index']);
 Route::get('/pesanan', [OrderController::class, 'buat']);
 Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk'])->name('pembeli.produk');

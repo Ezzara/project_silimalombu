@@ -7,6 +7,7 @@ use App\Models\Produk;
 use Illuminate\Http\Request;
 //Controller
 use App\Http\Controllers\OrderController;
+use Session;
 
 class KeranjangController extends Controller
 {
@@ -48,9 +49,16 @@ class KeranjangController extends Controller
         //$cart = new Keranjang;
        //$cart -> user_id = $request ->session ()->get('cart')[$id];
         //$cart -> save;
-        $cart = session()->get('cart',[]);
+
+        //$cart = session()->get('cart', [])->key; //another way
+        $cart = Session::get('cart');
+
+        //dd($cart[1]['key']);
+        //$cart = json_decode(session()->get('cart',[0]), true);
         //$cart -> save;
-        $key = uniqid();
+
+        $key = $cart[1]['key'];
+        
         //$key = session()->get('cart',["key"]);
         //foreach ($request->produk as $k => $p) {
             $request->validate([

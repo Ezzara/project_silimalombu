@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Session;
 
 class OrderController extends Controller
 {
@@ -66,8 +67,10 @@ class OrderController extends Controller
             //'catatan'=> 'required',
             
         ]);
+
+        $cart = Session::get('cart');
         
-        $request['id'] = '1';
+        $request['id'] = $cart[1]['key'];
         $request['status'] = 'belum';
         $input = $request->all();
         Order::create($input);
