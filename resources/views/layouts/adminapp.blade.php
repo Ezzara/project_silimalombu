@@ -16,6 +16,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        nav {
+            background-color: #3E8412 !important;
+        }
+
+        .card-header {
+            background-color: #3E8412 !important;
+        }
+
+        .card-body {
+            background-color: #C2FF9B !important;
+        }
+
+        tr th {
+            font-size: 12px;
+        }
+
+        td {
+            font-size: 12px;
+        }
+
+        .pilih_gambar {
+            border: 1px;
+        }
+    </style>
 </head>
 
 <body>
@@ -106,15 +131,14 @@
                             <i class="fa-solid fa-right-from-bracket"></i>
                         </span>
 
-                        <a class="nav-link text-secondary lead" aria-current="page" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                        <a class="nav-link text-secondary lead" aria-current="page" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        Keluar
-                                    </a>
+                            Keluar
+                        </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </li>
 
                 </ul>

@@ -35,7 +35,7 @@
                     <div class="mt-3 row">
                         <label for="email_admin" class="col-sm-2 col-form-label">Email :</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email_admin" readonly name="email" value="{{ Auth::user()->email}}"> 
+                            <input type="email" class="form-control" id="email_admin" readonly name="email" value="{{ Auth::user()->email}}">
                         </div>
                     </div>
 
