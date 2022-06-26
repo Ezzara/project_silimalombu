@@ -41,6 +41,7 @@
                             <th>Kode Promo</th>
                             <th>Catatan</th>
                             <th>Status</th>
+
                         </tr>
                         @foreach ($order as $order)
                         <tr>
@@ -88,12 +89,24 @@
                                 {{ $order->catatan }}
                             </td>
                             <td>
-                                {{ $order->status }}
-                            </td>
+                                @if($order->status == "belum verifikasi")
+                                    <form action="{{ route('order.update', $order->id) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <input type="submit" value="{{ $order->status }} ">
+                                    </form>
+                                
+                                @else
+                                    {{ $order->status }}
+                                @endif
+                            </td> 
 
                         </tr>
                         @endforeach
                     </table>
+                </div>
+                <div>
+                    <a href="{{route('admin.detail')}}">Lihat Detail Data</a>
                 </div>
 
                 <div class="row mt-3">

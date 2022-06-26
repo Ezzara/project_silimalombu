@@ -1,3 +1,5 @@
+@extends ('layouts.adminapp')
+@section ('content')
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Detail Pemesanan/Konfirmasi Pembayaran</p>
     <div class="card w-100">
@@ -32,25 +34,30 @@
                             <th>Upload Bukti Transfer</th>
                             <th>Tools</th>
                         </tr>
+                        @foreach ($data as $data)
                         <tr>
-                            <td>
-                                <!--foreach data-->
+                            <td>{{ $data->nama_penerima }}</td>
+                            <td>{{ $data->telepon }}</td>
+                            <td>{{ $data->id }}</td>
+                            <td>{{ $data->nominal }}</td>
+                            <td>{{ $data->created_at }}</td>
+                            <td><img src="/image/{{ $data->bukti }}" width="100px"></td>
+                            <td><form action="{{ route('order.destroy', $data->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" title="delete">Delete</button>
+                                </form>
                             </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
 
 
                         </tr>
+                        @endforeach
                     </table>
                 </div>
 
                 <div class="row mt-3">
                     <button class="btn pr-4 pl-4 mr-3" style=" background-color: #3E8412;color:white">Simpan</button>
-                    <a href="" class="btn pr-4 pl-4" style="background-color: #3E8412;color:white"> Kembali</a>
+                    <a href="{{ url()->previous() }}" class="btn pr-4 pl-4" style="background-color: #3E8412;color:white"> Kembali</a>
                 </div>
 
 
@@ -60,3 +67,5 @@
     </div>
 </div>
 </div>
+
+@endsection

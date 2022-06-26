@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Session;
+use DB;
 
 class OrderController extends Controller
 {
@@ -20,6 +21,16 @@ class OrderController extends Controller
 
         return view('admin.detail_pemesanan.index', compact('order'))
         ->with('i');
+    }
+
+    public function detail()
+    {
+        $order = Order::latest()->paginate();
+        $data = DB::table('kelola_order')
+            ->join('bayar', 'bayar.id', '=', 'kelola_order.id')
+            ->get();
+        return view('admin.detail_pemesanan.show',compact('order'))
+            ->with('data',$data);
     }
 
     /**
@@ -79,6 +90,14 @@ class OrderController extends Controller
             ->with('success', 'Produk berhasil di Edit');
 
     }
+
+    public function verif()
+    {
+        dd($order->id);
+        $order->status = "sudah diverifikasi";
+        $order->save();
+        return Redirect()->route('order.index');
+    }
     
 
     /**
@@ -90,6 +109,9 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         //
+
+        return view('admin.detail_pemesanan.show', compact('order'))
+        ->with('i');
     }
 
     /**
@@ -112,24 +134,9 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
-        $request->validate([
-            'username'=> 'required',
-            'email'=> 'required',
-            'nama_penerima'=> 'required',
-            'alamat_lengkap'=> 'required',
-            'kelurahan'=> 'required',
-            'kecamatan'=> 'required',
-            'kab_kota'=> 'required',
-            //'kd_provinsi'=> 'required',
-            'kd_pos'=> 'required',
-            'telepon'=> 'required',
-            'kd_promo'=> 'required',
-            'catatan'=> 'required',
-        ]);
-        $request['id'] = $key;
-        $request['status'] = 'belum';
-        Order::create($request->all());
+        $order->status = "sudah diverifikasi";
+        $order->save();
+        return Redirect()->route('order.index');
     }
 
     /**
@@ -141,5 +148,8 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+        $order->delete();
+
+        return redirect()->route('admin.detail');
     }
 }

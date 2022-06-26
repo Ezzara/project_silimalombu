@@ -28,7 +28,12 @@ use App\Http\Controllers\UserProfileController;
 
 Route::get('admin', [adminProfileController::class,'index']);
 Route::get('/pesanan', [OrderController::class, 'buat']);
+
+
 Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk'])->name('pembeli.produk');
+
+Route::get('/admin/detail', [OrderController::class, 'detail'])->name('admin.detail');
+
 Route::get('/', [PembeliController::class, 'welcome'])->name('welcome');
 //Route::get('detail_produk', [PembeliController::class, 'show'])->name('pembeli.show');
 
@@ -47,6 +52,7 @@ Route::get('logout', [PembeliController::class, 'logout'])->name('user.logout');
 Route::get('/admin/profile', [adminProfileController::class,'index'])->name('admin.profile');
 Route::get('/admin/profile/edit',[adminProfileController::class,'edit'])->name('admin.profile.edit');
 Route::put('/admin/profile/update',[adminProfileController::class,'update'])->name('admin.profile.update');
+Route::put('/order/verif',[OrderController::class, 'verif'])->name('order.verif');
 
 Route::get('/admin/user_data', [UserController::class,'index'])->name('admin.userdata');
 Route::post('/admin/delete/{id}', [UserController::class ,'delete'])    
