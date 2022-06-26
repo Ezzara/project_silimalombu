@@ -26,7 +26,7 @@ Route::get('admin', [adminProfileController::class,'index']);
 Route::get('/pesanan', [OrderController::class, 'buat']);
 Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk'])->name('pembeli.produk');
 Route::get('/', [PembeliController::class, 'welcome'])->name('welcome');
-Route::get('detail_produk', [PembeliController::class, 'show'])->name('pembeli.show');
+//Route::get('detail_produk', [PembeliController::class, 'show'])->name('pembeli.show');
 
 Route::get('cart', [PembeliController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [PembeliController::class, 'addToCart'])->name('add.to.cart');
@@ -36,6 +36,8 @@ Route::get('/pembeli/notifikasi', [PembeliController::class, 'notif'])->name('pe
 Route::get('/pembeli/tentang', [PembeliController::class, 'about'])->name('pembeli.about');
 Route::get('/pembeli/qa', [PembeliController::class, 'qa'])->name('pembeli.qa');
 Route::get('/user/profile', [UserProfileController::class, 'index'])->name('user.profile');
+
+
 Route::get('logout', [PembeliController::class, 'logout'])->name('user.logout');
 
 Route::get('/admin/profile', [adminProfileController::class,'index'])->name('admin.profile');

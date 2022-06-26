@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 
@@ -9,10 +10,26 @@ class PembeliController extends Controller
 {
     //
 
-    public function daftarProduk()
+    public function daftarProduk(Request $request)
     {
-        $produk = Produk::latest()->paginate();
-        return view('pembeli.produk.index', compact('produk'))
+        //$produk = Produk::latest();
+        $kategori = Kategori::latest()->paginate();
+        //dd($kategori);
+        //dd(is_null($request->filter));
+        if(is_null($request->filter)) {
+            $produk = Produk::where([
+                ['nm_produk','like',"%".$request->keyword."%"],
+                ])
+                ->paginate();
+            }
+        else {
+            $produk = Produk::where([
+                ['nm_produk','like',"%".$request->keyword."%"],
+                ['kd_kategori','=',$request->filter],
+                ])
+                ->paginate();
+        }
+        return view('pembeli.produk.index', compact('produk','kategori'))
         ->with ('i');
     }
     public function show($id)
