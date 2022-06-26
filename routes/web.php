@@ -43,6 +43,10 @@ Route::get('/admin/profile/edit',[adminProfileController::class,'edit'])->name('
 Route::put('/admin/profile/update',[adminProfileController::class,'update'])->name('admin.profile.update');
 
 Route::get('/admin/user_data', [UserController::class,'index'])->name('admin.userdata');
+Route::post('/admin/delete/{id}', [UserController::class ,'delete'])    
+    ->middleware('is_admin')    
+    ->name('admin.user.delete');
+
 Route::put('/profile/update',[UserProfileController::class,'update'])->name('profile.update');
 Route::get('admin/penjualan', function () { return view('admin.laporan_penjualan.index');})->name('admin.penjualan');
 
@@ -58,6 +62,7 @@ Route::resource('biaya',BiayaController::class);
 Route::resource('keranjang',KeranjangController::class);
 Route::resource('bayar',BayarController::class);
 Route::resource('pembeli',PembeliController::class);
+//Route::resource('admin',UserController::class);
 //Route::resource('profile',UserProfileController::class);
 
 //Route::resource('pembeli',PembeliController::class);

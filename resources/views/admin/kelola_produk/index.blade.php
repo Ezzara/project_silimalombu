@@ -56,14 +56,9 @@
                                 <a href="{{ route('produk.edit', $produks->id) }}">Edit</a><br> 
                                 
                                 <form action="{{ route('produk.destroy', $produks->id) }}" method="POST">
-
                                     @csrf
                                     @method('DELETE')
-
-                                    <button type="submit" title="delete">Delete
-                                    </button>
-                                
-
+                                    <button type="submit" title="delete">Delete</button>
                                 </form>
                             </td>
                         </tr>
