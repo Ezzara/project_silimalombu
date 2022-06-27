@@ -32,6 +32,7 @@
                 <input type="text" class="form-control mt-3" placeholder="Provinsi" name="kelurahan">
                 <input type="text" class="form-control mt-3" placeholder="Kabupaten/Kota" name="kab_kota">
                 <input type="text" class="form-control mt-3" placeholder="Kecamatan" name="kecamatan">
+                
                 <div class="form-row mt-3">
                     <div class="col">
                         <input type="text" class="form-control" id="" placeholder="Desa/Kelurahan" name="kelurahan">
@@ -74,17 +75,17 @@
             <p class="mt-3">Pengiriman : JNE Reguler</p>
             <label class="mr-sm-2" for="inlineFormCustomSelect">Provinsi Tujuan :</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                <option value="1">DKI Jakarta (Rp.24.000)</option>
-                <option value="2">Sumatera Selatan (Rp.10.000)</option>
-                <option value="3">Kalimantan Barat (Rp.26.000)</option>
+                @foreach ($biaya as $biaya)
+                <option value="{{$biaya->id}}">{{$biaya->nm_provinsi}} (Rp.{{$biaya->biaya_kirim}})</option>
+                @endforeach
             </select>
             <label class="mt-3">Catatan :</label>
             <input class="form-control text-left" type="text" id="" placeholder="Tinggalkan pesan untuk penjual (Opsional)">
 
             <div class="text-right mt-3">
-                <p>Subtotal Produk Rp.42.000</p>
-                <p>Ongkos Kirim Rp.0</p>
-                <p>Total Pembayaran <b>Rp.42.000</b></p>
+                <p>Subtotal Produk Rp.{{$produk['price'] * $produk['quantity']}}</p>
+                <p>Ongkos Kirim Rp.24.000</p>
+                <p>Total Pembayaran <b>{{$produk['price'] * $produk['quantity'] + 24000}}</b></p>
             </div>
             <div class="rounded my-auto p-3" style="background-color: #DDFFC8 ;">
                 <h3>

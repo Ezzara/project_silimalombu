@@ -13,6 +13,7 @@ use App\Http\Controllers\BayarController;
 use App\Http\Controllers\UserProfileController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +41,7 @@ Route::get('/', [PembeliController::class, 'welcome'])->name('welcome');
 Route::get('cart', [PembeliController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [PembeliController::class, 'addToCart'])->name('add.to.cart');
 Route::delete('remove-from-cart', [PembeliController::class, 'remove'])->name('remove.from.cart');
+Route::get('cart/remove', [KeranjangController::class, 'cart_remove'])->name('cart.remove');
 
 Route::get('/pembeli/notifikasi', [PembeliController::class, 'notif'])->name('pembeli.notif');
 Route::get('/pembeli/tentang', [PembeliController::class, 'about'])->name('pembeli.about');

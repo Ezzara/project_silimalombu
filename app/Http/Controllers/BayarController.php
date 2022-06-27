@@ -57,7 +57,9 @@ class BayarController extends Controller
         }
         Bayar::create($input);
 
-        return redirect()->route('pembeli.produk');
+        sleep(1);
+        $request->session()->forget('cart');
+        return redirect()->route('pembeli.notif');
 
     }
 

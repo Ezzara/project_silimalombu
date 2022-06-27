@@ -63,12 +63,13 @@ class PembeliController extends Controller
         $cart = session()->get('cart', []);
         $key = uniqid();
             $cart[$id] = [
-                "id" => $produk->id,
+                "id" => '1',
                 "name" => $produk->nm_produk,
                 "quantity" => $request->jumlah,
                 "price" => $produk->harga,
                 "image" => $produk->gambar,
-                "key" => $key
+                "key" => $key,
+                "id_produk" => $produk->id,
             ];
         
           

@@ -24,7 +24,11 @@ class KeranjangController extends Controller
         ->with ('i');
     }
 
-
+    public function cart_remove(Request $request) 
+    {   
+        $request->session()->forget('cart');
+        return redirect()->back();
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -73,7 +77,7 @@ class KeranjangController extends Controller
             $request['id'] = $key;
             //$request['id'] = $key;
         //}
-        Keranjang::create($request->all());
+       // Keranjang::create($request->all());
         return redirect()->route('order.create',$key);
     }
 

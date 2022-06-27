@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Models\Biaya;
 use Session;
 use DB;
 
@@ -17,6 +18,7 @@ class OrderController extends Controller
     public function index()
     {
         //
+        
         $order = Order::latest()->paginate(5);
 
         return view('admin.detail_pemesanan.index', compact('order'))
@@ -41,7 +43,8 @@ class OrderController extends Controller
     public function create()
     {
         //
-        return view('pembeli.order.create');
+        $biaya = Biaya::latest()->paginate();
+        return view('pembeli.order.create',compact('biaya'));
     }
     public function buat($key)
     {
@@ -85,9 +88,8 @@ class OrderController extends Controller
         $request['status'] = 'belum';
         $input = $request->all();
         Order::create($input);
-
         return redirect()->route('bayar.create')
-            ->with('success', 'Produk berhasil di Edit');
+                ->with('success', 'Produk berhasil');
 
     }
 

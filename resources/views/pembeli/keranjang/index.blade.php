@@ -26,8 +26,8 @@
                                 <td>Rp.{{$produk['price']}}</td>
                                 <td>{{$produk['quantity']}}</td>
                                 <td>Rp.{{$produk['price'] * $produk['quantity']}}</td>
-                                <td class="actions" data-th="">
-                                <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
+                                <td>
+                                <a href="{{route('cart.remove')}}"class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
                                 </td>
                             </tr>
                             @endforeach
@@ -43,6 +43,7 @@
                     <input type="hidden" name="harga_satuan" value="{{$produk['price']}}">
                     <input type="hidden" name="harga_total" value="{{$produk['price'] * $produk['quantity']}}">
                     <input type="hidden" name="gambar" value="{{$produk['image']}}">
+                    
                     <input type="submit" class="btn btn-success mr-3 float-right" value="Bayar">
                 </form>
                 <a class="btn btn-success mr-3 float-right" href="{{ url()->previous() }}"> Kembali</a>

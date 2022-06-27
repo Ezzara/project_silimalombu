@@ -24,7 +24,7 @@ class allseed extends Seeder
                 'gambar' => '20220619135205.jpg',
                 'keterangan'=> 'minyak',
                 'jmlh_stok'=> 100,
-                'harga'=> 100000,
+                'harga'=> 100,
             ]);
         }
         DB::table('kategori')->insert(
