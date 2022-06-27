@@ -41,25 +41,30 @@
                             <td>
                                 {{ $biaya->id }}
                             </td>
-                            <td> 
+                            <td>
                                 {{ $biaya->nm_provinsi }}
                             </td>
-                            <td> 
-                                {{ $biaya->biaya_kirim }} 
+                            <td>
+                                {{ $biaya->biaya_kirim }}
                             </td>
                             <td>
-                            <a href="{{ route('biaya.edit', $biaya->id) }}">Edit</a><br> 
-                                
-                                <form action="{{ route('biaya.destroy', $biaya->id) }}" method="POST">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <a class="btn" href="{{ route('biaya.edit', $biaya->id) }}" style="background-color: green; color:white">Edit</a><br>
+                                    </div>
+                                    <div class="col-md">
+                                        <form action="{{ route('biaya.destroy', $biaya->id) }}" method="POST">
 
-                                    @csrf
-                                    @method('DELETE')
+                                            @csrf
+                                            @method('DELETE')
 
-                                    <button type="submit" title="delete">Delete
-                                    </button>
-                                
+                                            <button class="btn" type="submit" title="delete">Delete
+                                            </button>
 
-                                </form>
+
+                                        </form>
+                                    </div>
+                                </div>
 
                             </td>
                         </tr>

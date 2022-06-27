@@ -16,10 +16,10 @@
                     <div class="col-md-4">
                         <!--Kosong untuk field-->
                     </div>
-                    
+
                     <div class="col-md-2"><a href="{{route('kategori.create')}}" class="lead text-secondary">+
                             Tambah Kategori</a></div>
-                        
+
                 </div>
 
                 <div class="row mt-3 ">
@@ -34,17 +34,21 @@
                         <tr>
                             <td> {{ $kategoris->id }} </td>
                             <td> {{ $kategoris->nm_kategori}}</td>
-                            <td> 
-                                <a href="{{ route('kategori.edit', $kategoris->id) }}">Edit</a><br> 
-                                
-                                <form action="{{ route('kategori.destroy', $kategoris->id) }}" method="POST">
+                            <td>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <a class="btn" href="{{ route('kategori.edit', $kategoris->id) }}" style="background-color: green; color:white">Edit</a><br>
+                                    </div>
+                                    <form action=" {{ route('kategori.destroy', $kategoris->id) }}" method="POST">
+                                        <div class="col-sm">
+                                            @csrf
+                                            @method('DELETE')
 
-                                    @csrf
-                                    @method('DELETE')
-
-                                    <button type="submit" title="delete">Delete
-                                    </button>
-                                </form>
+                                            <button class="btn" type="submit" title="delete">Delete
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach

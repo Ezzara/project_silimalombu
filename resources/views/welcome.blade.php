@@ -1,6 +1,6 @@
 @extends('layouts.userapp')
 @section('content')
-<div class="bg-image" style="background-image: url('{{asset ('image/banner.jpeg')}}');height:85vh;background-repeat:no-repeat; background-size: cover; background-position:center;">
+<div class="bg-image" style="background-image: url('{{asset ('/image/banner.jpeg')}}');height:85vh;background-repeat:no-repeat; background-size: cover; background-position:center;">
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.5);height:85vh;">
         <div class="d-flex justify-content-center align-items-center h-100">
             <h1 class="display-1 text-white font-weight-bold shadow ">SELAMAT DATANG <div class="display-1 ml-5 lead">di

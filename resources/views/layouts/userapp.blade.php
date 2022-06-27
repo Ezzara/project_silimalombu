@@ -109,7 +109,7 @@
         </div>
     </nav>
     @yield('content')
-
+    
     @stack('script')
     @livewireScripts
 </body>

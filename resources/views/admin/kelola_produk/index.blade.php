@@ -1,6 +1,6 @@
 @extends('layouts.adminapp')
 @section('content')
-<div class="col-lg-8 pl-5 pt-5 mt-2">
+<div class="col-lg pl-5 pt-5 mt-2">
     <p>Kelola Produk</p>
     <div class="card w-100">
         <div class="card-header text-white lead">
@@ -52,13 +52,19 @@
                             <td><img src="/image/{{ $produks->gambar }}" width="100px"></td>
                             <td>{{ $produks->keterangan }}</td>
                             <td>
-                                <a href="{{ route('produk.edit', $produks->id) }}">Edit</a><br> 
-                                
-                                <form action="{{ route('produk.destroy', $produks->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" title="delete">Delete</button>
-                                </form>
+                                <div class="row">
+                                    <div class="col-sm-3">
+
+                                        <a class="btn" href="{{ route('produk.edit', $produks->id) }}" style="background-color: green; color:white">Edit</a><br>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <form action="{{ route('produk.destroy', $produks->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn" type="submit" title="delete">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         @endforeach

@@ -55,9 +55,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             </ul>
-            <a class="navbar-brand mr-5 pr-5" href="#">
-                <i class="far fa-bell" style='font-size: 35px;color: white;'></i>
-            </a>
+
         </div>
     </nav>
 
