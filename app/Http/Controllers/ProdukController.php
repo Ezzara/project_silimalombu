@@ -40,7 +40,11 @@ class ProdukController extends Controller
     public function create()
     {
         //
+<<<<<<< Updated upstream
         return view('admin.kelola_produk.create');
+=======
+
+>>>>>>> Stashed changes
     }
 
     /**
@@ -53,6 +57,7 @@ class ProdukController extends Controller
     {
     
         $request->validate([
+<<<<<<< Updated upstream
             'id' => 'required',
             'nm_produk' => 'required',
             'harga' => 'required',
@@ -62,6 +67,7 @@ class ProdukController extends Controller
             'kd_kategori' => 'required'
         ]);
 
+<<<<<<< Updated upstream
         $input = $request->all();
         if ($image = $request->file('gambar')) {
             $destinationPath = 'image/';
