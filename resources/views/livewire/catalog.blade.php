@@ -19,7 +19,7 @@
                 <li class="list-group-item"><a href="" class="text-dark">Filters</a></li>
                 
                 <select wire:model="option">
-                    <option value=" ">Any</option>
+                    <option value="">Semua</option>
                     @foreach ($kategori as $kategori)
                         <option value="{{ $kategori->id }}" name="filter">
                             {{ $kategori->nm_kategori }}

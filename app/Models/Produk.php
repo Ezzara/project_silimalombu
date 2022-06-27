@@ -11,7 +11,6 @@ class Produk extends Model
 
     protected $table= 'produk';
     public $timestamps = true;
-<<<<<<< Updated upstream
     protected $primarykey = 'id';
     public $incrementing = false;
     
@@ -21,7 +20,6 @@ class Produk extends Model
         'harga' => 'float',
     ];
     protected $fillable = [
-<<<<<<< Updated upstream
         'id',
         'nm_produk',
         'kd_kategori',
