@@ -51,7 +51,6 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-    
         $request->validate([
             'id' => 'required',
             'nm_produk' => 'required',
@@ -61,7 +60,6 @@ class ProdukController extends Controller
             'keterangan' => 'required',
             'kd_kategori' => 'required'
         ]);
-
         $input = $request->all();
         if ($image = $request->file('gambar')) {
             $destinationPath = 'image/';
@@ -70,9 +68,7 @@ class ProdukController extends Controller
             $input['gambar'] = "$profileImage";
         }
         Produk::create($input);
-        //dd(Produk::get('jmlah_stok'));
-        //dd($input);
-        
+
         return redirect()->route('produk.index')
             ->with('success', 'Produk telah ditambahkan.');
     }
@@ -105,21 +101,18 @@ class ProdukController extends Controller
         $request->validate([
             'nm_produk' => 'required',
             'harga' => 'required',
-            'jmlah_stok' => 'required',
+            'jmlh_stok' => 'required',
+            'kd_kategori' => 'required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'keterangan' => 'required',
         ]);
-
-        
+        $input = $request->all();
         if ($image = $request->file('gambar')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
         }
-
-        $input = $request->all();
-
         $produk->update($input);
 
         return redirect()->route('produk.index')

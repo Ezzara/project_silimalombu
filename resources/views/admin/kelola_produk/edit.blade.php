@@ -35,7 +35,7 @@
                     <div class="mt-3 row">
                         <label for="jumlah_stok" class="col-sm-2 col-form-label">Jumlah Stok :</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="jmlah_stok" value="{{$produk->jmlah_stok}}">
+                            <input type="text" class="form-control" name="jmlh_stok" value="{{$produk->jmlah_stok}}">
                         </div>
                     </div>
 
@@ -56,12 +56,12 @@
                     <div class="mt-3 row">
                         <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
                         <div class="col-sm-10">
-                            <select class="form-control" name="kategori">
-                                <option value="oils">Oils</option>
-                                <option value="buah">Buah</option>
-                                <option value="sayur">Sayur</option>
-                                <option value="makanan">Makanan</option>
-                                <option value="lainnya">Lainnya</option>
+                            <select class="form-control" name="kd_kategori">
+                                <option value="1">Oils</option>
+                                <option value="2">Buah</option>
+                                <option value="3">Sayur</option>
+                                <option value="4">Makanan</option>
+                                <option value="5">Lainnya</option>
 
                             </select>
                         </div>
