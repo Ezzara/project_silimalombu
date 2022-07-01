@@ -26,7 +26,7 @@
                         <input type="text" class="form-control" placeholder="Username" name="username">
                     </div>
                 </div>
-                <input type="hidden" name="id" value="1">
+                <input type="hidden" name="id" value=" {{ Session::get('key') }}">
                 <input type="email" class="form-control mt-3" placeholder="Email" name="email">
                 <input type="tel" class="form-control mt-3" placeholder="Telepon" name="telepon">
                 <input type="text" class="form-control mt-3" placeholder="Provinsi" name="kelurahan">

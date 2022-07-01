@@ -12,14 +12,7 @@ class PembeliController extends Controller
 
     public function daftarProduk(Request $request)
     {
-        //$produk = Produk::latest()->paginate();
-        //$kategori = Kategori::latest()->paginate();
-        //return view('livewire.catalog',compact('produk','kategori'));
-        
-        //$produk = Produk::latest();
         $kategori = Kategori::latest()->paginate();
-        //dd($kategori);
-        //dd(is_null($request->filter));
         if(is_null($request->filter)) {
             $produk = Produk::where([
                 ['nm_produk','like',"%".$request->keyword."%"],
@@ -39,10 +32,11 @@ class PembeliController extends Controller
     }
     public function show($id)
     {
-        //
         $produk = Produk::findOrFail($id);
+
         return view ('pembeli.produk.show', compact('produk'));
     }
+
     public function welcome()
     {
         return view('welcome');
@@ -70,9 +64,7 @@ class PembeliController extends Controller
                 "image" => $produk->gambar,
                 "key" => $key,
                 "id_produk" => $produk->id,
-            ];
-        
-          
+            ];  
         session()->put('cart', $cart);
         
         return redirect()->route('cart');

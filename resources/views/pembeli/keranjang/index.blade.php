@@ -35,48 +35,23 @@
                     </table>
                 </div>
                 <br>
+                @php ( $key = uniqid())
                 <form action="{{ route('keranjang.store') }}" method="post">
                     @csrf
-                    <input type="hidden" name="id" value="{{$produk['id']}}">
+                   
+                    <input type="hidden" name="kd_order" value="{{ $key }}">
                     <input type="hidden" name="nm_produk" value="{{$produk['name']}}">
                     <input type="hidden" name="jumlah" value="{{$produk['quantity']}}">
                     <input type="hidden" name="harga_satuan" value="{{$produk['price']}}">
                     <input type="hidden" name="harga_total" value="{{$produk['price'] * $produk['quantity']}}">
                     <input type="hidden" name="gambar" value="{{$produk['image']}}">
-                    
                     <input type="submit" class="btn btn-success mr-3 float-right" value="Bayar">
                 </form>
                 <a class="btn btn-success mr-3 float-right" href="{{ url()->previous() }}"> Kembali</a>
             </div>
             <div class="col-md-1">
-
             </div>
         </div>
-
     </div>
 
-
-    <script type="text/javascript">
-  
-    $(".remove-from-cart").click(function (e) {
-        e.preventDefault();
-  
-        var ele = $(this);
-  
-        if(confirm("Are you sure want to remove?")) {
-            $.ajax({
-                url: '{{ route('remove.from.cart') }}',
-                method: "DELETE",
-                data: {
-                    _token: '{{ csrf_token() }}', 
-                    id: ele.parents("tr").attr("data-id")
-                },
-                success: function (response) {
-                    window.location.reload();
-                }
-            });
-        }
-    });
-  
-    </script>
 @endsection

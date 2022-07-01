@@ -14,7 +14,8 @@ class CreateKeranjangTable extends Migration
     public function up()
     {
         Schema::create('keranjang', function (Blueprint $table) {
-            $table->string('id');
+            $table->id();
+            $table->string('kd_order')->nullable();
             $table->string('nm_produk')->nullable();
             $table->string('gambar')->nullable();
             $table->decimal('jumlah')->nullable()->default(0.00);

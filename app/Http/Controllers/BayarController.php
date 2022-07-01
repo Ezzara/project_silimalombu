@@ -39,15 +39,12 @@ class BayarController extends Controller
     {
         //
         $request->validate ([
+            'id' => 'required',
             'nama' => 'required',
             'nominal' => 'required',
             'bukti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'telepon' => 'required'
         ]);
-
-        $cart = Session::get('cart');
-        
-        $request['id'] = $cart[1]['key'];
         $input = $request->all();
         if ($image = $request->file('bukti')) {
             $destinationPath = 'image/';

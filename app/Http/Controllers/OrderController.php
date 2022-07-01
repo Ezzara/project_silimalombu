@@ -46,7 +46,7 @@ class OrderController extends Controller
         $biaya = Biaya::latest()->paginate();
         return view('pembeli.order.create',compact('biaya'));
     }
-    public function buat($key)
+    public function buat( )
     {
         //
         return view('pembeli.order.create');
@@ -62,35 +62,27 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         //
-        
+        //dd($request);
         $request->validate([
             'username'=> 'required',
             'email'=> 'required',
-      
+            'id' => 'required',
             'nama_penerima'=> 'required',
-
             'alamat_lengkap'=> 'required',
             'kelurahan'=> 'required',
             'kecamatan'=> 'required',
             'kab_kota'=> 'required',
-            
-            //'kd_provinsi'=> 'required',
             'kd_pos'=> 'required',
             'telepon'=> 'required',
-            //'kd_promo'=> 'required',
-            //'catatan'=> 'required',
-            
+            'kd_promo'=> 'nullable',
+            'catatan'=> 'nullable',           
         ]);
-
-        $cart = Session::get('cart');
-        
-        $request['id'] = $cart[1]['key'];
         $request['status'] = 'belum';
         $input = $request->all();
         Order::create($input);
-        return redirect()->route('bayar.create')
-                ->with('success', 'Produk berhasil');
 
+        return redirect()->route('bayar.create')
+                ->with(['key' => $request['id']]);
     }
 
     public function verif()

@@ -64,7 +64,7 @@ class allseed extends Seeder
 
         DB::table('keranjang')->insert (
             [
-                'id'=>'100',
+                'kd_order' => '344n3242',
                 'nm_produk'=>'minyak',
                 'gambar'=>'oils.jpeg',
                 'jumlah'=>3,

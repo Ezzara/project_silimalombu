@@ -18,26 +18,23 @@
             </p>
             <form action="{{route('bayar.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="id" value=" {{ Session::get('key') }}">
                 <label for="">Nama Pengirim</label>
-                <input type="text" class="form-control" name="nama">
-
+                    <input type="text" class="form-control" name="nama">
                 <label for="">Telepon</label>
-                <input type="text" class="form-control" name="telepon">
-
+                    <input type="text" class="form-control" name="telepon">
                 <label for="">Nominal Transfer</label>
-                <input type="text" class="form-control" name="nominal">
-
+                    <input type="text" class="form-control" name="nominal">
                 <label for="">Tanggal Transaksi</label>
-                <input type="text" class="form-control">
-
+                    <input type="text" class="form-control">
                 <label class="mt-3" for="bukti">Upload Bukti Transfer</label>
-                <div>
-                    <input type="file" class="btn" name="bukti">
-                </div>
-                <div class="text-center mt-3">
-                    <input class="btn px-5 py-2 text-white" type="submit" id="" value="Kirim"
-                        style="background-color:#3E8412 ;">
-                </div>
+                    <div>
+                        <input type="file" class="btn" name="bukti">
+                    </div>
+                    <div class="text-center mt-3">
+                        <input class="btn px-5 py-2 text-white" type="submit" id="" value="Kirim"
+                            style="background-color:#3E8412 ;">
+                    </div>
             </form>
 
         </div>

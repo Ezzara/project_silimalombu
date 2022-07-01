@@ -23,7 +23,8 @@ class Keranjang extends Model
         'gambar',
         'jumlah',
         'harga_satuan',
-        'harga_total'
+        'harga_total',
+        'kd_order'
     ];
 
 }

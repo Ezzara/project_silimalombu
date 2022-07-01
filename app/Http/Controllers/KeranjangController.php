@@ -48,37 +48,24 @@ class KeranjangController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //$id = Produk::findOrFail();
-        //$cart = new Keranjang;
-       //$cart -> user_id = $request ->session ()->get('cart')[$id];
-        //$cart -> save;
-
-        //$cart = session()->get('cart', [])->key; //another way
         $cart = Session::get('cart');
-
-        //dd($cart[1]['key']);
-        //$cart = json_decode(session()->get('cart',[0]), true);
-        //$cart -> save;
-
-        $key = $cart[1]['key'];
-        
-        //$key = session()->get('cart',["key"]);
-        //foreach ($request->produk as $k => $p) {
+        foreach ($cart as $cart) 
+        {
+            /*
             $request->validate([
-                'id' => 'required',
+                'kd_order' => 'required',
                 'nm_produk' => 'required',
-                //'gambar' => $cart['image'],
                 'gambar' => 'required',
                 'jumlah' => 'required',
                 'harga_satuan' => 'required',
                 'harga_total' => 'required'
             ]);
-            $request['id'] = $key;
-            //$request['id'] = $key;
-        //}
-       // Keranjang::create($request->all());
-        return redirect()->route('order.create',$key);
+            Keranjang::create($request->all());
+            */
+        }
+
+        return redirect()->route('order.create')->with(['key' => $request['kd_order']]);
+        
     }
 
     /**
