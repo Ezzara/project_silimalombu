@@ -65,7 +65,7 @@ Route::post('/admin/delete/{id}', [UserController::class ,'delete'])
 
 Route::put('/profile/update',[UserProfileController::class,'update'])->name('profile.update');
 //Route::get('admin/penjualan', function () { return view('admin.laporan_penjualan.index');})->name('admin.penjualan');
-
+Route::get('admin/logout', function() { return view ('admin.logout');})->name('admin.logout');
 Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

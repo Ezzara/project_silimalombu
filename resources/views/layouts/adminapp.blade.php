@@ -129,14 +129,9 @@
                             <i class="fa-solid fa-right-from-bracket"></i>
                         </span>
 
-                        <a class="nav-link text-secondary lead" aria-current="page" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                        <a href= "{{ route('admin.logout') }}" class="nav-link text-secondary lead" aria-current="page">
                             Keluar
                         </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
                     </li>
 
                 </ul>

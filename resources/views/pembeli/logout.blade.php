@@ -18,11 +18,6 @@
                     Ya
                 </a>
                 <a href="{{ url()->previous() }}" class="btn px-5 mr-2 text-white" style="background-color: #3E8412 ;">Tidak</a>
-                {{-- <button href="{{ url()->previous() }}" class="btn px-5 mr-2 text-white" style="background-color: #3E8412 ;">Tidak</button>--}}
-                {{--<button class="btn px-5 ml-2 text-white" style="background-color: #3E8412 ;"> Ya</button>--}}
-            
-                
-
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
