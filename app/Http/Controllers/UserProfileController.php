@@ -37,7 +37,6 @@ class UserProfileController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['foto_profil'] = "$profileImage";
         }
-        //$request['is_admin'] = '0';
         $user = Auth::user();
         $user->uname = $request['uname'];
         $user->name = $request['nama'];

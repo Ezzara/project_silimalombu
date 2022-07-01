@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Keranjang;
 use App\Models\Produk;
 use Illuminate\Http\Request;
+use DB;
 //Controller
 use App\Http\Controllers\OrderController;
 use Session;
@@ -48,8 +49,9 @@ class KeranjangController extends Controller
      */
     public function store(Request $request)
     {
-        $cart = Session::get('cart');
-        foreach ($cart as $cart) 
+        $carts = Session::get('cart');
+        //dd($carts);
+        foreach ($carts as $cart) 
         {
             /*
             $request->validate([
@@ -62,6 +64,14 @@ class KeranjangController extends Controller
             ]);
             Keranjang::create($request->all());
             */
+            $keranjang = new Keranjang;
+            $keranjang -> kd_order = $request['kd_order'];
+            $keranjang -> nm_produk = $cart['name'];
+            $keranjang -> gambar = $cart['image'];
+            $keranjang -> jumlah = $cart['quantity'];
+            $keranjang -> harga_satuan = $cart['price'];
+            $keranjang -> harga_total = $cart['quantity'] * $cart['price'];
+            $keranjang -> save();
         }
 
         return redirect()->route('order.create')->with(['key' => $request['kd_order']]);
