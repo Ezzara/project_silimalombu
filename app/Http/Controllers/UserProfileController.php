@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
+use Hash;
 
 class UserProfileController extends Controller
 {
@@ -45,22 +46,30 @@ class UserProfileController extends Controller
         $user->alamat_lengkap = $request['alamat'];
         $user->foto_profil = $input['foto_profil'];
         $user->save();
-
-        //$user->update($input);
-        /*
-        auth()->user()->update([
-            'uname'=> $request->uname,
-            'nama' => $request->nama,
-            'telepon' => $request->telepon,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'tgl_lahir' => $request->tgl_lahir,
-            'alamat' => $request->alamat,
-        ]);
-        */
-
-
-        //dd(auth()->user());
-        //dd($request->alamat);
+ 
         return back();
+    }
+
+    public function changePassword(Request $request)
+    {       
+        $user = Auth::user();
+    
+        $userPassword = $user->password;
+        
+        $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|same:confirm_password|min:6',
+            'confirm_password' => 'required',
+        ]);
+
+        if (!Hash::check($request->current_password, $userPassword)) {
+            return back()->withErrors(['current_password'=>'password not match']);
+        }
+
+        $user->password = Hash::make($request->password);
+
+        $user->save();
+
+        return redirect()->route('admin.profile');
     }
 }

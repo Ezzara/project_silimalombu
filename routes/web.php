@@ -49,13 +49,17 @@ Route::get('/pembeli/notifikasi', [NotificationController::class, 'index'])->nam
 Route::get('/pembeli/tentang', [PembeliController::class, 'about'])->name('pembeli.about');
 Route::get('/pembeli/qa', [PembeliController::class, 'qa'])->name('pembeli.qa');
 Route::get('/user/profile', [UserProfileController::class, 'index'])->name('user.profile');
-
+Route::get('/pembeli/profile/ganti_password', function() { return view ('pembeli.ganti_pass');})->name('pembeli.profile.ganti');
+Route::post('/pembeli/profile/ganti_password_store',[UserProfileController::class,'changePassword'])->name('pembeli.profile.gantiPass');
 
 Route::get('logout', [PembeliController::class, 'logout'])->name('user.logout');
 
 Route::get('/admin/profile', [adminProfileController::class,'index'])->name('admin.profile');
 Route::get('/admin/profile/edit',[adminProfileController::class,'edit'])->name('admin.profile.edit');
 Route::put('/admin/profile/update',[adminProfileController::class,'update'])->name('admin.profile.update');
+Route::get('/admin/profile/ganti_password', function() { return view ('admin.profil.gantipass');})->name('admin.ganti');
+Route::post('/admin/profile/ganti_password_store',[adminProfileController::class,'changePassword'])->name('admin.profile.gantiPass');
+
 Route::put('/order/verif',[OrderController::class, 'verif'])->name('order.verif');
 
 Route::get('/admin/user_data', [UserController::class,'index'])->name('admin.userdata');

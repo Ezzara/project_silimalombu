@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
+use Hash;
 
 class adminProfileController extends Controller
 {
@@ -40,5 +41,28 @@ class adminProfileController extends Controller
         return redirect()->route('admin.profile');
     }
 
+    
+    
+    public function changePassword(Request $request)
+    {       
+        $user = Auth::user();
+    
+        $userPassword = $user->password;
+        
+        $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|same:confirm_password|min:6',
+            'confirm_password' => 'required',
+        ]);
 
+        if (!Hash::check($request->current_password, $userPassword)) {
+            return back()->withErrors(['current_password'=>'password not match']);
+        }
+
+        $user->password = Hash::make($request->password);
+
+        $user->save();
+
+        return redirect()->route('pembeli.profile');
+    }
 }

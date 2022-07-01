@@ -41,7 +41,7 @@
                 <div class="form-group row">
                     <div class="col-sm-2 col-form-label"></div>
                     <div class="col-sm-10">
-                        <a href="" class="text-secondary text-center ml-2"><u><b> Ganti Password</b></u></a>
+                        <a href="{{ route('pembeli.profile.ganti') }}" class="text-secondary text-center ml-2"><u><b> Ganti Password</b></u></a>
                     </div>
                 </div>
 

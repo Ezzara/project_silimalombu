@@ -30,7 +30,7 @@
                         </div>
                     </div>
 
-                    <a href="link ganti pass" class="text-secondary"> <u>Ganti Password</u> </a>
+                    <a href="{{ route('admin.ganti') }}" class="text-secondary"> <u>Ganti Password</u> </a>
 
                     <div class="mt-3 row">
                         <label for="email_admin" class="col-sm-2 col-form-label">Email :</label>

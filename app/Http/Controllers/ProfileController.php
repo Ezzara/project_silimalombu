@@ -17,6 +17,8 @@ class ProfileController extends Controller
         return view ('pembeli.profile');
     }
 
+    
+
     /**
      * Show the form for creating a new resource.
      *
