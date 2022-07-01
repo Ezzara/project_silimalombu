@@ -30,29 +30,12 @@
         </div>
         <div class="col-md-10">
             <div class="d-flex justify-content-around">
+                @foreach($kategori as $kategori)
                 <div class="d-flex flex-column">
-                    <a href="" class="text-center"><img class=" rounded " src="img/oils.jpeg" alt="" style="width:75% ;"></a>
-                    <h3 class="mx-auto">Oils</h3>
+                    <a href=" {{route('pembeli.produk')}}" class="text-center"><img class=" rounded " src="/image/{{$kategori->image}}" alt="" style="width:75% ;"></a>
+                    <h3 class="mx-auto"> {{ $kategori->nm_kategori }}</h3>
                 </div>
-                <div class="d-flex flex-column">
-                    <a href="" class="text-center"><img class=" rounded" src="img/buah.jpeg" alt="" style="width:75% ;"></a>
-                    <h3 class="mx-auto">Buah</h3>
-                </div>
-
-                <div class="d-flex flex-column">
-                    <a href="" class="text-center"><img class=" rounded" src="img/sayur.jpeg" alt="" style="width:75% ;"></a>
-                    <h3 class="mx-auto">Sayur</h3>
-                </div>
-
-                <div class="d-flex flex-column">
-                    <a href="" class="text-center"><img class=" rounded" src="img/makanan.jpeg" alt="" style="width:75% ;"></a>
-                    <h3 class="mx-auto">Makanan</h3>
-                </div>
-
-                <div class="d-flex flex-column">
-                    <a href="" class="text-center"><img class="rounded" src="img/lainnya.jpeg" alt="" style="width:75% ;"></a>
-                    <h3 class="mx-auto">Lainnya</h3>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="col-md-1">

@@ -31,23 +31,29 @@ class allseed extends Seeder
             [
                 [
                     'id' => '1',
-                    'nm_kategori' => 'Oils'
+                    'nm_kategori' => 'Oils',
+                    'image' => 'oils.jpeg'
                 ],
                 [
                     'id' => '2',
-                    'nm_kategori' => 'Buah'
+                    'nm_kategori' => 'Buah',
+                    'image' => 'buah.jpeg'
+
                 ],
                 [
                     'id' => '3',
-                    'nm_kategori' => 'sayur'
+                    'nm_kategori' => 'sayur',
+                    'image' => 'sayur.jpeg'
                 ],
                 [
                     'id' => '4',
-                    'nm_kategori' => 'makanan'
+                    'nm_kategori' => 'makanan',
+                    'image' => 'makanan.jpeg'
                 ],
                 [
                     'id' => '5',
-                    'nm_kategori' => 'lainya'
+                    'nm_kategori' => 'lainya',
+                    'image' => 'lainya.jpeg'
                 ],
             ]
         );
@@ -88,7 +94,7 @@ class allseed extends Seeder
                 'telepon'=>'0323232332',
                 'kd_promo'=>'3333',
                 'catatan'=>'tambahan',
-                'status'=>'sudah diverifikasi',
+                'status'=>'Belum di Verifikasi',
             ]
         );
 

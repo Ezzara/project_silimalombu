@@ -64,6 +64,7 @@ class OrderController extends Controller
         //
         //dd($request);
         $request->validate([
+            'user_id' => 'required',
             'username'=> 'required',
             'email'=> 'required',
             'id' => 'required',
@@ -77,7 +78,7 @@ class OrderController extends Controller
             'kd_promo'=> 'nullable',
             'catatan'=> 'nullable',           
         ]);
-        $request['status'] = 'belum';
+        $request['status'] = 'Belum di Verifikasi';
         $input = $request->all();
         Order::create($input);
 

@@ -12,11 +12,13 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <div class="text-center mt-5">
-                <a class="btn px-5 mr-2" style="background-color: #3E841" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();"
+                                                class="btn px-5 mr-2 text-white" style="background-color: #3E8412 ;">
                     Ya
                 </a>
-                <button class="btn px-5 mr-2 text-white" style="background-color: #3E8412 ;">Tidak</button>
+                <a href="{{ url()->previous() }}" class="btn px-5 mr-2 text-white" style="background-color: #3E8412 ;">Tidak</a>
+                {{-- <button href="{{ url()->previous() }}" class="btn px-5 mr-2 text-white" style="background-color: #3E8412 ;">Tidak</button>--}}
                 {{--<button class="btn px-5 ml-2 text-white" style="background-color: #3E8412 ;"> Ya</button>--}}
             
                 

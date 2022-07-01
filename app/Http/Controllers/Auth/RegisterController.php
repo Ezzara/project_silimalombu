@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8'],
             'telepon' => ['required'],
         ]);
-        return redirect()->route('welcome');
+        return redirect()->route('/');
     }
 
     /**

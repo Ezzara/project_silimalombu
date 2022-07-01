@@ -24,9 +24,13 @@
                             <input type="text" class="form-control" id="nama_kategori" name="nm_kategori">
                         </div>
                     </div>
+                    <div class="mt-3 row">
+                        <label for="gambar" class="col-sm-2">Gambar :</label>
+                        <div class="col-sm-2">
+                            <input type="file" class="btn" name="image" value="Pilih Gambar">
+                        </div>
+                    </div>
                     <br>
-
-
                     <input type="submit" class="btn pr-4 pl-4" style="background-color: #3E8412;color:white"
                         value="Simpan">
 

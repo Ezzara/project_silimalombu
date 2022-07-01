@@ -27,6 +27,7 @@
                     </div>
                 </div>
                 <input type="hidden" name="id" value=" {{ Session::get('key') }}">
+                <input type="hidden" name="user_id" value=" {{ Auth::user()->id }}">
                 <input type="email" class="form-control mt-3" placeholder="Email" name="email">
                 <input type="tel" class="form-control mt-3" placeholder="Telepon" name="telepon">
                 <input type="text" class="form-control mt-3" placeholder="Provinsi" name="kelurahan">
@@ -83,9 +84,13 @@
             <input class="form-control text-left" type="text" id="" placeholder="Tinggalkan pesan untuk penjual (Opsional)">
 
             <div class="text-right mt-3">
-                <p>Subtotal Produk Rp.{{$produk['price'] * $produk['quantity']}}</p>
+                @php ($subtotal = 0)
+                @foreach (session('cart') as $cart)
+                    @php ($subtotal += $cart['price'] * $cart['quantity'])
+                @endforeach
+                <p>Subtotal Produk Rp.{{$subtotal}}</p>
                 <p>Ongkos Kirim Rp.24.000</p>
-                <p>Total Pembayaran <b>{{$produk['price'] * $produk['quantity'] + 24000}}</b></p>
+                <p>Total Pembayaran <b>{{$subtotal + 24000}}</b></p>
             </div>
             <div class="rounded my-auto p-3" style="background-color: #DDFFC8 ;">
                 <h3>

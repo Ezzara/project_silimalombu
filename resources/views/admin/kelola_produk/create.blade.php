@@ -65,12 +65,9 @@
                         <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
                         <div class="col-sm-10">
                             <select class="form-control" name="kd_kategori">
-                                <option value="1">Oils</option>
-                                <option value="2">Buah</option>
-                                <option value="3">Sayur</option>
-                                <option value="4">Makanan</option>
-                                <option value="5">Lainnya</option>
-
+                                @foreach ($kategori as $kategori)
+                                <option value="{{ $kategori->id }}">{{ $kategori->nm_kategori }} </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

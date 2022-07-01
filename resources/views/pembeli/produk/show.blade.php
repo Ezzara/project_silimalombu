@@ -19,7 +19,7 @@
                     {{$produk->keterangan}}
                 </p>
             </div>
-            <p>Stock: <b>10</b></p>
+            <p>Stock: <b>{{$produk->jmlh_stok}}</b></p>
             <form action= "{{ route('add.to.cart', $produk->id) }}" method="GET" >
                 @csrf
                 <span>Masukkan Jumlah: </span><input type="number" style="width: 10%;" name='jumlah'>  

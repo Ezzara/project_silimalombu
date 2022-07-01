@@ -10,6 +10,8 @@ use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\adminProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BayarController;
+use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\UserProfileController;
 
 
@@ -27,12 +29,12 @@ use App\Http\Controllers\UserProfileController;
 //livewire
 //Route::get('/catalog', Catalog::class);
 
-Route::get('admin', [adminProfileController::class,'index']);
+Route::get('admin', [adminProfileController::class,'index'])->middleware('is_admin');
 Route::get('/pesanan', [OrderController::class, 'buat']);
+Route::get('admin/penjualan', [PenjualanController::class, 'index'])->name('admin.penjualan');
 
-
-Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk'])->name('pembeli.produk');
-
+//Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk'])->name('pembeli.produk');
+Route::get('/pembeli/produk', function () { return view('pembeli.produk.index');})->name('pembeli.produk');
 Route::get('/admin/detail', [OrderController::class, 'detail'])->name('admin.detail');
 
 Route::get('/', [PembeliController::class, 'welcome'])->name('welcome');
@@ -43,7 +45,7 @@ Route::get('add-to-cart/{id}', [PembeliController::class, 'addToCart'])->name('a
 Route::delete('remove-from-cart', [PembeliController::class, 'remove'])->name('remove.from.cart');
 Route::get('cart/remove', [KeranjangController::class, 'cart_remove'])->name('cart.remove');
 
-Route::get('/pembeli/notifikasi', [PembeliController::class, 'notif'])->name('pembeli.notif');
+Route::get('/pembeli/notifikasi', [NotificationController::class, 'index'])->name('pembeli.notif');
 Route::get('/pembeli/tentang', [PembeliController::class, 'about'])->name('pembeli.about');
 Route::get('/pembeli/qa', [PembeliController::class, 'qa'])->name('pembeli.qa');
 Route::get('/user/profile', [UserProfileController::class, 'index'])->name('user.profile');
@@ -62,14 +64,14 @@ Route::post('/admin/delete/{id}', [UserController::class ,'delete'])
     ->name('admin.user.delete');
 
 Route::put('/profile/update',[UserProfileController::class,'update'])->name('profile.update');
-Route::get('admin/penjualan', function () { return view('admin.laporan_penjualan.index');})->name('admin.penjualan');
+//Route::get('admin/penjualan', function () { return view('admin.laporan_penjualan.index');})->name('admin.penjualan');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::get('/', function () { return view('welcome');});
 
-Route::resource('produk',ProdukController::class);
+Route::resource('produk',ProdukController::class)->middleware('is_admin');
 Route::resource('kategori',KategoriController::class);
 Route::resource('order',OrderController::class);
 Route::resource('biaya',BiayaController::class);

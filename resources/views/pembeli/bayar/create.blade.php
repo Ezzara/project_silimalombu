@@ -26,7 +26,7 @@
                 <label for="">Nominal Transfer</label>
                     <input type="text" class="form-control" name="nominal">
                 <label for="">Tanggal Transaksi</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" placeholder="01-11-2000">
                 <label class="mt-3" for="bukti">Upload Bukti Transfer</label>
                     <div>
                         <input type="file" class="btn" name="bukti">

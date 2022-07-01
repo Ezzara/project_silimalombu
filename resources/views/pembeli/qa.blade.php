@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10 mt-5">
-            <h3>Q&A</h3>
+            <h3>FAQ</h3>
             <h4>Mengapa saya tidak bisa mendaftar dengan nomor handphone saya?</h4>
             <p>Ada beberapa kemungkinan alasan mengapa nomor handphone Anda mungkin sudah ditautkan ke akun website
                 penjualan Ecovillage SIlimalombu yang ada: <br>

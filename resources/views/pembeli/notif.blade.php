@@ -12,6 +12,13 @@
                         Tidak ada Notifikasi
                     </p>
                 </div>
+                @foreach ($order as $order)
+                <div class="rounded text-left mt-5" style="border: 1px solid">
+                    <p class=" mt-3 ml-5">
+                        pesanan nomor {{ $order->id}} {{ $order->status }}
+                    </p>
+                </div>
+                @endforeach
             </div>
         </div>
         <div class="col-md-2">

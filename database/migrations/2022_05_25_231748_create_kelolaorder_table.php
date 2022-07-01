@@ -15,6 +15,7 @@ class CreateKelolaorderTable extends Migration
     {
         Schema::create('kelola_order', function (Blueprint $table) {
             $table->string('id');
+            $table->string('user_id')->nullable();
             $table->string('username')->nullable();
             $table->string('email')->nullable();
             $table->string('nama_penerima')->nullable();

@@ -40,7 +40,8 @@ class ProdukController extends Controller
     public function create()
     {
         //
-        return view('admin.kelola_produk.create');
+        $kategori = Kategori::latest()->paginate();
+        return view('admin.kelola_produk.create',compact('kategori'));
     }
 
     /**
@@ -93,7 +94,8 @@ class ProdukController extends Controller
      */
     public function edit(Produk $produk)
     {
-        return view('admin.kelola_produk.edit', compact('produk'));
+        $kategori = Kategori::latest()->paginate();
+        return view('admin.kelola_produk.edit', compact('produk','kategori'));
     }
     
     public function update(Request $request, Produk $produk)

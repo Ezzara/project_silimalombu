@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class IsAdmin
+class is_admin
 {
     /**
      * Handle an incoming request.
@@ -20,6 +20,6 @@ class IsAdmin
             return $next($request);
         }
    
-        return redirect('home')->with('error',"You don't have admin access.");
+        return redirect('welcome')->with('error',"You don't have admin access.");
     }
 }

@@ -44,8 +44,17 @@ class KategoriController extends Controller
         $request->validate([
             'id' => 'required',
             'nm_kategori' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        Kategori::create($request->all());
+
+        $input = $request->all();
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+        Kategori::create($input);
 
         return redirect()->route('kategori.index')
             ->with('success','kategori telah ditambahkan');
@@ -86,8 +95,15 @@ class KategoriController extends Controller
         //
         $request->validate([
             'nm_kategori' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $input = $request->all();
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
         $kategori->update($input);
 
         return redirect()->route('kategori.index')

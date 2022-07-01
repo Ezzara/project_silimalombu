@@ -18,6 +18,7 @@ class Order extends Model
     ];
     protected $fillable = [
         'id',
+        'user_id',
         'username',
         'email',
         'nama_penerima',

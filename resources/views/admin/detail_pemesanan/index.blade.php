@@ -89,7 +89,7 @@
                                 {{ $order->catatan }}
                             </td>
                             <td>
-                                @if($order->status == "belum")
+                                @if($order->status == "Belum di Verifikasi")
                                     <form action="{{ route('order.update', $order->id) }}" method="post">
                                         @csrf
                                         @method('put')

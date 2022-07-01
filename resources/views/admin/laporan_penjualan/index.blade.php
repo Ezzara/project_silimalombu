@@ -34,18 +34,18 @@
                             <th>Alamat</th>
                             <th>Tanggal Transaksi</th>
                         </tr>
+                        @foreach ($data as $keranjang)
                         <tr>
-                            <td>
-                                <!--foreach data-->
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $keranjang->id }}</td>
+                            <td>{{ $keranjang->kd_order }}</td>
+                            <td>{{ $keranjang->username }}</td>
+                            <td>{{ $keranjang->nm_produk }}</td>
+                            <td>{{ $keranjang->jumlah }}</td>
+                            <td>{{ $keranjang->alamat_lengkap }}</td>
+                            <td>{{ $keranjang->alamat_lengkap }}</td>
 
                         </tr>
+                        @endforeach
                     </table>
                 </div>
 

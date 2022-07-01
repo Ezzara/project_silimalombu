@@ -9,9 +9,11 @@ use Illuminate\Http\Request;
 class PembeliController extends Controller
 {
     //
-
+    
+    /*
     public function daftarProduk(Request $request)
     {
+        
         $kategori = Kategori::latest()->paginate();
         if(is_null($request->filter)) {
             $produk = Produk::where([
@@ -30,6 +32,7 @@ class PembeliController extends Controller
         ->with ('i');
 
     }
+    */
     public function show($id)
     {
         $produk = Produk::findOrFail($id);
@@ -39,7 +42,8 @@ class PembeliController extends Controller
 
     public function welcome()
     {
-        return view('welcome');
+        $kategori = Kategori::latest()->paginate();
+        return view('welcome', compact('kategori'));
     }
 
     public function cart()
