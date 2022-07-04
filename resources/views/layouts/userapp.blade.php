@@ -81,7 +81,7 @@
             </ul>
             <div class="form-inline my-2 my-lg-0">
                 @if (!Auth::guest())
-                <a href="{{route('user.profile')}}"><img src="{{ asset('image/billie eilish.jpg') }}" alt="" style="width: 50px;" class="rounded-circle mr-2"></a>
+                <a href="{{route('user.profile')}}"><img src="{{ asset('image/'.Auth::user()->foto_profil) }}" alt="" style="width: 50px;" class="rounded-circle mr-2"></a>
                 @else
                 <a href="{{route('user.profile')}}"><i class="fas fa-user fa-2x text-white px-3"></i></a>
                 @endif

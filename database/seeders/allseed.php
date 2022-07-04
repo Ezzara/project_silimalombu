@@ -95,6 +95,7 @@ class allseed extends Seeder
                 'kd_promo'=>'3333',
                 'catatan'=>'tambahan',
                 'status'=>'Belum di Verifikasi',
+                
             ]
         );
 
@@ -122,7 +123,7 @@ class allseed extends Seeder
                     'password' => bcrypt('123456'),
                     'telepon' => '0211234567',
                     'alamat_lengkap' => 'Jalan nomor 39',
-                    'foto_profil' => 'fotoprofile.jpg',
+                    'foto_profil'=>'default_user.jpeg',
                     'jenis_kelamin' => 'laki-laki',
                     'tgl_lahir' => '10 - 03 - 2000'
                     
@@ -134,7 +135,7 @@ class allseed extends Seeder
                     'password' => bcrypt('123456'),
                     'telepon' => '0211234567',
                     'alamat_lengkap' => 'Jalan nomor 39',
-                    'foto_profil' => 'fotoprofile.jpg',
+                    'foto_profil'=>'default_user.jpeg',
                     'jenis_kelamin' => 'laki-laki',
                     'tgl_lahir' => '10 - 03 - 2000'
                 ]

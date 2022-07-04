@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
             'telepon' => ['required'],
+            
         ]);
         return redirect()->route('/');
     }
@@ -72,7 +73,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'telepon' => $data['telepon'],
-            'is_admin' => "0"
+            'is_admin' => "0",
+            'foto_profil' => "default_user.jpeg",
+            'tgl_lahir' => '30 - 01 - 2000',
         ]);
         
     }
