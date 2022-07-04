@@ -35,10 +35,19 @@
             <div class="row">
 
                 @foreach($product as $produk)
-                <div class="column">
-                    <a href="{{ route('pembeli.show',$produk->id) }}" class="text-center"><img class=" rounded " src="/image/{{$produk->gambar}}" alt="" style="width:205px; height:205px ;"></a>
-                    <p class="mx-auto font-weight-bold mt-2">{{$produk->nm_produk}}</p>
-                    <p class="mx-auto">Rp.{{$produk->harga}}</p>
+                <div class="column mb-5">
+                    <a href="{{ route('pembeli.show',$produk->id) }}" class="text-dark" style="text-decoration:none">
+                        <div class="card" style="width: 20rem;">
+                            <img class="card-img-top mx-auto" src="/image/{{$produk->gambar}}" alt="Card image cap" style="width:100%; height:270px ;">
+                            <div class=" card-body">
+                                <h3 class=""><b>Rp.{{$produk->harga}}</b></h3>
+                                <p class="card-text lead  mt-2 ">{{$produk->nm_produk}}</p>
+                                <p class="card-text text-secondary">{{$produk->keterangan}}</p>
+                            </div>
+                        </div>
+                        <!-- <img class=" rounded " src="/image/{{$produk->gambar}}" alt="" style="width:205px; height:205px ;"> -->
+                    </a>
+
                 </div>
                 @endforeach
             </div>

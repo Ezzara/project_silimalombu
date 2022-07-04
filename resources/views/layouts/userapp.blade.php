@@ -23,9 +23,6 @@
             background-color: #3E8412 !important;
         }
 
-        .card-body {
-            background-color: #C2FF9B !important;
-        }
 
         tr th {
             font-size: 12px;
