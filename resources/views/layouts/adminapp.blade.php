@@ -65,8 +65,8 @@
                 <ul class="nav d-block">
 
                     <li class="nav-link d-flex">
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="#">Dina
-                            Ismayanti</a>
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" 
+                                href="{{route('admin.profile')}}">{{ Auth::user()->name }}</a>
                     </li>
                     <hr>
 
