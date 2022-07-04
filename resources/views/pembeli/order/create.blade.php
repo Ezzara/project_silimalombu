@@ -90,7 +90,7 @@
                 @endforeach
                 <p>Subtotal Produk Rp.{{$subtotal}}</p>
                 <p>Ongkos Kirim Rp.24.000</p>
-                <p>Total Pembayaran <b>{{$subtotal + 24000}}</b></p>
+                <p>Total Pembayaran <b>Rp. {{$subtotal + 24000}}</b></p>
             </div>
             <div class="rounded my-auto p-3" style="background-color: #DDFFC8 ;">
                 <h3>
