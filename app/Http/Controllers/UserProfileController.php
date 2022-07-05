@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
 use Hash;
+use Image;
 
 class UserProfileController extends Controller
 {
@@ -35,9 +36,29 @@ class UserProfileController extends Controller
         if ($image = $request->file('foto_profil')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+
+            $img = Image::make($image->path());
+            $img->resize(100, 100, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($destinationPath.'/'.$profileImage);
+
             $image->move($destinationPath, $profileImage);
             $input['foto_profil'] = "$profileImage";
         }
+/*
+        $image = $request->file('image');
+        $input['imagename'] = time().'.'.$image->extension();
+     
+        $destinationPath = public_path('/thumbnail');
+        $img = Image::make($image->path());
+        $img->resize(100, 100, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destinationPath.'/'.$input['imagename']);
+   
+        $destinationPath = public_path('/images');
+        $image->move($destinationPath, $input['imagename']);
+*/
+
         $user = Auth::user();
         $user->uname = $request['uname'];
         $user->name = $request['nama'];
