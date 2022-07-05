@@ -37,7 +37,7 @@
                 @foreach($product as $produk)
                 <div class="column mb-5">
                     <a href="{{ route('pembeli.show',$produk->id) }}" class="text-dark" style="text-decoration:none">
-                        <div class="card" style="width: 20rem;">
+                        <div class="card shadow-sm" style="width: 20rem;">
                             <img class="card-img-top mx-auto" src="/image/{{$produk->gambar}}" alt="Card image cap" style="width:100%; height:270px ;">
                             <div class=" card-body">
                                 <h3 class=""><b>Rp.{{$produk->harga}}</b></h3>

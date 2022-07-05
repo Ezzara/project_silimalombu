@@ -53,7 +53,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <a class="navbar-brand text-black font-weight-bold ml-5" href="{{route('welcome')}}">Ecovillage <br> Silimalombu</a>
+        <a class="navbar-brand text-black font-weight-bold ml-5" href="{{route('welcome')}}"><img class="rounded-circle" src="image/logo.png" alt="" style="width:100px; height:100px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,7 +61,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item px-3">
-                    <a class="nav-link active" href="{{route('welcome')}}">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-white" href="{{route('welcome')}}">HOME</a>
                 </li>
                 <li class="nav-item px-3">
                     <a class="nav-link text-white" href="{{route('pembeli.produk')}}">PRODUK</a>
@@ -73,12 +73,12 @@
                     <a class="nav-link text-white" href="{{route('pembeli.about')}}">TENTANG</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link text-white" href="{{route('pembeli.qa')}}">Q&A</a>
+                    <a class="nav-link text-white" href="{{route('pembeli.qa')}}">FAQ</a>
                 </li>
             </ul>
             <div class="form-inline my-2 my-lg-0">
                 @if (!Auth::guest())
-                <a href="{{route('user.profile')}}"><img src="{{ asset('image/'.Auth::user()->foto_profil) }}" alt="" style="width: 50px;" class="rounded-circle mr-2"></a>
+                <a href="{{route('user.profile')}}"><img src="{{ asset('image/'.Auth::user()->foto_profil) }}" alt="" style="width: 50px;  height:50px;;" class="rounded-circle mr-2"></a>
                 @else
                 <a href="{{route('user.profile')}}"><i class="fas fa-user fa-2x text-white px-3"></i></a>
                 @endif
@@ -106,12 +106,12 @@
         </div>
     </nav>
     @yield('content')
-    
+
     @stack('script')
     @livewireScripts
 
-    <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Footer -->\
+    <footer class="text-center text-lg-start bg-dark text-white mt-5">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
@@ -135,11 +135,9 @@
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="" class="me-4 text-reset">
-                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-github"></i>
-                </a>
+
             </div>
             <!-- Right -->
         </section>
@@ -147,11 +145,11 @@
 
         <!-- Section: Links  -->
         <section class="">
-            <div class="container text-center text-md-start mt-5">
+            <div class="container text-left text-md-start mt-5">
                 <!-- Grid row -->
                 <div class="row mt-3">
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <div class="col-md-3 col-lg-2 col-xl-4 mx-auto mb-4">
                         <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4">
                             <i class="fas fa-gem me-3"></i>Ecovillage Silimalombu
@@ -163,13 +161,17 @@
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <div class="col-md-2 col-lg-2 col-xl-1 mx-auto mb-4">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
+
+                    </div>
+
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto text-center mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase text-center fw-bold mb-4">
                             Useful links
                         </h6>
                         <p>
@@ -186,6 +188,10 @@
                         </p>
                     </div>
                     <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+
+                    </div>
 
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -209,7 +215,7 @@
         <!-- Section: Links  -->
 
         <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2022 Copyright:
             <a class="text-reset fw-bold" href="https://www.laketoba.net/">Ecovillagesilimalombu.com</a>
         </div>
