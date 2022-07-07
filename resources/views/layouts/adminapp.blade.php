@@ -40,6 +40,10 @@
         .pilih_gambar {
             border: 1px;
         }
+
+        .active {
+            background-color: #C2FF9B !important;
+        }
     </style>
 </head>
 
@@ -62,22 +66,21 @@
     <div class="container-fluid">
         <div class="row no-gutters">
             <div class=" pt-3 pb-5 ml-5 pl-4" style="border-right: 1px solid gainsboro; height: max-content;">
-                <ul class="nav d-block">
+                <ul class="nav d-block nav-pills">
 
                     <li class="nav-link d-flex">
-                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" 
-                                href="{{route('admin.profile')}}">{{ Auth::user()->name }}</a>
+                        <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="{{route('admin.profile')}}">{{ Auth::user()->name }}</a>
                     </li>
                     <hr>
 
-                    <li class="nav-link d-flex">
+                    <li class="nav-link d-flex {{ (request()->is('admin/profile*')) ? 'active' : '' }}">
                         <span>
                             <i class="fas fa-user fa-2x text-secondary"></i>
                         </span>
                         <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="{{route('admin.profile')}}">Profil</a>
                     </li>
 
-                    <li class="nav-link d-flex">
+                    <li class="nav-link d-flex {{ (request()->is('produk*')) ? 'active' : '' }}">
                         <span>
                             <i class="fas fa-box fa-2x text-secondary"></i>
                         </span>
@@ -85,7 +88,7 @@
                             Produk</a>
                     </li>
 
-                    <li class="nav-link d-flex">
+                    <li class="nav-link d-flex {{ (request()->is('kategori*')) ? 'active' : '' }}">
                         <span>
                             <i class="fas fa-list fa-2x text-secondary"></i>
                         </span>
@@ -93,7 +96,7 @@
                             Produk</a>
                     </li>
 
-                    <li class="nav-link d-flex">
+                    <li class="nav-link d-flex {{ (request()->is('order')) ? 'active' : '' }} {{ (request()->is('admin/detail')) ? 'active' : '' }}">
                         <span>
                             <i class="fas fa-cart-arrow-down fa-2x text-secondary"></i>
                         </span>
@@ -101,7 +104,7 @@
                             Pemesanan</a>
                     </li>
 
-                    <li class="nav-link d-flex">
+                    <li class="nav-link d-flex {{ (request()->is('biaya*')) ? 'active' : '' }}">
                         <span>
                             <i class="fas fa-file-invoice-dollar fa-2x text-secondary"></i>
                         </span>
@@ -109,14 +112,14 @@
                             Pengiriman</a>
                     </li>
 
-                    <li class="nav-link d-flex">
+                    <li class="nav-link d-flex {{ (request()->is('admin/user_data')) ? 'active' : '' }}">
                         <span>
                             <i class="fas fa-users fa-2x text-secondary"></i>
                         </span>
                         <a class="nav-link text-dark font-weight-bold lead" aria-current="page" href="{{route('admin.userdata')}}">Data Pelanggan</a>
                     </li>
 
-                    <li class="nav-link d-flex">
+                    <li class="nav-link d-flex {{ (request()->is('admin/penjualan')) ? 'active' : '' }}">
                         <span>
                             <i class="fas fa-file-signature fa-2x text-secondary"></i>
                         </span>
@@ -129,7 +132,7 @@
                             <i class="fa-solid fa-right-from-bracket"></i>
                         </span>
 
-                        <a href= "{{ route('admin.logout') }}" class="nav-link text-secondary lead" aria-current="page">
+                        <a href="{{ route('admin.logout') }}" class="nav-link text-secondary font-weight-bold lead" aria-current="page">
                             Keluar
                         </a>
                     </li>

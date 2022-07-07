@@ -17,10 +17,10 @@
                 <li class="list-group-item">Filters</li>
                 <li class="list-group-item">
 
-                    <select class="form-select " size="6" aria-label="size 5 select example" wire:model="option">
+                    <select class="form-select " size="6" aria-label="size 10 select example" wire:model="option">
                         <option value="">Semua</option>
                         @foreach ($kategori as $kategori)
-                        <option value="{{ $kategori->id }}" name="filter">
+                        <option value="{{ $kategori->id }}" name="filter" class="pr-lg-5">
                             {{ $kategori->nm_kategori }}
                         </option>
                         @endforeach

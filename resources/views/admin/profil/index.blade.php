@@ -26,7 +26,7 @@
                     <div class=" row">
                         <label for="password_admin" class="col-sm-2 col-form-label">Password :</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password" readonly value="">
+                            <input type="password" class="form-control" id="password" readonly value="" placeholder="*******">
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@
                             <input type="text" class="form-control" id="status_admin" value="Aktif" readonly>
                         </div>
                     </div>
-
+                    <br>
                     <a href="{{route('admin.profile.edit')}}" type="submit" class="btn pr-4 pl-4" style="background-color: #3E8412;color:white">Edit</a>
 
                 </form>

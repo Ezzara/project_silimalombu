@@ -109,7 +109,7 @@
                     {{-- test
                 <button class="btn mt-4" onclick="document.getElementById('getFile').click()">Pilih Gambar</button>
                 <input type='file' id="getFile" style="display:none" name="foto_profil">--}}
-                    <input type="file" class="btn mt-4" name="foto_profil" value="">
+                    <input type="file" class="btn mt-4" name="foto_profil" value="Auth::user()->foto_profil">
                 </div>
                 <div class="text-secondary mt-3">
                     <p>Ukuran Gambar: maks 1 MB</p>

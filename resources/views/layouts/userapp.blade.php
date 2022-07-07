@@ -49,6 +49,10 @@
             clear: both;
             display: table;
         }
+
+        .active {
+            background-color: #1B4103 !important;
+        }
     </style>
 
 </head>
@@ -61,29 +65,29 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto nav-pills">
                 <li class="nav-item px-3">
-                    <a class="nav-link text-white" href="{{route('welcome')}}">HOME</a>
+                    <a class="nav-link text-white {{ (request()->is('/')) ? 'active' : '' }}" href="{{route('welcome')}}">HOME</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link text-white" href="{{route('pembeli.produk')}}">PRODUK</a>
+                    <a class="nav-link text-white {{ (request()->is('pembeli/produk*')) ? 'active' : '' }}" href="{{route('pembeli.produk')}}">PRODUK</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link text-white" href="{{route('pembeli.notif')}}">NOTIFIKASI</a>
+                    <a class="nav-link text-white {{ (request()->segment(2) == 'notifikasi') ? 'active' : '' }}" href="{{route('pembeli.notif')}}">NOTIFIKASI</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link text-white" href="{{route('pembeli.about')}}">TENTANG</a>
+                    <a class="nav-link text-white {{ (request()->is('pembeli/tentang')) ? 'active' : '' }}" href="{{route('pembeli.about')}}">TENTANG</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link text-white" href="{{route('pembeli.qa')}}">FAQ</a>
+                    <a class="nav-link text-white {{ (request()->is('pembeli/qa')) ? 'active' : '' }}" href="{{route('pembeli.qa')}}">FAQ</a>
                 </li>
 
             </ul>
             <div class="form-inline my-2 my-lg-0">
                 @if (!Auth::guest())
-                <div class="nav-item dropdown mr-5">
+                <div class="nav-item dropdown mr-5 pr-3">
                     <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('image/'.Auth::user()->foto_profil) }}" width="45" height="45" class="rounded-circle">
+                        <img src="{{ asset('image/'.Auth::user()->foto_profil) }}" width="40" height="40" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="{{route('user.profile')}}">Edit Profile</a></li>

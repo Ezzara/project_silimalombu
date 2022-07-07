@@ -10,16 +10,7 @@
             <blockquote class="blockquote mb-0">
 
                 <div class="row mt-3">
-                    <div class="col-md-6">
-                        <form action="" method="post">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Cari Produk" name="keyword">
-                                <div class="input-group-append">
-                                    <button class="btn btn-white bg-white" type="submit">Cari</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+
 
                 </div>
 
@@ -42,7 +33,8 @@
                             <td>{{ $data->nominal }}</td>
                             <td>{{ $data->created_at }}</td>
                             <td><img src="/image/{{ $data->bukti }}" width="100px"></td>
-                            <td><form action="{{ route('order.destroy', $data->id) }}" method="POST">
+                            <td>
+                                <form action="{{ route('order.destroy', $data->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" title="delete">Delete</button>

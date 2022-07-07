@@ -19,16 +19,7 @@
             <blockquote class="blockquote mb-0">
 
                 <div class="row mt-3">
-                    <div class="col-md-6">
-                        <form action="" method="post">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Cari Produk" name="keyword">
-                                <div class="input-group-append">
-                                    <button class="btn btn-white bg-white" type="submit">Cari</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+
 
                 </div>
 
@@ -36,7 +27,6 @@
                     <table class="table bg-light">
                         <tr>
                             <th>Username</th>
-                            <th>Password</th>
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Telepon</th>
@@ -49,20 +39,19 @@
                         @foreach ($user as $user)
                         <tr>
                             <td>{{ $user->uname }}</td>
-                            <td>{{ $user->pass }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->telepon }}</td>
                             <td>{{ $user->jenis_kelamin }}</td>
                             <td>{{ $user->tgl_lahir }}</td>
                             <td>{{ $user->alamat_lengkap }}</td>
-                            <td><img src="{{ asset('image/'.$user->foto_profil) }}"></td>
+                            <td><img src="{{ asset('image/'.$user->foto_profil) }}" style="width:100px"></td>
                             <td>
-                            <form action="{{ route('admin.user.delete', $user->id)}}" method="post">
+                                <form action="{{ route('admin.user.delete', $user->id)}}" method="post">
 
-                                @csrf
-                                <input class="btn btn-danger" type="submit" value="Delete" />
-                            </form>
+                                    @csrf
+                                    <input class="btn btn-danger" type="submit" value="Delete" />
+                                </form>
                             </td>
                         </tr>
                         @endforeach
