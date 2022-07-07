@@ -2,6 +2,15 @@
 @section ('content')
 
 <div class="col-lg-8 pl-5 pt-5 mt-2">
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
     <div class="card w-100">
         <div class="card-header text-white lead">
             Ganti Password Admin
