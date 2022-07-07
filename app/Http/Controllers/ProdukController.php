@@ -25,8 +25,11 @@ class ProdukController extends Controller
 
         $produk = Produk::latest()->paginate();
         $data = DB::table('produk')
-                    ->join('kategori', 'kategori.id', '=', 'produk.kd_kategori')
+                    ->leftJoin('kategori', 'kategori.id', '=' ,'produk.kd_kategori',)
+                    ->select('produk.*', 'kategori.nm_kategori')
+                    ->orderBy('produk.id','asc')
                     ->get();
+        //dd($data);
 
         return view('admin.kelola_produk.index', compact('produk'))
         ->with('i')->with('data', $data);
