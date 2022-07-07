@@ -1,6 +1,11 @@
 @extends ('layouts.adminapp')
 @section ('content')
 <div class="col-lg-8 pl-5 pt-5 mt-2">
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
     <p>Profil</p>
     <div class="card w-100">
         <div class="card-header text-white lead">

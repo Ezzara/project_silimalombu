@@ -63,6 +63,6 @@ class adminProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('admin.profile');
+        return redirect()->route('admin.profile')->with('message', 'Sukses ganti password');
     }
 }

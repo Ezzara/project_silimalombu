@@ -91,6 +91,6 @@ class UserProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('user.profile');
+        return redirect()->route('user.profile')->with('message', 'Sukses ganti password');
     }
 }
