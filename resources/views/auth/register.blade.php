@@ -1,6 +1,15 @@
 @extends('layouts.userlogin')
 
 @section('content')
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-4">
@@ -12,7 +21,7 @@
                 <h4 class="text-center mb-4">Ecovillage Silimalombu
                 </h4>
                 <p>Username</p>
-                <input class="form-control shadow-sm mb-2" type="text" id="username" name="username" value="">
+                <input class="form-control shadow-sm mb-2" type="text" id="username" name="uname" value="">
                 <p>Email</p>
                 <input class="form-control shadow-sm mb-2" type="email" id="email" name="email" value="">
                 <p>Password</p>
