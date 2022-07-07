@@ -32,7 +32,7 @@
             <div class="d-flex justify-content-around">
                 @foreach($kategori as $kategori)
                 <div class="d-flex flex-column">
-                    <a href=" {{route('pembeli.produk')}}" class="text-center"><img class=" rounded " src="/image/{{$kategori->image}}" alt="" style="width:75% ;"></a>
+                    <a href=" {{route('pembeli.produk')}}" class="text-center"><img class=" rounded " src="/image/{{$kategori->image}}" alt="" style="width:200px ; height:200px"></a>
                     <h3 class="mx-auto"> {{ $kategori->nm_kategori }}</h3>
                 </div>
                 @endforeach
