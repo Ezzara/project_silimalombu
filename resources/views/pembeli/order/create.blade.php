@@ -75,7 +75,7 @@
 
             <p class="mt-3">Pengiriman : JNE Reguler</p>
             <label class="mr-sm-2" for="inlineFormCustomSelect">Provinsi Tujuan :</label>
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name=kd_provinsi>
                 @foreach ($biaya as $biaya)
                 <option value="{{$biaya->id}}">{{$biaya->nm_provinsi}} (Rp.{{$biaya->biaya_kirim}})</option>
                 @endforeach

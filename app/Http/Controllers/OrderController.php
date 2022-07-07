@@ -76,7 +76,8 @@ class OrderController extends Controller
             'kd_pos'=> 'required',
             'telepon'=> 'required',
             'kd_promo'=> 'nullable',
-            'catatan'=> 'nullable',           
+            'catatan'=> 'nullable',   
+            'kd_provinsi'=>'required',   
         ]);
         $request['status'] = 'Belum di Verifikasi';
         $input = $request->all();
