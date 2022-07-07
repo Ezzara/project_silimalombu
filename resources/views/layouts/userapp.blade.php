@@ -73,9 +73,6 @@
                     <a class="nav-link text-white {{ (request()->is('pembeli/produk*')) ? 'active' : '' }}" href="{{route('pembeli.produk')}}">PRODUK</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link text-white {{ (request()->segment(2) == 'notifikasi') ? 'active' : '' }}" href="{{route('pembeli.notif')}}">NOTIFIKASI</a>
-                </li>
-                <li class="nav-item px-3">
                     <a class="nav-link text-white {{ (request()->is('pembeli/tentang')) ? 'active' : '' }}" href="{{route('pembeli.about')}}">TENTANG</a>
                 </li>
                 <li class="nav-item px-3">
@@ -92,6 +89,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="{{route('user.profile')}}">Edit Profile</a></li>
                         <li><a class="dropdown-item" href="{{route('cart')}}">Keranjang</a></li>
+                        <li><a class="dropdown-item" href="{{route('pembeli.notif')}}">Notifikasi</a></li>
                         <li><a class="dropdown-item" href="{{route('user.logout')}}">Logout</a></li>
                     </ul>
 
