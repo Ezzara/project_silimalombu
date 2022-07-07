@@ -133,7 +133,7 @@
                         </span>
 
                         <a href="{{ route('admin.logout') }}" class="nav-link text-secondary font-weight-bold lead" aria-current="page">
-                            Keluar
+                            Logout
                         </a>
                     </li>
 

@@ -13,13 +13,11 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-4">
-            <img class="w-25 mt-3" src="logo.jpeg" alt="">
         </div>
         <div class="col-lg-4 ">
-            <form class="mt-5 pt-3" method="POST" action="{{ route('register') }}">
+            <img class="mx-auto d-block" src="{{ asset('image/logo.png') }}" alt="" style="width: 35% ;">
+            <form class="" method="POST" action="{{ route('register') }}">
                 @csrf
-                <h4 class="text-center mb-4">Ecovillage Silimalombu
-                </h4>
                 <p>Username</p>
                 <input class="form-control shadow-sm mb-2" type="text" id="username" name="uname" value="">
                 <p>Email</p>
@@ -33,8 +31,7 @@
 
                 <br><br>
 
-                <input type="submit" class="btn mx-auto d-block pr-5 pl-5 pt-2 pb-2"
-                    style="background-color: #3E8412;color:white" value="Daftar">
+                <input type="submit" class="btn mx-auto d-block pr-5 pl-5 pt-2 pb-2" style="background-color: #3E8412;color:white" value="Daftar">
             </form>
         </div>
         <div class="col-lg-4"></div>

@@ -21,7 +21,7 @@
 
 <body>
     <nav>
-        <ul class="nav justify-content-center pt-5 pb-3 mb-5 shadow-sm">
+        <ul class="nav justify-content-center pt-5 pb-3 shadow-sm">
 
         </ul>
     </nav>
