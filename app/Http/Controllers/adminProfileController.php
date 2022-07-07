@@ -63,6 +63,6 @@ class adminProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('pembeli.profile');
+        return redirect()->route('admin.profile');
     }
 }

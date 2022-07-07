@@ -39,7 +39,7 @@
                     </div>
 
                     <input type="submit" class="btn pr-4 pl-4" style="background-color: #3E8412;color:white" value="Simpan">
-                    <a href="" class="btn pr-4 pl-4" style="background-color: #3E8412;color:white"> Batal</a>
+                    <a href="{{ url()->previous() }}" class="btn pr-4 pl-4" style="background-color: #3E8412;color:white"> Batal</a>
 
                 </form>
 
