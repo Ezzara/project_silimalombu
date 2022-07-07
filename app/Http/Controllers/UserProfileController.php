@@ -91,6 +91,6 @@ class UserProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('admin.profile');
+        return redirect()->route('user.profile');
     }
 }
