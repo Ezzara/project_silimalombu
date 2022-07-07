@@ -7,11 +7,10 @@
             <blockquote class="blockquote mb-0">
                 <div class="row pd-5">
                     <div class="col-md-3 p-5"></div>
-                    <div class="col-md-6 p-5 m-5text-center rounded" style="background-color: white;">
+                    <div class="col-md-6 p-5 m-5 text-center rounded" style="background-color: white;">
                         <p class=" p-5">Apakah anda yakin untuk keluar?</p>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();"
-                                                    class="btn px-5 mr-2 text-white" style="background-color: #3E8412 ;">
+                                                    document.getElementById('logout-form').submit();" class="btn px-5 mr-2 text-white" style="background-color: #3E8412 ;">
                             Ya
                         </a>
                         <a href="{{ url()->previous() }}" class="btn px-5 mr-2 text-white" style="background-color: #3E8412 ;">Tidak</a>

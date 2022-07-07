@@ -14,9 +14,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
     <style>
         nav {
-            background-color: #3E8412 !important;
+            background-color: #2E6D07 !important;
         }
 
         .card-header {
@@ -53,7 +55,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <a class="navbar-brand text-black font-weight-bold ml-5" href="{{route('welcome')}}"><img class="rounded-circle" src="image/logo.png" alt="" style="width:100px; height:100px;"></a>
+        <a class="navbar-brand text-black font-weight-bold ml-5" href="{{route('welcome')}}"><img class="rounded-circle" src="{{ asset('image/logo.png') }}" alt="" style="width:65px; height:65px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -75,15 +77,24 @@
                 <li class="nav-item px-3">
                     <a class="nav-link text-white" href="{{route('pembeli.qa')}}">FAQ</a>
                 </li>
+
             </ul>
             <div class="form-inline my-2 my-lg-0">
                 @if (!Auth::guest())
-                <a href="{{route('user.profile')}}"><img src="{{ asset('image/'.Auth::user()->foto_profil) }}" alt="" style="width: 50px;  height:50px;;" class="rounded-circle mr-2"></a>
-                @else
-                <a href="{{route('user.profile')}}"><i class="fas fa-user fa-2x text-white px-3"></i></a>
-                @endif
+                <div class="nav-item dropdown mr-5">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{ asset('image/'.Auth::user()->foto_profil) }}" width="45" height="45" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="{{route('user.profile')}}">Edit Profile</a></li>
+                        <li><a class="dropdown-item" href="{{route('cart')}}">Keranjang</a></li>
+                        <li><a class="dropdown-item" href="{{route('user.logout')}}">Logout</a></li>
+                    </ul>
 
-                <a href="{{route('cart')}}"> <i class="fas fa-cart-arrow-down fa-2x text-white px-3"></i></a>
+                </div>
+
+                @else
+                @endif
 
                 @if (!Auth::guest())
                 {{--
@@ -96,7 +107,6 @@
                     @csrf
                 </form>
                 --}}
-                <a href="{{route('user.logout')}}" class="nav-link text-white lead px-3"> Log Out </a>
                 @else
                 <a href="{{route('login')}}" class="nav-link text-white lead px-3">Login</a>
 
@@ -151,7 +161,7 @@
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-2 col-xl-4 mx-auto mb-4">
                         <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4 text-center">
                             <i class="fas fa-gem me-3"></i>Ecovillage Silimalombu
                         </h6>
                         <p>
@@ -196,15 +206,27 @@
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4 text-center">
                             Contact
                         </h6>
-                        <p><i class="fas fa-home me-3"></i> Silimalombu, Kecamatan Onan Runggu, Kapupaten Samosir, Sumatera Utara, Indonesia, Kodepos 22094.</p>
-                        <p>
-                            <i class="fas fa-envelope me-3"></i>
-                            r(at)laketoba.net
-                        </p>
-                        <p><i class="fas fa-phone me-3"></i> + 62 812 6085 8209</p>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <i class="fas fa-home me-3"></i>
+                            </div>
+                            <div class="col-sm">
+                                <p>Silimalombu, Kecamatan Onan Runggu, Kapupaten Samosir, Sumatera Utara, Indonesia, Kodepos 22094.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <i class="fas fa-envelope me-3"></i>
+                            </div>
+                            <div class="col-sm">
+                                <p>r(at)laketoba.net</p>
+                            </div>
+                        </div>
+
+                        <p><i class="fas fa-phone me-3"></i> &nbsp; &nbsp;+ 62 812 6085 8209</p>
 
                     </div>
                     <!-- Grid column -->

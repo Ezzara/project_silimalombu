@@ -27,5 +27,26 @@
         </div>
         <div class="col-md-1"></div>
     </div>
+    <div class="row">
+        <div class="col-md-12 mb-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mb-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mb-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mb-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mb-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mb-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mb-5"></div>
+    </div>
 </div>
 @endsection

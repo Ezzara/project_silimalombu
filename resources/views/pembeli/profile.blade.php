@@ -55,7 +55,7 @@
                 <div class="form-group row">
                     <label for="colEmail" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="colEmail" value="{{ Auth::user()->email }}" name="email">
+                        <input type="email" class="form-control" id="colEmail" value="{{ Auth::user()->email }}" name="email" readonly>
                     </div>
                 </div>
 
