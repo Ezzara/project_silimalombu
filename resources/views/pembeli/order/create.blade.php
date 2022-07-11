@@ -25,15 +25,15 @@
                 @csrf
                 <div class="form-row mt-5">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_penerima">
+                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_penerima" value="{{ Auth::user()->name }}" disabled>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Username" name="username">
+                        <input type="text" class="form-control" placeholder="Username" name="username" value="{{ Auth::user()->uname }}" disabled>
                     </div>
                 </div>
                 <input type="hidden" name="id" value=" {{ Session::get('key') }}">
                 <input type="hidden" name="user_id" value=" {{ Auth::user()->id }}">
-                <input type="email" class="form-control mt-3" placeholder="Email" name="email">
+                <input type="email" class="form-control mt-3" placeholder="Email" name="email" value="{{ Auth::user()->email }}" disabled>
                 <input type="tel" class="form-control mt-3" placeholder="Telepon" name="telepon">
                 <input type="text" class="form-control mt-3" placeholder="Provinsi" name="kelurahan">
                 <input type="text" class="form-control mt-3" placeholder="Kabupaten/Kota" name="kab_kota">
