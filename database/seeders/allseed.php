@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use Carbon\Carbon;
 
 class allseed extends Seeder
 {
@@ -23,6 +24,7 @@ class allseed extends Seeder
                 'kd_kategori' => (string) $i,
                 'gambar' => '20220619135205.jpg',
                 'keterangan'=> 'minyak',
+                'berat'=> 100,
                 'jmlh_stok'=> 100,
                 'harga'=> 100,
             ]);
@@ -63,6 +65,7 @@ class allseed extends Seeder
                 'id'=>'100',
                 'nama'=>'sam',
                 'nominal'=>'34000',
+                'tgl_transaksi'=> Carbon::parse('2000-01-01'),
                 'bukti'=>'bukti.jpg',
                 'telepon'=>'0211234323'
             ]
@@ -76,12 +79,13 @@ class allseed extends Seeder
                 'jumlah'=>3,
                 'harga_satuan'=>10000,
                 'harga_total'=>30000,
+                'berat_total' =>600,
             ]
         );
 
         DB::table('kelola_order')->insert (
             [
-                'id'=>'100',
+                'id' => uniqid(),
                 'username'=>'nama',
                 'email'=>'user@online',
                 'nama_penerima'=>'dina',
@@ -94,6 +98,7 @@ class allseed extends Seeder
                 'telepon'=>'0323232332',
                 'kd_promo'=>'3333',
                 'catatan'=>'tambahan',
+                
                 'status'=>'Belum di Verifikasi',
                 
             ]
@@ -103,13 +108,23 @@ class allseed extends Seeder
             [
                 [
                     'id' => '1',
-                    'nm_provinsi'=>'jakarta',
-                    'biaya_kirim'=>24000,
+                    'nm_provinsi'=>'Sumatra',
+                    'biaya_kirim'=>10000,
                 ],
                 [
                     'id' => '2',
-                    'nm_provinsi'=>'jawa barat',
+                    'nm_provinsi'=>'Jakarta',
                     'biaya_kirim'=>24000,
+                ],
+                [
+                    'id' => '3',
+                    'nm_provinsi'=>'Kalimantan',
+                    'biaya_kirim'=>18000,
+                ],
+                [
+                    'id' => '4',
+                    'nm_provinsi'=>'Sulawesi',
+                    'biaya_kirim'=>35000,
                 ]
             ]
         );
@@ -118,6 +133,7 @@ class allseed extends Seeder
             [
                 [
                     'name' => 'Admin',
+                    'uname' => 'admin',
                     'email' => 'admin@online',
                     'is_admin' => '1',
                     'password' => bcrypt('123456'),
@@ -125,11 +141,12 @@ class allseed extends Seeder
                     'alamat_lengkap' => 'Jalan nomor 39',
                     'foto_profil'=>'default_user.jpeg',
                     'jenis_kelamin' => 'laki-laki',
-                    'tgl_lahir' => '10 - 03 - 2000'
+                    'tgl_lahir' => Carbon::parse('2000-01-01'),
                     
                 ],
                 [
                     'name' => 'user',
+                    'uname' => 'User',
                     'email' => 'user@online',
                     'is_admin' => '0',
                     'password' => bcrypt('123456'),
@@ -137,7 +154,7 @@ class allseed extends Seeder
                     'alamat_lengkap' => 'Jalan nomor 39',
                     'foto_profil'=>'default_user.jpeg',
                     'jenis_kelamin' => 'laki-laki',
-                    'tgl_lahir' => '10 - 03 - 2000'
+                    'tgl_lahir' => Carbon::parse('2000-01-01'),
                 ]
             ]
         );

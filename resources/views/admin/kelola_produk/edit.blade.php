@@ -31,7 +31,12 @@
                             <input type="text" class="form-control" name="harga" value="{{$produk->harga}}">
                         </div>
                     </div>
-
+                    <div class=" row">
+                        <label for="harga_produk" class="col-sm-2 col-form-label">Harga Produk :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="berat" value="{{$produk->berat}}">
+                        </div>
+                    </div>
                     <div class="mt-3 row">
                         <label for="jumlah_stok" class="col-sm-2 col-form-label">Jumlah Stok :</label>
                         <div class="col-sm-10">

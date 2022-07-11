@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\keranjang;
 use DB;
+use Carbon\Carbon;
 
 class PenjualanController extends Controller
 {
@@ -19,8 +20,12 @@ class PenjualanController extends Controller
         $data = DB::table('keranjang')
                     ->join('kelola_order', 'kelola_order.id', '=', 'keranjang.kd_order')
                     ->join('bayar', 'bayar.id', '=', 'keranjang.kd_order')
+                    ->select(   'keranjang.*', 
+                                'kelola_order.username',
+                                'kelola_order.alamat_lengkap',
+                                'bayar.tgl_transaksi')
                     ->get();
-       // dd($data);
+        //dd($data);
         return view('admin.laporan_penjualan.index', compact('keranjang'))
         ->with('i')->with('data', $data);
     }

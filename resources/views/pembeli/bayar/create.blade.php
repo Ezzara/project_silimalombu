@@ -18,6 +18,8 @@
             </p>
             <form action="{{route('bayar.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
+                <label for="">Biaya Total = Rp. {{ Session::get('biaya_total') }}</label>
+                </br>
                 <input type="hidden" name="id" value=" {{ Session::get('key') }}">
                 <label for="">Nama Pengirim</label>
                     <input type="text" class="form-control" name="nama">
@@ -26,7 +28,7 @@
                 <label for="">Nominal Transfer</label>
                     <input type="text" class="form-control" name="nominal">
                 <label for="">Tanggal Transaksi</label>
-                    <input type="text" class="form-control" placeholder="01-11-2000">
+                    <input type="date" class="form-control" name="tgl_transaksi">
                 <label class="mt-3" for="bukti">Upload Bukti Transfer</label>
                     <div>
                         <input type="file" class="btn" name="bukti">

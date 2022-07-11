@@ -18,6 +18,7 @@ class Produk extends Model
     protected $casts = [
         'jmlh_stok' => 'float',
         'harga' => 'float',
+        'berat' => 'float',
     ];
     protected $fillable = [
         'id',
@@ -26,7 +27,8 @@ class Produk extends Model
         'gambar',
         'keterangan',
         'jmlh_stok',
-        'harga'
+        'harga',
+        'berat'
 
     ];
 

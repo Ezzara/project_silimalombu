@@ -19,6 +19,7 @@ class CreateBayarTable extends Migration
             $table->string('nominal');
             $table->string('bukti');
             $table->string('telepon');
+            $table->date('tgl_transaksi');
             $table->timestamps();
         });
     }

@@ -62,9 +62,13 @@ class OrderController extends Controller
         foreach ($carts as $cart){
             $kd_kategori = Produk::where ('id', '=', $cart['id_produk'])->first();
             $nm_kategori = Kategori::where ('id', '=', $kd_kategori->kd_kategori)->first();
+            $nm_provinsi = Biaya::where ('id', '=', $request->kd_provinsi)->first();
             //dd($nm_kategori);
-            if($nm_kategori->nm_kategori == 'Buah' AND $request->kd_provinsi == '1')
-                return back()->with('message','barang tidak dapat dikirim ke provinsi tersebut'); 
+            if( ($nm_kategori->nm_kategori == 'Buah' OR $nm_kategori->nm_kategori == 'Sayur')
+                AND $nm_provinsi->nm_provinsi != 'Sumatra')
+                return back()
+                        ->with('message','Buah/Sayur tidak dapat dikirim ke luar provinsi Sumatra')
+                        ->with('key',$request->id); 
         }
         $request->validate([
             'user_id' => 'required',
@@ -85,9 +89,9 @@ class OrderController extends Controller
         $request['status'] = 'Belum di Verifikasi';
         $input = $request->all();
         Order::create($input);
-
         return redirect()->route('bayar.create')
-                ->with(['key' => $request['id']]);
+                ->with(['key' => $request['id']])
+                ->with('biaya_total', $request->biaya_total);
     }
 
     public function verif()

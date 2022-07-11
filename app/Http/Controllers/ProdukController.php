@@ -55,6 +55,7 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'id' => 'required',
             'nm_produk' => 'required',
@@ -62,7 +63,8 @@ class ProdukController extends Controller
             'jmlh_stok' => 'required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'keterangan' => 'required',
-            'kd_kategori' => 'required'
+            'kd_kategori' => 'required',
+            'berat' => 'required',
         ]);
         $input = $request->all();
         if ($image = $request->file('gambar')) {
@@ -71,6 +73,7 @@ class ProdukController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
         }
+        //dd($input);
         Produk::create($input);
 
         return redirect()->route('produk.index')
@@ -110,6 +113,7 @@ class ProdukController extends Controller
             'kd_kategori' => 'required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'keterangan' => 'required',
+            'berat' => 'required'
         ]);
         $input = $request->all();
         if ($image = $request->file('gambar')) {

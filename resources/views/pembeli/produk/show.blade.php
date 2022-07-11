@@ -10,6 +10,7 @@
         </div>
         <div class="col-md-3 text-left ml-5">
             <h4><u>{{ $produk->nm_produk}}</u></h4>
+            <p>Berat {{ $produk->berat}} g</p>
             <p>Rp. {{ $produk->harga}}</p>
             <div class="rounded" style="background-color: #DDFFC8 ; width: 75%">
                 <p>

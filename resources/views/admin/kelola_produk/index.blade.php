@@ -26,6 +26,7 @@
                             <th>Nama Produk</th>
                             <th>Kategori</th>
                             <th>Stok</th>
+                            <th>Berat (gram)</th>
                             <th>Harga (Rp)</th>
                             <th>Gambar</th>
                             <th>Keterangan</th>
@@ -39,6 +40,7 @@
                             <td>{{ $produks->nm_produk }}</td>
                             <td>{{ $produks->nm_kategori }}</td>
                             <td>{{ $produks->jmlh_stok }}</td>
+                            <td>{{ $produks->berat }}</td>
                             <td>{{ $produks->harga }}</td>
                             <td><img src="/image/{{ $produks->gambar }}" width="100px"></td>
                             <td>{{ $produks->keterangan }}</td>

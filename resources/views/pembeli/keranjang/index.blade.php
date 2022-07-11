@@ -13,8 +13,10 @@
                         <th></th>
                         <th>Produk</th>
                         <th>Harga Satuan</th>
+                        <th>Berat</th>
                         <th>Jumlah</th>
                         <th>Harga Total</th>
+                        <th>Berat Total</th>
                         <th>Aksi</th>
                     </tr>
                     @if(session('cart'))
@@ -25,8 +27,10 @@
                         {{--<td>ini{{session()->get('cart')['quantity']}}</td>--}}
                         <td>{{$produk['name']}}</td>
                         <td>Rp.{{$produk['price']}}</td>
+                        <td>{{$produk['weight']}} g</td>
                         <td>{{$produk['quantity']}}</td>
                         <td>Rp.{{$produk['price'] * $produk['quantity']}}</td>
+                        <td>{{$produk['weight'] * $produk['quantity']}} g</td>
                         <td>
                             <a href="{{route('cart.remove')}}" class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
                         </td>
@@ -45,6 +49,7 @@
                 <input type="hidden" name="jumlah" value="{{$produk['quantity']}}">
                 <input type="hidden" name="harga_satuan" value="{{$produk['price']}}">
                 <input type="hidden" name="harga_total" value="{{$produk['price'] * $produk['quantity']}}">
+                <input type="hidden" name="berat_total" value="{{$produk['weight'] * $produk['quantity']}}">
                 <input type="hidden" name="gambar" value="{{$produk['image']}}">
                 <input type="submit" class="btn btn-success mr-3 float-right" value="Bayar">
             </form>

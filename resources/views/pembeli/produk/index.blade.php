@@ -1,7 +1,7 @@
 @extends ('layouts.userapp')
 
 @push('script')
-@livewireScripts
+    @livewireScripts
 @endpush
 
 @section ('content')

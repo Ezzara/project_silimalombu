@@ -1,4 +1,9 @@
 @extends ('layouts.userApp')
+
+@push('scripts')
+    @livewireScripts
+@endpush
+
 @section ('content')
 @if ($errors->any())
 <div class="alert alert-danger">
@@ -25,15 +30,15 @@
                 @csrf
                 <div class="form-row mt-5">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_penerima" value="{{ Auth::user()->name }}" disabled>
+                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_penerima" value="{{ Auth::user()->name }}" readonly>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Username" name="username" value="{{ Auth::user()->uname }}" disabled>
+                        <input type="text" class="form-control" name="username" value="{{ Auth::user()->uname }}" readonly>
                     </div>
                 </div>
                 <input type="hidden" name="id" value=" {{ Session::get('key') }}">
                 <input type="hidden" name="user_id" value=" {{ Auth::user()->id }}">
-                <input type="email" class="form-control mt-3" placeholder="Email" name="email" value="{{ Auth::user()->email }}" disabled>
+                <input type="email" class="form-control mt-3" placeholder="Email" name="email" value="{{ Auth::user()->email }}" readonly>
                 <input type="tel" class="form-control mt-3" placeholder="Telepon" name="telepon">
                 <input type="text" class="form-control mt-3" placeholder="Provinsi" name="kelurahan">
                 <input type="text" class="form-control mt-3" placeholder="Kabupaten/Kota" name="kab_kota">
@@ -63,6 +68,9 @@
                     <td>Jumlah</td>
                     <td>Subtotal Produk</td>
                 </tr>
+
+                
+
                 @foreach (session('cart') as $id => $produk)
                 <tr class="font-weight-bold">
                     <td>{{$produk['name']}}</td>
@@ -78,15 +86,19 @@
                 <input class="col-sm-9 ml-3 form-control text-left" type="text" id="" placeholder="Kode Promo"> <button class="btn text-white col-sm-2" style="background-color:#3E8412 ;">Pakai</button>
             </div>
 
-            <p class="mt-3">Pengiriman : JNE Reguler</p>
-            <label class="mr-sm-2" for="inlineFormCustomSelect">Provinsi Tujuan :</label>
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name=kd_provinsi>
-                @foreach ($biaya as $biaya)
-                <option value="{{$biaya->id}}">{{$biaya->nm_provinsi}} (Rp.{{$biaya->biaya_kirim}})</option>
-                @endforeach
-            </select>
             <label class="mt-3">Catatan :</label>
             <input class="form-control text-left" type="text" id="" placeholder="Tinggalkan pesan untuk penjual (Opsional)">
+            
+            @livewire('jumlah-biaya')
+            {{--dalam livewire
+
+            <p class="mt-3">Pengiriman : JNE Reguler</p>
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Provinsi Tujuan :</label>
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name=kd_provinsi>
+                    @foreach ($biaya as $biaya)
+                    <option value="{{$biaya->id}}">{{$biaya->nm_provinsi}} (Rp.{{$biaya->biaya_kirim}})</option>
+                    @endforeach
+                </select>
 
             <div class="text-right mt-3">
                 @php ($subtotal = 0)
@@ -97,6 +109,7 @@
                 <p>Ongkos Kirim Rp.24.000</p>
                 <p>Total Pembayaran <b>Rp. {{$subtotal + 24000}}</b></p>
             </div>
+             --}}
             <div class="rounded my-auto p-3" style="background-color: #DDFFC8 ;">
                 <h3>
                     Transfer Pembayaran

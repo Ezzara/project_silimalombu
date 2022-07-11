@@ -64,6 +64,7 @@ class KeranjangController extends Controller
             $keranjang -> gambar = $cart['image'];
             $keranjang -> jumlah = $cart['quantity'];
             $keranjang -> harga_satuan = $cart['price'];
+            $keranjang -> berat_total = $cart['quantity'] * $cart['weight'];
             $keranjang -> harga_total = $cart['quantity'] * $cart['price'];
             $keranjang -> save();
         }

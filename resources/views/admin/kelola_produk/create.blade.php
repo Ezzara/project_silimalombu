@@ -1,20 +1,20 @@
 @extends('layouts.adminapp')
 @section('content')
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Kelola Produk/Tambah Data</p>
     <div class="card w-100">
         <div class="card-header text-white lead">
             Masukkan Data
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="card-body">
             <blockquote class="blockquote mb-0">
                 <form action="{{ route('produk.store') }}" method="post" enctype="multipart/form-data">
@@ -33,13 +33,18 @@
                         </div>
                     </div>
 
-                    <div class=" row">
+                    <div class="mt-3 row">
                         <label for="harga_produk" class="col-sm-2 col-form-label">Harga Produk :</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="harga">
+                            <input type="number" class="form-control" name="harga">
                         </div>
                     </div>
-
+                    <div class="mt-3 row">
+                        <label for="harga_produk" class="col-sm-2 col-form-label">Berat Satuan :</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="berat">
+                        </div>
+                    </div>
                     <div class="mt-3 row">
                         <label for="jumlah_stok" class="col-sm-2 col-form-label">Jumlah Stok :</label>
                         <div class="col-sm-10">

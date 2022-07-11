@@ -1,4 +1,9 @@
 @extends ('layouts.adminapp')
+
+@push('script')
+    @livewireScripts
+@endpush
+
 @section ('content')
 <div class="col-lg-8 pl-5 pt-5 mt-2">
     <p>Laporan Penjualan</p>
@@ -12,7 +17,8 @@
                 <div class="row mt-3">
 
                 </div>
-
+               @livewire('penjualan-table')
+{{-- livewire --}}
                 <div class="row mt-3 ">
                     <table class="table bg-light">
                         <tr>
@@ -32,16 +38,12 @@
                             <td>{{ $keranjang->nm_produk }}</td>
                             <td>{{ $keranjang->jumlah }}</td>
                             <td>{{ $keranjang->alamat_lengkap }}</td>
-                            <td>{{ $keranjang->alamat_lengkap }}</td>
-
+                            <td>{{ \Carbon\Carbon::parse($keranjang->tgl_transaksi)->format('d/m/Y') }}</td>
                         </tr>
                         @endforeach
                     </table>
                 </div>
-
-
-
-
+{{-- --}}
             </blockquote>
         </div>
     </div>

@@ -15,7 +15,8 @@ class Keranjang extends Model
     protected $casts = [
         'jumlah',
         'harga_satuan',
-        'harga_total'
+        'harga_total',
+        'berat_total'
     ];
     protected $fillable = [
         'id',
@@ -24,7 +25,8 @@ class Keranjang extends Model
         'jumlah',
         'harga_satuan',
         'harga_total',
-        'kd_order'
+        'kd_order',
+        'berat_total'
     ];
 
 }

@@ -38,12 +38,14 @@ class BayarController extends Controller
     public function store(Request $request)
     {
         //
+      
         $request->validate ([
             'id' => 'required',
             'nama' => 'required',
             'nominal' => 'required',
             'bukti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'telepon' => 'required'
+            'telepon' => 'required',
+            'tgl_transaksi' => 'required',
         ]);
         $input = $request->all();
         if ($image = $request->file('bukti')) {
@@ -52,6 +54,7 @@ class BayarController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['bukti'] = "$profileImage";
         }
+        //dd($input);
         Bayar::create($input);
 
         sleep(1);

@@ -21,6 +21,7 @@ class CreateKeranjangTable extends Migration
             $table->decimal('jumlah')->nullable()->default(0.00);
             $table->decimal('harga_satuan')->nullable()->default(0.00);
             $table->decimal('harga_total')->nullable()->default(0.00);
+            $table->decimal('berat_total')->nullable()->default(0.00);
             $table->timestamps();
         });
     }

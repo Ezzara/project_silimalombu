@@ -21,6 +21,7 @@ class CreateProdukTable extends Migration
             $table->string('keterangan')->nullable();
             $table->decimal('jmlh_stok')->nullable()->default(0.00);
             $table->decimal('harga')->nullable()->default(0.00);
+            $table->decimal('berat')->nullable()->default(0.00);
             $table->timestamps();
         });
     }

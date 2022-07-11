@@ -20,6 +20,7 @@ class Bayar extends Model
         'nama',
         'nominal',
         'bukti',
-        'telepon'
+        'telepon',
+        'tgl_transaksi',
     ];
 }
