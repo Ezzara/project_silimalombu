@@ -37,21 +37,18 @@ class PembeliController extends Controller
         elseif($request->jumlah < 0)
 
             return back()->with('message','Input stok salah');
-            
+
         $request->validate ([
             'jumlah' => 'required',
         ]);
         $cart = session()->get('cart', []);
-        $key = uniqid();
-            $cart[$id] = [
-                "id" => '1',
-                "name" => $produk->nm_produk,
-                "quantity" => $request->jumlah,
-                "price" => $produk->harga,
-                "image" => $produk->gambar,
-                "key" => $key,
-                "id_produk" => $produk->id,
-            ];  
+        $cart[$id] = [
+            "name" => $produk->nm_produk,
+            "quantity" => $request->jumlah,
+            "price" => $produk->harga,
+            "image" => $produk->gambar,
+            "id_produk" => $produk->id,
+        ];  
         session()->put('cart', $cart);
         
         return redirect()->route('cart');

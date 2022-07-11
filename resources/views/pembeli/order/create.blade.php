@@ -9,6 +9,11 @@
     </ul>
 </div>
 @endif
+@if(session()->has('message'))
+    <div class="alert alert-danger">
+        {{ session()->get('message') }}
+    </div>
+@endif
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-1">

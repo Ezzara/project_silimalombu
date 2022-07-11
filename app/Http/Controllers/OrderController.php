@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\Biaya;
+use App\Models\Kategori;
+use App\Models\Produk;
 use Session;
 use DB;
 
@@ -51,18 +53,19 @@ class OrderController extends Controller
         //
         return view('pembeli.order.create');
     }
-    
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
         //dd($request);
+        $carts = Session::get('cart');
+        foreach ($carts as $cart){
+            $kd_kategori = Produk::where ('id', '=', $cart['id_produk'])->first();
+            $nm_kategori = Kategori::where ('id', '=', $kd_kategori->kd_kategori)->first();
+            //dd($nm_kategori);
+            if($nm_kategori->nm_kategori == 'Buah' AND $request->kd_provinsi == '1')
+                return back()->with('message','barang tidak dapat dikirim ke provinsi tersebut'); 
+        }
         $request->validate([
             'user_id' => 'required',
             'username'=> 'required',
@@ -94,14 +97,7 @@ class OrderController extends Controller
         $order->save();
         return Redirect()->route('order.index');
     }
-    
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
     public function show(Order $order)
     {
         //
@@ -110,24 +106,6 @@ class OrderController extends Controller
         ->with('i');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Order $order)
     {
         $order->status = "sudah diverifikasi";
