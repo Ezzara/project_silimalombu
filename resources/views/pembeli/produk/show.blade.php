@@ -2,8 +2,6 @@
 @section ('content')
 <div class="container-fluid">
     <div class="row my-5 pb-5">
-
-        <!--blank space-->
     </div>
     <div class="row ">
         <div class="col-md-3"></div>
@@ -22,6 +20,11 @@
                 </p>
             </div>
             <p>Stock: <b>{{$produk->jmlh_stok}}</b></p>
+            @if(session()->has('message'))
+                <div class="alert alert-danger">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
             <form action="{{ route('add.to.cart', $produk->id) }}" method="GET">
                 @csrf
                 <span>Masukkan Jumlah: </span><input type="number" style="width: 10%;" name='jumlah'> <br> <br>
@@ -29,10 +32,6 @@
             </form>
 
         </div>
-        <div class="col-md-6 ">
-
-        </div>
-
     </div>
     <div class="row">
         <div class="col-md-12 py-5 my-5"></div>

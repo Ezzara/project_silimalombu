@@ -53,21 +53,11 @@ class KeranjangController extends Controller
      */
     public function store(Request $request)
     {
+
         $carts = Session::get('cart');
         //dd($carts);
         foreach ($carts as $cart) 
         {
-            /*
-            $request->validate([
-                'kd_order' => 'required',
-                'nm_produk' => 'required',
-                'gambar' => 'required',
-                'jumlah' => 'required',
-                'harga_satuan' => 'required',
-                'harga_total' => 'required'
-            ]);
-            Keranjang::create($request->all());
-            */
             $keranjang = new Keranjang;
             $keranjang -> kd_order = $request['kd_order'];
             $keranjang -> nm_produk = $cart['name'];

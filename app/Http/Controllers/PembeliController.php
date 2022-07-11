@@ -8,31 +8,6 @@ use Illuminate\Http\Request;
 
 class PembeliController extends Controller
 {
-    //
-    
-    /*
-    public function daftarProduk(Request $request)
-    {
-        
-        $kategori = Kategori::latest()->paginate();
-        if(is_null($request->filter)) {
-            $produk = Produk::where([
-                ['nm_produk','like',"%".$request->keyword."%"],
-                ])
-                ->paginate();
-            }
-        else {
-            $produk = Produk::where([
-                ['nm_produk','like',"%".$request->keyword."%"],
-                ['kd_kategori','=',$request->filter],
-                ])
-                ->paginate();
-        }
-        return view('pembeli.produk.index', compact('produk','kategori'))
-        ->with ('i');
-
-    }
-    */
     public function show($id)
     {
         $produk = Produk::findOrFail($id);
@@ -55,6 +30,14 @@ class PembeliController extends Controller
     public function addToCart($id, Request $request)
     {
         $produk = Produk::findOrFail($id);
+        if($request->jumlah > $produk->jmlh_stok) 
+
+            return back()->with('message', 'Stok kurang');
+
+        elseif($request->jumlah < 0)
+
+            return back()->with('message','Input stok salah');
+            
         $request->validate ([
             'jumlah' => 'required',
         ]);
