@@ -81,16 +81,7 @@
                                 {{ $order->catatan }}
                             </td>
                             <td>
-                                @if($order->status == "Belum di Verifikasi")
-                                <form action="{{ route('order.update', $order->id) }}" method="post">
-                                    @csrf
-                                    @method('put')
-                                    <input type="submit" value="{{ $order->status }} ">
-                                </form>
-
-                                @else
                                 {{ $order->status }}
-                                @endif
                             </td>
                             <td>
                                 <form action="{{ route('order.update', $order->id) }}" method="post">
@@ -100,7 +91,8 @@
                                             <option value="Sudah di Verifikasi">Sudah di Verifikasi</option>
                                             <option value="Biaya Kurang">Biaya Kurang</option>
                                             <option value="Biaya Lebih">Biaya Lebih</option>
-                                            
+                                            <option value="Selesai">Selesai</option>
+                                            <option value="Dibatalkan">Dibatalkan</option>
                                         </select>
                                         <input type="submit">
                                 </form>
