@@ -93,6 +93,17 @@
                                 @endif
                             </td>
                             <td>
+                                <form action="{{ route('order.update', $order->id) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <select name="verif">
+                                            <option value="Sudah di Verifikasi">Sudah di Verifikasi</option>
+                                            <option value="Biaya Kurang">Biaya Kurang</option>
+                                            <option value="Biaya Lebih">Biaya Lebih</option>
+                                            
+                                        </select>
+                                        <input type="submit">
+                                </form>
                             </td>
 
                         </tr>

@@ -112,7 +112,7 @@ class OrderController extends Controller
 
     public function update(Request $request, Order $order)
     {
-        $order->status = "sudah diverifikasi";
+        $order->status = $request->verif;
         $order->save();
         return Redirect()->route('order.index');
     }
