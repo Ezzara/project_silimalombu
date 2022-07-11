@@ -96,7 +96,7 @@ class OrderController extends Controller
 
     public function verif()
     {
-        dd($order->id);
+        //dd($order->id);
         $order->status = "sudah diverifikasi";
         $order->save();
         return Redirect()->route('order.index');

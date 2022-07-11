@@ -13,13 +13,13 @@ class Catalog extends Component
     public function render()
     {
         return view('livewire.catalog', [
-            'product' => Produk::where('nm_produk','like','%'.$this->search.'%')
+            'product' => Prouk::where('nm_produk','like','%'.$this->search.'%')
                     ->when ($this->option != '', function ($q)
                     {
                         return $q->where('kd_kategori', '=', $this->option);
                     }
                 )
-                    ->paginate(''),
+                    ->paginate(),
             'kategori' => Kategori::paginate()
         ]);
     }

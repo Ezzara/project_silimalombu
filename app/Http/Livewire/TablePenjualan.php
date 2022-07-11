@@ -6,9 +6,9 @@ use Livewire\Component;
 use DB;
 use Carbon\Carbon;
 
-class PenjualanTable extends Component
+class TablePenjualan extends Component
 {
-    public $option = "07";
+    public $option = '';
 
     public function render()
     {
@@ -23,7 +23,7 @@ class PenjualanTable extends Component
                         'kelola_order.alamat_lengkap',
                         'bayar.tgl_transaksi')
             ->get();
-            return view('livewire.penjualan-table',['total' => $this->option])
+            return view('livewire.penjualan-table')
                 ->with('i')->with('data', $data);
         }
 
@@ -40,7 +40,7 @@ class PenjualanTable extends Component
             ->whereMonth('bayar.tgl_transaksi', $this->option)
             ->get();
 
-            return view('livewire.penjualan-table',['total' => $this->option])
+            return view('livewire.penjualan-table')
                 ->with('i')->with('data', $data);
         }
     }

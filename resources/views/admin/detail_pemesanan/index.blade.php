@@ -32,6 +32,7 @@
                             <th>Kode Promo</th>
                             <th>Catatan</th>
                             <th>Status</th>
+                            <th>Ubah Status</th>
 
                         </tr>
                         @foreach ($order as $order)
@@ -90,6 +91,8 @@
                                 @else
                                 {{ $order->status }}
                                 @endif
+                            </td>
+                            <td>
                             </td>
 
                         </tr>

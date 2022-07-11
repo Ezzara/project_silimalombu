@@ -142,6 +142,8 @@
             <!--Container-->
             @yield('content')
         </div>
+
+        
 </body>
 
 </html>
