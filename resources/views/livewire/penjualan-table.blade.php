@@ -34,7 +34,7 @@
                     <td>{{ $keranjang->nm_produk }}</td>
                     <td>{{ $keranjang->jumlah }}</td>
                     <td>{{ $keranjang->alamat_lengkap }}</td>
-                    <td>{{ \Carbon\Carbon::parse($keranjang->tgl_transaksi)->format('d/m/Y') }}</td>
+                    <td>{{ \Carbon\Carbon::parse($keranjang->tgl_transaksi)->translatedFormat('d F Y') }}</td>
                 </tr>
             @endforeach
         </table>
