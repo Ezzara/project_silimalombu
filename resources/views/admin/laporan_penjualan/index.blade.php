@@ -12,13 +12,7 @@
                 Laporan Penjualan
             </div>
             <div class="card-body">
-                <blockquote class="blockquote mb-0">
-
-                    <div class="row mt-3">
-
-                    </div>
                 @livewire('penjualan-table')
-                </blockquote>
             </div>
         </div>
     </div>

@@ -141,6 +141,9 @@
             </div>
             <!--Container-->
             @yield('content')
+
+            @stack('script')
+            @livewireScripts
         </div>
 
         

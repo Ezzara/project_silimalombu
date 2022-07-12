@@ -8,12 +8,7 @@
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
-
-                <div class="row mt-3">
-
-
-                </div>
-
+                <div class="row mt-3"></div>
                 <div class="row mt-3 ">
                     <table class="table bg-light">
                         <tr>
@@ -117,5 +112,5 @@
         </div>
     </div>
 </div>
-</div>
+
 @endsection
