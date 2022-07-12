@@ -62,7 +62,7 @@ class allseed extends Seeder
 
         DB::table('bayar')->insert(
             [
-                'id'=>'100',
+                'id'=>'1',
                 'nama'=>'sam',
                 'nominal'=>'34000',
                 'tgl_transaksi'=> Carbon::parse('2000-01-01'),
@@ -73,7 +73,7 @@ class allseed extends Seeder
 
         DB::table('keranjang')->insert (
             [
-                'kd_order' => '344n3242',
+                'kd_order' => '1',
                 'nm_produk'=>'minyak',
                 'gambar'=>'oils.jpeg',
                 'jumlah'=>3,
@@ -85,7 +85,7 @@ class allseed extends Seeder
 
         DB::table('kelola_order')->insert (
             [
-                'id' => uniqid(),
+                'id' => '1',
                 'username'=>'nama',
                 'email'=>'user@online',
                 'nama_penerima'=>'dina',

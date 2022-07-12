@@ -8,7 +8,8 @@ use Carbon\Carbon;
 
 class PenjualanTable extends Component
 {
-    public $option = "07";
+    public $option = "";
+    public $test = "hiii";
 
     public function render()
     {
@@ -24,7 +25,7 @@ class PenjualanTable extends Component
                         'bayar.tgl_transaksi')
             ->get();
             return view('livewire.penjualan-table',['total' => $this->option])
-                ->with('i')->with('data', $data);
+                ->with('i')->with('data', $data)->with('test',$this->test);
         }
 
         else 

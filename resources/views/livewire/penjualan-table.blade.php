@@ -1,6 +1,8 @@
 
 <div class="container-lg-12">
     <div class="row mt-3 ">
+        <input type="text" wire:model="test">
+        <p>{{$test}}</br></p>
         <select class="form-select" wire:model="option">
             <option value="">Semua</option>
             <option value="01">Januari</option>
