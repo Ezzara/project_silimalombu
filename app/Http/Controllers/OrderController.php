@@ -64,7 +64,7 @@ class OrderController extends Controller
             $nm_kategori = Kategori::where ('id', '=', $kd_kategori->kd_kategori)->first();
             $nm_provinsi = Biaya::where ('id', '=', $request->kd_provinsi)->first();
             //dd($nm_kategori);
-            if( ($nm_kategori->nm_kategori == 'Buah' OR $nm_kategori->nm_kategori == 'Sayur')
+            if( ($nm_kategori->nm_kategori == 'Buah' OR $nm_kategori->nm_kategori == 'Sayur' OR $nm_kategori->nm_kategori == 'Makanan')
                 AND $nm_provinsi->nm_provinsi != 'Sumatra')
                 return back()
                         ->with('message','Buah/Sayur tidak dapat dikirim ke luar provinsi Sumatra')
