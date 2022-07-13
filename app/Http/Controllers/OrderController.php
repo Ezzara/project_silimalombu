@@ -86,7 +86,7 @@ class OrderController extends Controller
             'catatan'=> 'nullable',   
             'kd_provinsi'=>'required',   
         ]);
-        $request['status'] = 'Belum di Verifikasi';
+        $request['status'] = 'Sedang di Proses';
         $input = $request->all();
         Order::create($input);
         return redirect()->route('bayar.create')
