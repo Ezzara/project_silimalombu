@@ -1,7 +1,7 @@
 @extends ('layouts.userApp')
 
 @push('scripts')
-    @livewireScripts
+@livewireScripts
 @endpush
 
 @section ('content')
@@ -15,9 +15,9 @@
 </div>
 @endif
 @if(session()->has('message'))
-    <div class="alert alert-danger">
-        {{ session()->get('message') }}
-    </div>
+<div class="alert alert-danger">
+    {{ session()->get('message') }}
+</div>
 @endif
 <div class="container-fluid">
     <div class="row">
@@ -30,7 +30,7 @@
                 @csrf
                 <div class="form-row mt-5">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_penerima" value="{{ Auth::user()->name }}" readonly>
+                        <input type="text" class="form-control" name="nama_penerima" placeholder="Nama Penerima">
                     </div>
                     <div class="col">
                         <input type="text" class="form-control" name="username" value="{{ Auth::user()->uname }}" readonly>
@@ -43,7 +43,7 @@
                 <input type="text" class="form-control mt-3" placeholder="Provinsi" name="kelurahan">
                 <input type="text" class="form-control mt-3" placeholder="Kabupaten/Kota" name="kab_kota">
                 <input type="text" class="form-control mt-3" placeholder="Kecamatan" name="kecamatan">
-                
+
                 <div class="form-row mt-3">
                     <div class="col">
                         <input type="text" class="form-control" id="" placeholder="Desa/Kelurahan" name="kelurahan">
@@ -66,16 +66,18 @@
                     <td>Produk</td>
                     <td>Harga Satuan</td>
                     <td>Jumlah</td>
+                    <td>Total Berat Produk</td>
                     <td>Subtotal Produk</td>
                 </tr>
 
-                
+
 
                 @foreach (session('cart') as $id => $produk)
                 <tr class="font-weight-bold">
                     <td>{{$produk['name']}}</td>
                     <td>Rp.{{$produk['price']}}</td>
                     <td>{{$produk['quantity']}}</td>
+                    <td>{{$produk['weight'] * $produk['quantity']}} g</td>
                     <td>Rp.{{$produk['price'] * $produk['quantity']}} </td>
                 </tr>
                 @endforeach
@@ -88,7 +90,7 @@
 
             <label class="mt-3">Catatan :</label>
             <input class="form-control text-left" type="text" id="" placeholder="Tinggalkan pesan untuk penjual (Opsional)">
-            
+
             @livewire('jumlah-biaya')
             {{--dalam livewire
 
@@ -96,20 +98,20 @@
             <label class="mr-sm-2" for="inlineFormCustomSelect">Provinsi Tujuan :</label>
                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name=kd_provinsi>
                     @foreach ($biaya as $biaya)
-                    <option value="{{$biaya->id}}">{{$biaya->nm_provinsi}} (Rp.{{$biaya->biaya_kirim}})</option>
-                    @endforeach
-                </select>
+                    <option value="{{$biaya->id}}">{{$biaya->nm_provinsi}} ( Rp.{{$biaya->biaya_kirim}})</option>
+            @endforeach
+            </select>
 
             <div class="text-right mt-3">
                 @php ($subtotal = 0)
                 @foreach (session('cart') as $cart)
-                    @php ($subtotal += $cart['price'] * $cart['quantity'])
+                @php ($subtotal += $cart['price'] * $cart['quantity'])
                 @endforeach
                 <p>Subtotal Produk Rp.{{$subtotal}}</p>
                 <p>Ongkos Kirim Rp.24.000</p>
                 <p>Total Pembayaran <b>Rp. {{$subtotal + 24000}}</b></p>
             </div>
-             --}}
+            --}}
             <div class="rounded my-auto p-3" style="background-color: #DDFFC8 ;">
                 <h3>
                     Transfer Pembayaran
