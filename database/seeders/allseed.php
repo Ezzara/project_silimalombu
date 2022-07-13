@@ -44,17 +44,17 @@ class allseed extends Seeder
                 ],
                 [
                     'id' => '3',
-                    'nm_kategori' => 'sayur',
+                    'nm_kategori' => 'Sayur',
                     'image' => 'sayur.jpeg'
                 ],
                 [
                     'id' => '4',
-                    'nm_kategori' => 'makanan',
+                    'nm_kategori' => 'Makanan',
                     'image' => 'makanan.jpeg'
                 ],
                 [
                     'id' => '5',
-                    'nm_kategori' => 'lainya',
+                    'nm_kategori' => 'Lainya',
                     'image' => 'lainya.jpeg'
                 ],
             ]
@@ -99,7 +99,7 @@ class allseed extends Seeder
                 'kd_promo'=>'3333',
                 'catatan'=>'tambahan',
                 
-                'status'=>'Belum di Verifikasi',
+                'status'=>'Sedang di Proses',
                 
             ]
         );
