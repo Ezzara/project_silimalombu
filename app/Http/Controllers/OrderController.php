@@ -67,7 +67,7 @@ class OrderController extends Controller
             if( ($nm_kategori->nm_kategori == 'Buah' OR $nm_kategori->nm_kategori == 'Sayur' OR $nm_kategori->nm_kategori == 'Makanan')
                 AND $nm_provinsi->nm_provinsi != 'Sumatra')
                 return back()
-                        ->with('message','Buah/Sayur tidak dapat dikirim ke luar provinsi Sumatra')
+                        ->with('message','Buah, Sayur dan Makanan tidak dapat dikirim ke luar provinsi Sumatra')
                         ->with('key',$request->id); 
         }
         $request->validate([

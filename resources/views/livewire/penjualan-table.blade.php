@@ -25,6 +25,7 @@
                 <th>Jumlah</th>
                 <th>Alamat</th>
                 <th>Tanggal Transaksi</th>
+                <th>Harga Total</th>
             </tr>
             @foreach ($data as $keranjang)
                 <tr>
@@ -35,6 +36,7 @@
                     <td>{{ $keranjang->jumlah }}</td>
                     <td>{{ $keranjang->alamat_lengkap }}</td>
                     <td>{{ \Carbon\Carbon::parse($keranjang->tgl_transaksi)->translatedFormat('d F Y') }}</td>
+                    <td>{{$keranjang->harga_total}}</td>
                 </tr>
             @endforeach
         </table>
