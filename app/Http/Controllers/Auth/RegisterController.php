@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -77,7 +78,7 @@ class RegisterController extends Controller
             'telepon' => $data['telepon'],
             'is_admin' => "0",
             'foto_profil' => "default_user.jpeg",
-            'tgl_lahir' => '30 - 01 - 2000',
+            'tgl_lahir' => Carbon::parse('2000-01-01'),
         ]);
         
     }
