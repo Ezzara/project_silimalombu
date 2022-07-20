@@ -54,12 +54,13 @@ class BayarController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['bukti'] = "$profileImage";
         }
-        //dd($input);
+        //dd($request->id);
         Bayar::create($input);
-
+        app('App\Http\Controllers\PenjualanController')->store($request->id);
         sleep(1);
         $request->session()->forget('cart');
         return redirect()->route('pembeli.notif');
+        //return redirect()->route('admin.penjualan.store',$request->id);
 
     }
 

@@ -32,7 +32,7 @@ class ProdukController extends Controller
         //dd($data);
 
         return view('admin.kelola_produk.index', compact('produk'))
-        ->with('i')->with('data', $data);
+                ->with('i')->with('data', $data);
     }
 
     /**

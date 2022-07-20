@@ -29,7 +29,5 @@ class Produk extends Model
         'jmlh_stok',
         'harga',
         'berat'
-
     ];
-
 }

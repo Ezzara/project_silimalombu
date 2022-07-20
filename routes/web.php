@@ -32,6 +32,7 @@ use App\Http\Controllers\UserProfileController;
 Route::get('admin', [adminProfileController::class,'index'])->middleware('is_admin');
 Route::get('/pesanan', [OrderController::class, 'buat']);
 Route::get('admin/penjualan', [PenjualanController::class, 'index'])->name('admin.penjualan');
+Route::post('penjualan/store', [PenjualanController::class, 'store'])->name('admin.penjualan.store');
 
 //Route::get('/pembeli/produk', [PembeliController::class, 'daftarProduk'])->name('pembeli.produk');
 Route::get('/pembeli/produk', function () { return view('pembeli.produk.index');})->name('pembeli.produk');
